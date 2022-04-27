@@ -1,21 +1,38 @@
-header{
+  html{
+  background-color: var(--black);
+  }
+
+  header{
   background-color: transparent;
   }
-  
+
   /*=================================================================
     Navigation
   ==================================================================*/
   
-  /* .navigation {
-    transition: .3s all;
-  } */
-  
+  .navContent{
+    margin-left: 5vw;
+    display: flex;
+  }
+
+  .navbar-brand.logo{
+    margin: 0;
+    align-self: center;
+    margin-right: 1vw;
+  }
+
+  /* TrocaCorNavbar */
+  .navbarScroll{
+    background-color: var(--black);
+    color: var(--black);
+  }
+
   /* Tira duplicacao do logo */
   .navigation .logo-default {
     display: none;
   }
   
-  .navigation .navbar-light .navbar-nav .nav-item .nav-link {
+  .navigation .navbar-dark .navbar-nav .nav-item .nav-link {
     color: #fff;
     font-size: 18px;
     line-height: 30px;
@@ -27,13 +44,21 @@ header{
   
   /* MAIN COLOR */
   /* HOVER */
-  .navigation .navbar-light .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
+  .navigation .navbar-dark .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:active, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:focus {
     background: none;
     color: var(--main-color);
+    font-size: 19px;
+  }
+
+  .user .navbar-dark .navbar-nav .nav-item .nav-link:hover {
+    background: none;
+    color: var(--main-color);
+    font-size: 19px;
   }
   
+  
   /* INITIAL ACTIVE */
-  .navigation .navbar-light .navbar-nav .nav-item.active .nav-link {
+  .navigation .navbar-dark .navbar-nav .nav-item.active .nav-link {
     color: var(--main-color);
   }
 
@@ -44,12 +69,95 @@ header{
     }
   }
   
+  @media (max-width: 991px) {
+    .navigation {
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+      background: transparent;
+    }
+    .navigation .navbar-dark .navbar-nav .nav-item .nav-link {
+      color: #000;
+    }
+    .navigation .logo-white {
+      display: none;
+    }
+    .navigation .logo-default {
+      display: block;
+    }
+  }
+  
+  .sticky-header {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+    background: #fff;
+  }
+  
+  .sticky-header .navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #000;
+  }
+  
+  .sticky-header .logo-white {
+    display: none;
+  }
+  
+  .sticky-header .logo-default {
+    display: block;
+  }
+  
+  .navbar-brand {
+    height: auto;
+    padding: 8px 0;
+  }
+  
+  .navbar-brand h1 {
+    margin: 0;
+  }
+
+  .background-header img{
+    width: 100%;
+    max-height: 90vh;
+    filter: brightness(30%);
+  }
+
+  .background-header {
+    position: relative;
+}
+
+  .background-header:after {
+    position: absolute;
+    content:"";
+    height:100%;  
+    width:100%;
+    top:0;
+    left:0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1));
+}
+
+  .user{
+    position: relative;
+    margin-right: 0;
+  }
+
   /* DROPDOWN CSS */
-   /* .navigation .dropdown:hover .dropdown-menu {
+   .navigation .dropdown:hover .dropdown-menu {
     visibility: visible;
     opacity: 1;
     -webkit-transform: scaleY(1);
             transform: scaleY(1);
+  }
+
+  a#navbarDropdown.nav-link{
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 30px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .2s ease-in-out 0s; 
+  }
+
+  a#navbarDropdown.nav-link:hover{
+    background: none;
+    color: var(--main-color);
+    font-size: 19px;
   }
   
   .navigation .dropdown-menu {
@@ -65,7 +173,7 @@ header{
             transform: scaleY(0);
     -webkit-transform-origin: top;
             transform-origin: top;
-    background: #000;
+    background: rgba(0, 0, 0, 0.5);
   } 
   
   @media (max-width: 991px) {
@@ -104,65 +212,13 @@ header{
     color: #fff;
     background: transparent;
     padding-left: 12px;
-  } */
-  
-  @media (max-width: 991px) {
-    .navigation {
-      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-      background: #fff;
-    }
-    .navigation .navbar-light .navbar-nav .nav-item .nav-link {
-      color: #000;
-    }
-    .navigation .logo-white {
-      display: none;
-    }
-    .navigation .logo-default {
-      display: block;
-    }
-    .navigation .navbar-light .navbar-toggler {
-      color: rgba(0, 0, 0, 0.5);
-      border-color: rgba(0, 0, 0, 0.1);
-    }
-  }
-  
-  .sticky-header {
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-    background: #fff;
-  }
-  
-  .sticky-header .navbar-light .navbar-nav .nav-item .nav-link {
-    color: #000;
-  }
-  
-  .sticky-header .logo-white {
-    display: none;
-  }
-  
-  .sticky-header .logo-default {
-    display: block;
-  }
-  
-  .navbar-brand {
-    height: auto;
-    padding: 8px 0;
-  }
-  
-  .navbar-brand h1 {
-    margin: 0;
   }
 
-  .background-header{
-    width: 100%;
-    height: 90vh;
-    background-color: purple;
-  }
+  /* /DROPDOWN CSS */
 
-  .background-header img{
-    width: 100%;
-    max-height: 90vh;
+  .user{
+    margin-left: 40vw;
   }
-
   
    /* .hero-area {
     background-image: url("../images/slider/slider-bg-1.jpg");

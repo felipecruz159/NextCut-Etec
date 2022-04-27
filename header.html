@@ -20,58 +20,60 @@
 Fixed Navigation
 ==================================== -->
   <header class="navigation fixed-top">
-    <div class="container">
+    <div class="container-fluid p-0">
       <!-- main nav -->
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <!-- logo -->
-        <a class="navbar-brand logo" href="index.html">
+      <nav id="colorScroll" class="navbar navbar-expand-lg navbar-dark navbarColor">
+        <div class="navContent">
+          <!-- logo -->
+          <a class="navbar-brand logo" href="index.html">
 
-          <img class="logo-white" src="/template/images/logo-white.png" alt="logo" />
-        </a>
-        <!-- /logo -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <img class="logo-white" src="/template/images/logo-white.png" alt="logo" />
+          </a>
+          <!-- /logo -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="navigation">
-          <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
-              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Homepage
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Portfolio</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="team.html">Team</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="pricing.html">Pricing</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Pages
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="404.html">404 Page</a>
-                <a class="dropdown-item" href="blog.html">Blog Page</a>
-                <a class="dropdown-item" href="single-post.html">Blog Single Page</a>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto text-center">
+              <li id="header" class="nav-item active">
+                <a class="nav-link" href="#">Início</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Serviços</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Portfolio</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="team.html">Equipe</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="pricing.html">Contato</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="contact.html">Assine já</a>
+              </li>
+
+              <div id="user" class="user collapse navbar-collapse">
+                <li class="dropdown">
+                  <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Perfil
+                  </a>
+                  <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item " href="404.html">Configuração</a>
+                    <a class="dropdown-item " href="blog.html">Central de ajuda</a>
+                    <a class="dropdown-item " href="single-post.html">Sair da conta</a>
+                  </div>
+                </li>
               </div>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </div>
       </nav>
       <!-- /main nav -->
@@ -81,16 +83,21 @@ Fixed Navigation
 End Fixed Navigation
 ==================================== -->
 
-<div class="background-header">
-<img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
-</div>
-<div class="background-header">
-  <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
+  <div class="background-header gradient-overlay">
+    <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
   </div>
+  <div class="background-header gradient-overlay">
+    <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
+  </div>
+  <div class="background-header gradient-overlay">
+    <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
+  </div>
+
 
   <script src="/js/popper.min.js"></script>
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/custom.js"></script>
 </body>
 
 </html>

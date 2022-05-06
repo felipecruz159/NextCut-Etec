@@ -4,32 +4,24 @@
 
   header{
   background-color: transparent;
+  margin-left: 3%;
   }
 
   /*=================================================================
     Navigation
   ==================================================================*/
-  
-  .navContent{
-    margin-left: 5vw;
-    display: flex;
-  }
 
-  .navbar-brand.logo{
+
+  /*LOGO ALINHAR EIXO Y*/
+  .navbar-brand.logo{ 
+    padding: 30px 15px;
     margin: 0;
-    align-self: center;
-    margin-right: 1vw;
   }
 
-  /* TrocaCorNavbar */
+  /* TROCA COR */
   .navbarScroll{
     background-color: var(--black);
     color: var(--black);
-  }
-
-  /* Tira duplicacao do logo */
-  .navigation .logo-default {
-    display: none;
   }
   
   .navigation .navbar-dark .navbar-nav .nav-item .nav-link {
@@ -42,8 +34,6 @@
     transition: .2s ease-in-out 0s;
   }
   
-  /* MAIN COLOR */
-  /* HOVER */
   .navigation .navbar-dark .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:active, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:focus {
     background: none;
     color: var(--main-color);
@@ -72,10 +62,10 @@
   @media (max-width: 991px) {
     .navigation {
       box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-      background: transparent;
+      background: var(--black);
     }
     .navigation .navbar-dark .navbar-nav .nav-item .nav-link {
-      color: #000;
+      color: var(--white);
     }
     .navigation .logo-white {
       display: none;
@@ -84,32 +74,8 @@
       display: block;
     }
   }
-  
-  .sticky-header {
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-    background: #fff;
-  }
-  
-  .sticky-header .navbar-dark .navbar-nav .nav-item .nav-link {
-    color: #000;
-  }
-  
-  .sticky-header .logo-white {
-    display: none;
-  }
-  
-  .sticky-header .logo-default {
-    display: block;
-  }
-  
-  .navbar-brand {
-    height: auto;
-    padding: 8px 0;
-  }
-  
-  .navbar-brand h1 {
-    margin: 0;
-  }
+
+/* HOMEPAGE BACKGROUND */
 
   .background-header img{
     width: 100%;
@@ -117,9 +83,9 @@
     filter: brightness(30%);
   }
 
-  .background-header {
-    position: relative;
-}
+    .background-header {
+      position: relative;
+  }
 
   .background-header:after {
     position: absolute;
@@ -130,14 +96,11 @@
     left:0;
     background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1));
 }
-
-  .user{
-    position: relative;
-    margin-right: 0;
-  }
+  /* /HOMEPAGE BACKGROUND */
 
   /* DROPDOWN CSS */
-   .navigation .dropdown:hover .dropdown-menu {
+
+  .navigation .dropdown:hover .dropdown-menu {
     visibility: visible;
     opacity: 1;
     -webkit-transform: scaleY(1);
@@ -214,11 +177,9 @@
     padding-left: 12px;
   }
 
+
   /* /DROPDOWN CSS */
 
-  .user{
-    margin-left: 40vw;
-  }
   
    /* .hero-area {
     background-image: url("../images/slider/slider-bg-1.jpg");

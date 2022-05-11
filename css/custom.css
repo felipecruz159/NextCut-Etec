@@ -1,17 +1,14 @@
-  html{
-  background-color: var(--black);
+  html, body{
+  background-color: var(--black) !important;
   }
 
   header{
   background-color: transparent;
-
   }
 
   #colorScroll{
     padding-left: 3%;
   }
-
- 
   
   /*=================================================================
     Navigation
@@ -29,7 +26,7 @@
     color: var(--black);
   }
   
-  .navigation .navbar-dark .navbar-nav .nav-item .nav-link {
+  .navigation .navbar-dark .navbar-nav .nav-item .nav-link, .navigation .navbar-dark .navbar-nav .item .nav-link {
     color: #fff;
     font-size: 18px;
     line-height: 30px;
@@ -39,24 +36,22 @@
     transition: .2s ease-in-out 0s;
   }
   
-  .navigation .navbar-dark .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:active, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:focus {
-    background: none;
-    color: var(--main-color);
-    font-size: 19px;
-  }
-  .navbar-dark .navbar-nav .nav-item .nav-link:hover {
+  .navigation .navbar-dark .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:active, .navigation .navbar-dark .navbar-nav .nav-item .nav-link:focus  {
     background: none;
     color: var(--main-color);
     font-size: 19px;
   }
   
+  .navigation .navbar-dark .navbar-nav .item .nav-link:hover, .navigation .navbar-dark .navbar-nav .item .nav-link:focus  {
+    background: none;
+    font-size: 19px;
+  }
   
   /* INITIAL ACTIVE */
   .navigation .navbar-dark .navbar-nav .nav-item.active .nav-link {
     color: var(--main-color);
   }
 
-  
   @media (max-width: 991px) {
     .navigation .nav-link {
       padding: 10px !important;
@@ -68,7 +63,7 @@
       box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
       background: var(--black);
     }
-    .navigation .navbar-dark .navbar-nav .nav-item .nav-link {
+    .navigation .navbar-dark .navbar-nav .nav-item .nav-link, .item  {
       color: var(--white);
     }
     .navigation .logo-white {
@@ -181,6 +176,13 @@
     padding-left: 12px;
   }
 
+  #headerRight{
+    padding-right: 3%;
+  }
+  
+  span{
+    color: var(--main-color);
+  }
 
   /* /DROPDOWN CSS */
 

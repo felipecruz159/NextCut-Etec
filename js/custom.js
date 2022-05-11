@@ -26,4 +26,15 @@ window.onscroll = function() {
     }
 }
 
-// /Nav background when scrolling
+// /Nav background when 
+
+// Salva layout no responsivo/web
+function changeHTML() {
+    $("#headerRight").appendTo("#destination");
+}
+
+if ($(window).width() < 991) {
+    changeHTML();
+ }
+
+ // /Salva layout no responsivo/web

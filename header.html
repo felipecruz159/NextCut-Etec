@@ -30,46 +30,64 @@ Fixed Navigation
       </a>
       <!-- /logo -->
 
-      <div class="collapse navbar-collapse" id="navigation">
-        <ul class="navbar-nav ml-auto text-center">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Início</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Sobre</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Portfolio</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Equipe</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Contato</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Assine já</a>
-          </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="navigation-right">
-            <li class="dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span>Perfil</span>
-              </a>
-              <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                <a class="dropdown-item " href="#">Configuração</a>
-                <a class="dropdown-item " href="#">Central de ajuda</a>
-                <a class="dropdown-item " href="#">Sair da conta</a>
-              </div>
+      <div class="navbar-collapse collapse" id="navigation">
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Início</a>
             </li>
-          </div>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Serviços</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Equipe</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Contato</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Assine já</a>
+            </li>
+          </ul>
+        </div>
+        <div id="destination">
 
+        </div>
+      </div>
+
+      <div id="headerRight">
+        <ul class="navbar-nav">
+          <!-- <li class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span>Perfil</span>
+            </a>
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item " href="#">Configuração</a>
+              <a class="dropdown-item " href="#">Central de ajuda</a>
+              <a class="dropdown-item " href="#">Sair da conta</a>
+            </div>
+          </li> -->
+          <li class="item">
+            <a class="nav-link" href="#"><span>Cadastre-se</span></a>
+          </li>
+          <li class="item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
         </ul>
       </div>
+
     </nav>
     <!-- /main nav -->
 
@@ -78,16 +96,9 @@ Fixed Navigation
 End Fixed Navigation
 ==================================== -->
 
-  <div class="background-header gradient-overlay">
+  <div class="background-header">
     <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
   </div>
-  <div class="background-header gradient-overlay">
-    <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
-  </div>
-  <div class="background-header gradient-overlay">
-    <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
-  </div>
-
 
   <script src="/js/popper.min.js"></script>
   <script src="/js/jquery.min.js"></script>

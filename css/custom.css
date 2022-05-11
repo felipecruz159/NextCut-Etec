@@ -4,13 +4,18 @@
 
   header{
   background-color: transparent;
-  margin-left: 3%;
+
   }
 
+  #colorScroll{
+    padding-left: 3%;
+  }
+
+ 
+  
   /*=================================================================
     Navigation
   ==================================================================*/
-
 
   /*LOGO ALINHAR EIXO Y*/
   .navbar-brand.logo{ 
@@ -39,8 +44,7 @@
     color: var(--main-color);
     font-size: 19px;
   }
-
-  .user .navbar-dark .navbar-nav .nav-item .nav-link:hover {
+  .navbar-dark .navbar-nav .nav-item .nav-link:hover {
     background: none;
     color: var(--main-color);
     font-size: 19px;
@@ -83,7 +87,7 @@
     filter: brightness(30%);
   }
 
-    .background-header {
+  .background-header {
       position: relative;
   }
 

@@ -1,17 +1,5 @@
 // Change active color in the nav
 
-// $('li').not("#user").click(function(){ 
-//     var elemento = document.getElementById("header");
-//     if(elemento.classList.contains('active'))  {
-//         $("#header").addClass('active')
-//     }
-//     else{
-//         $("#header").removeClass('active')
-//     }
-//     $(this).addClass('active');
-//     $(this).removeClass('active');
-//    });
-
 $(document).ready(function() {
     $(".nav-item").bind( "click", function(event) {
         event.preventDefault();
@@ -29,7 +17,7 @@ $(document).ready(function() {
 
 window.onscroll = function() {
     var nav = document.getElementById('colorScroll');
-    if ( window.pageYOffset > 800 ) {
+    if ( window.pageYOffset > 300 ) {
 
         nav.classList.add("navbarScroll");
     } else {

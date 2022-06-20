@@ -6,4 +6,11 @@
     --black:#000000;
   }
 
+  html, body{
+    background-color: var(--main-color) !important;
+    }
+  
+    ::selection{
+      color: var(--main-color);
+    }
   

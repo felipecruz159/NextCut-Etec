@@ -1,21 +1,4 @@
-<!doctype html>
-<html lang="pt-br">
-
-<head>
-
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Agendamento de corte de cabelo ">
-
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="template/css/style.css">
-
-  <title>NextCut</title>
-</head>
-
-<body>
-
+<link rel="stylesheet" href="css/main.css">
   <!--
 Fixed Navigation
 ==================================== -->
@@ -25,7 +8,7 @@ Fixed Navigation
     <nav id="colorScroll" class="navbar navbar-expand-lg navbar-dark navbarColor">
 
       <!-- logo -->
-      <a class="navbar-brand logo" href="index.html">
+      <a class="navbar-brand logo" href="#">
         <img class="logo-white" src="/template/images/logo-white.png" alt="logo" />
       </a>
       <!-- /logo -->
@@ -68,17 +51,6 @@ Fixed Navigation
 
       <div id="headerRight">
         <ul class="navbar-nav">
-          <!-- <li class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <span>Perfil</span>
-            </a>
-            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item " href="#">Configuração</a>
-              <a class="dropdown-item " href="#">Central de ajuda</a>
-              <a class="dropdown-item " href="#">Sair da conta</a>
-            </div>
-          </li> -->
           <li class="item">
             <a class="nav-link" href="#"><span>Cadastre-se</span></a>
           </li>
@@ -95,15 +67,3 @@ Fixed Navigation
   <!--
 End Fixed Navigation
 ==================================== -->
-
-  <div class="background-header">
-    <img src="/imagens/backgroundHeader.jpg" alt="" class="img-fluid">
-  </div>
-
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/custom.js"></script>
-</body>
-
-</html>

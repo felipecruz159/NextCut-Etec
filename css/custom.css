@@ -91,6 +91,8 @@
     left:0;
     background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1));
 }
+
+
   /* /HOMEPAGE BACKGROUND */
 
   /* DROPDOWN CSS */
@@ -591,4 +593,54 @@
 
 /*=================================================================
    //Footer section
+==================================================================*/
+
+/*=================================================================
+   Carousel section
+==================================================================*/
+
+.carousel-caption{
+  z-index: 9;
+}
+
+.main-btn{
+  background-color: var(--dark-gray);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 3px solid transparent;
+  transition: .5s;
+}
+
+.main-btn:hover{
+  background-color: var(--main-color);
+  color: var(--black);
+  text-decoration: none;
+}
+
+.carousel-caption{
+  margin-bottom: 15vh;
+}
+
+.carousel-caption h2{
+  font-size: 48pt;
+}
+
+.carousel-caption p{
+  font-size: 18pt;
+}
+/*=================================================================
+   Team section
+==================================================================*/
+
+.team .avatar{
+  max-height: 200px;
+}
+
+/*=================================================================
+   //Team section
 ==================================================================*/

@@ -1,19 +1,4 @@
-// Change active color in the nav
-
-$(document).ready(function() {
-    $(".nav-item").bind( "click", function(event) {
-        event.preventDefault();
-        var clickedItem = $( this );
-        $( ".nav-item" ).each( function() {
-            $( this ).removeClass( "active" );
-        });
-        clickedItem.addClass( "active" );
-    });
-});
-
-// /Change active color in the nav
-
-// Nav background when scrolling
+// Nav background com rolagem
 
 window.onscroll = function() {
     var nav = document.getElementById('colorScroll');
@@ -26,9 +11,9 @@ window.onscroll = function() {
     }
 }
 
-// /Nav background when 
+// /Nav background com rolagem
 
-// Salva layout no responsivo/web
+// Arruma layout no responsivo/web
 function changeHTML() {
     $("#headerRight").appendTo("#destination");
 }
@@ -37,4 +22,14 @@ if ($(window).width() < 991) {
     changeHTML();
  }
 
- // /Salva layout no responsivo/web
+ $(window).resize(function(){location.reload();});
+
+ // /Arruma layout no responsivo/web
+
+ // Intervalo de tempo do carousel
+
+ $('#mainSlider').carousel({
+    interval: 4000
+});
+
+// /Intervalo de tempo do carousel

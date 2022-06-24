@@ -8,7 +8,7 @@ Fixed Navigation
     <nav id="colorScroll" class="navbar navbar-expand-lg navbar-dark navbarColor">
 
       <!-- logo -->
-      <a class="navbar-brand logo" href="#">
+      <a class="navbar-brand logo" href="./?page=inicio">
         <img class="logo-white" src="/template/images/logo-white.png" alt="logo" />
       </a>
       <!-- /logo -->
@@ -21,26 +21,29 @@ Fixed Navigation
       <div class="navbar-collapse collapse" id="navigation">
         <div>
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Início</a>
+            <li class="nav-item <?php if($page == "inicio") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=inicio">Início</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Sobre</a>
+            <li class="nav-item <?php if($page == "sobre") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=sobre">Sobre</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Serviços</a>
+            <li class="nav-item <?php if($page == "servicos") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=servicos">Serviços</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Portfolio</a>
+            <li class="nav-item <?php if($page == "portfolio") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=portfolio">Portfolio</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Equipe</a>
+            <li class="nav-item <?php if($page == "equipe") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=equipe">Equipe</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Contato</a>
+            <li class="nav-item <?php if($page == "carreiras") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=carreuras">Carreiras</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Assine já</a>
+            <li class="nav-item <?php if($page == "contato") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=contato">Contato</a>
+            </li>
+            <li class="nav-item <?php if($page == "assine") echo 'active'; ?>">
+              <a class="nav-link" href="./?page=assine">Assine já</a>
             </li>
           </ul>
         </div>

@@ -15,16 +15,17 @@
 <body>
 
 <?php
-include 'header.php';
-include 'config.php';
 $page = @$_GET['page'];
+include 'header.php';
+include 'carousel.php';
+
 
 if ($page != '') {
   if (file_exists($page . ".php")) {
     include $page . ".php";
   } 
   else {  
-    echo "Página não encontrada";
+    echo "<font color='#FFF'> Página não encontrada! </font>>";
   }
 } 
 else {

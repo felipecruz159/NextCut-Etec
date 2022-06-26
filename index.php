@@ -12,39 +12,41 @@
 
   <title>NextCut</title>
 </head>
+
 <body>
 
-<?php
 
-$page = @$_GET['page'];
+  <?php
 
-if ($page != 'login'){
-include 'header.php';
-include 'carousel.php';
-}
-else{
-;
-}
+  $page = @$_GET['page'];
+  include 'header.php';
 
-
-if ($page != '') {
-  if (file_exists($page . ".php")) {
-    include $page . ".php";
-  } 
-  else {  
-    echo "<font color='#FFF'> Página não encontrada! </font>>";
+  if ($page != '') {
+    if (file_exists($page . ".php")) {
+      if ($page != 'login') {
+        include 'carousel.php';
+        include $page . ".php";
+      }
+      else{
+        include $page . ".php";
+      }
+    }
+    else {
+      include '404.php';
+    }
   }
-} 
-else {
-  include 'inicio.php';
-}
+  else {
+    include 'carousel.php';
+    include 'inicio.php';
+  }
 
-include 'footer.php';
-?>
+  include 'footer.php';
+  ?>
 
   <script src="js/popper.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
 </body>
+
 </html>

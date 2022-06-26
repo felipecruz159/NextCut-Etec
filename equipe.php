@@ -6,7 +6,7 @@
             <div class="col-12 text-center">
                 <div class="section-title mb-4 pb-2">
                     <h4 class="title mb-4 mt-5">As mentes por trás da NextCut</h4>
-                    <p class="text-muted para-desc mx-auto mb-0">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
+                    <p class="text-muted para-desc mx-auto mb-0">Aqui você irá encontrar pessoas capacitadas, integração total dos times e com entusiasmo para te atender bem.</p>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
@@ -34,7 +34,7 @@
                     <img src="https://media-exp1.licdn.com/dms/image/C5603AQGWWAGzV6JSbQ/profile-displayphoto-shrink_200_200/0/1637689536261?e=1661385600&v=beta&t=qARUDFWZmvmXkLoQEFrnLyPCcheGBeVPMBC7Djscg-c" class="img-fluid avatar avatar-medium shadow rounded-pill" alt="">
                     <div class="content mt-3">
                         <h4 class="title mb-0">Marcos Felipe</h4>
-                        <small class="text-muted">Back-end</small>
+                        <small class="text-muted">Full-stack</small>
                         <ul class="list-unstyled mt-3 social-icon social mb-0">
                             <!-- <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li> -->
                             <li class="list-inline-item"><a href="https://www.instagram.com/felipe_cruz159/" target="_blank" class="rounded"><i class="mdi mdi-instagram" title="Instagram"></i></a></li>
@@ -79,6 +79,7 @@
                     </div>
                 </div>
             </div><!--end col-->
+            
         </div><!--end row-->
     </div>
 

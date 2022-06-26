@@ -7,11 +7,11 @@
   }
 
   html, body{
-    background-color: #000000b0 ; 
+    background-color: #000000b0 !important; 
     }
 
     h1, h2, h3, h4, h5, h6, p{
-      color: rgb(0, 0, 0);
+      color: white !important;
     }
   
     ::selection{
@@ -21,5 +21,9 @@
     .container-fluid{
       margin: 0 !important;
       padding: 0 !important;
+    }
+
+    .login-text{
+      color: var(--dark-gray) !important;
     }
   

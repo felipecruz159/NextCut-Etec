@@ -2,7 +2,14 @@
   <!--
 Fixed Navigation
 ==================================== -->
-  <header class="navigation fixed-top">
+  <header class="navigation fixed-top" style="background-color: <?php 
+  if ( $page == 'login' ){
+    echo 'black';
+  }
+  else{
+    echo 'transparent';
+  }
+  ;?>">
 
     <!-- main nav -->
     <nav id="colorScroll" class="navbar navbar-expand-lg navbar-dark navbarColor">
@@ -21,7 +28,7 @@ Fixed Navigation
       <div class="navbar-collapse collapse" id="navigation">
         <div>
           <ul class="navbar-nav">
-            <li class="nav-item <?php if($page == "inicio") echo 'active'; ?>">
+            <li class="nav-item <?php if($page == "inicio" || $page == '') echo 'active'; ?>">
               <a class="nav-link" href="./?page=inicio">Início</a>
             </li>
             <li class="nav-item <?php if($page == "sobre") echo 'active'; ?>">
@@ -37,7 +44,7 @@ Fixed Navigation
               <a class="nav-link" href="./?page=equipe">Equipe</a>
             </li>
             <li class="nav-item <?php if($page == "carreiras") echo 'active'; ?>">
-              <a class="nav-link" href="./?page=carreuras">Carreiras</a>
+              <a class="nav-link" href="./?page=carreiras">Carreiras</a>
             </li>
             <li class="nav-item <?php if($page == "contato") echo 'active'; ?>">
               <a class="nav-link" href="./?page=contato">Contato</a>
@@ -54,11 +61,11 @@ Fixed Navigation
 
       <div id="headerRight">
         <ul class="navbar-nav">
-          <li class="item <?php if($page == "login") echo 'active'; ?>">
-            <a class="nav-link" href="./?page=login"><span>Cadastre-se</span></a>
+          <li class="item <?php if($page == "cadastro") echo 'active'; ?>">
+            <a class="nav-link" href="./?page=cadastro"><span>Cadastre-se</span></a>
           </li>
-          <li class="item">
-            <a class="nav-link" href="#">Login</a>
+          <li class="item <?php if($page == "login") echo 'active'; ?>">
+            <a class="nav-link" href="./?page=login">Login</a>
           </li>
         </ul>
       </div>

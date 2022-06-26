@@ -1,10 +1,3 @@
-<!-- <link rel="stylesheet" href="css/main.css">
-<div class="background-header">
-    <img src="imagens/backgroundHeader.jpg" alt="" class="img-fluid">
-</div>
-
-<h1>Sobre</h1> -->
-
 <main>
     <div class="container-fluid">
         <div id="mainSlider" class="carousel slide" data-ride="carousel">

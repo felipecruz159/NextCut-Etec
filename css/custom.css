@@ -23,7 +23,7 @@
   }
   
   .navigation .navbar-dark .navbar-nav .nav-item .nav-link, .navigation .navbar-dark .navbar-nav .item .nav-link {
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     line-height: 30px;
     padding: 30px 15px;
@@ -644,3 +644,51 @@
 /*=================================================================
    //Team section
 ==================================================================*/
+
+
+
+
+/*LOGIN*/
+.fundo  {
+  background-color: white;
+  box-shadow:
+      0px 0.6px 3.4px rgba(0, 0, 0, 0.019),
+      0px 1.4px 7.5px rgba(0, 0, 0, 0.028),
+      0px 2.3px 12.6px rgba(0, 0, 0, 0.034),
+      0px 3.5px 19px rgba(0, 0, 0, 0.04),
+      0px 5px 27.4px rgba(0, 0, 0, 0.045),
+      0px 7.1px 38.8px rgba(0, 0, 0, 0.05),
+      0px 10.1px 55px rgba(0, 0, 0, 0.056),
+      0px 14.6px 79.9px rgba(0, 0, 0, 0.062),
+      0px 22.5px 123.2px rgba(0, 0, 0, 0.071),
+      0px 40px 219px rgba(0, 0, 0, 0.09);
+      color: black; 
+      border-radius: 20px;
+}
+
+
+
+.log input{
+  background-color: transparent;
+  color: var(--main-color);
+  font-weight: bold;
+  height: 60px;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid var(--dark-gray);
+  transition: .5s;
+  width: 85%;
+}
+  .log :focus{
+  border: none;
+  border-radius: 30px;
+  color: var(--black);
+  background-color: white;
+}
+.img-login{
+  background: hsla(19, 96%, 49%, 1);
+  background: linear-gradient(45deg, hsla(19, 96%, 49%, 1) 22%, hsla(26, 100%, 63%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(19, 96%, 49%, 1) 22%, hsla(26, 100%, 63%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(19, 96%, 49%, 1) 22%, hsla(26, 100%, 63%, 1) 100%);
+  border-radius: 20px 0px 0px 20px;
+}

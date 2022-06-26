@@ -15,9 +15,16 @@
 <body>
 
 <?php
+
 $page = @$_GET['page'];
+
+if ($page != 'login'){
 include 'header.php';
 include 'carousel.php';
+}
+else{
+;
+}
 
 
 if ($page != '') {

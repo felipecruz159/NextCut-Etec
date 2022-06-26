@@ -54,8 +54,8 @@ Fixed Navigation
 
       <div id="headerRight">
         <ul class="navbar-nav">
-          <li class="item">
-            <a class="nav-link" href="#"><span>Cadastre-se</span></a>
+          <li class="item <?php if($page == "login") echo 'active'; ?>">
+            <a class="nav-link" href="./?page=login"><span>Cadastre-se</span></a>
           </li>
           <li class="item">
             <a class="nav-link" href="#">Login</a>

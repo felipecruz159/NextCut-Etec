@@ -177,11 +177,11 @@
 .page-404 {
   display: flex;
   align-items: center;
-  height: 100vh;
+
 }
 
 .page-404 h1 {
-  font-size: 200px;
+  font-size: 4em;
 }
 
 /*============================================================
@@ -616,21 +616,32 @@
 }
 
 .login-box{
-  padding-top: 22vh;
-  padding-bottom: 10vh;
+  padding-top: 14vh;
 }
+
 
 /* //LOGIN */
 
 /* 404 */
 
-.erro{
-  color: white !important;
-  text-decoration: underline !important;
+.btn-erro{
+  background-color: var(--dark-gray);
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 3px solid transparent;
+  transition: .3s;
 }
 
-.erro:hover{
+.btn-erro:hover{
   color: var(--main-color) !important;
+  background-color: rgba(0, 0, 0, 0.7);
 }
+
 
 /* //404 */

@@ -7,10 +7,10 @@
   }
 
   html, body{
-    background-color: #000000b0 !important; 
+    background-color: #292929b0 !important; 
     }
 
-    h1, h2, h3, h4, h5, h6, p{
+    h1, h2, h3, h4, h5, h6, p, small{
       color: white !important;
     }
   

@@ -16,7 +16,6 @@
                     </div>
                 </div>
 
-
                 <div class="carousel-item">
                     <img src="https://hips.hearstapps.com/esq.h-cdn.co/assets/17/29/1500667303-es-072117-talk-to-your-barber-about-your-hair.jpg" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">

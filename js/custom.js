@@ -29,7 +29,7 @@ if ($(window).width() < 991) {
  // Intervalo de tempo do carousel
 
  $('#mainSlider').carousel({
-    interval: 4000
+    interval: 6000
 });
 
 // /Intervalo de tempo do carousel

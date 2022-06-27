@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="css/main.css">
 	<section class="page-404 section text-center">
 		<div class="container">
 			<div class="row">

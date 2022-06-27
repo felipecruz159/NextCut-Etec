@@ -19,16 +19,19 @@
   <?php
 
   $page = @$_GET['page'];
-  include 'header.php';
 
   if ($page != '') {
     if (file_exists($page . ".php")) {
       if ($page != 'login') {
+        include 'header.php';
         include 'carousel.php';
         include $page . ".php";
+        include 'footer.php';
       }
       else{
+        include 'header.php';
         include $page . ".php";
+        include 'footer.php';
       }
     }
     else {
@@ -36,11 +39,12 @@
     }
   }
   else {
+    include 'header.php';
     include 'carousel.php';
     include 'inicio.php';
+    include 'footer.php';
   }
 
-  include 'footer.php';
   ?>
 
   <script src="js/popper.min.js"></script>

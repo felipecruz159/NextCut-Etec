@@ -1,17 +1,19 @@
 :root {
     --main-color:#ff6600;
-    --white:#ffff;
-    --light-gray:#f6f4f4;
-    --dark-gray:#1f1f1f;
-    --black:#000000;
+    --white:#fff;
+    --light-gray: #bdbdbd;
+    --gray:#212225;
+    --dark-main:#121212;
+    --black:#000;
+  
   }
 
   body {
-    background-color: #181818b0 !important; 
+    background-color: var(--dark-main) !important; 
     }
 
     h1, h2, h3, h4, h5, h6, p, small{
-      color: white !important;
+      color: var(--white) !important;
     }
   
     ::selection{
@@ -24,6 +26,6 @@
     }
 
     .login-text{
-      color: var(--dark-gray) !important;
+      color: var(--dark-main) !important;
     }
   

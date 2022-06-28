@@ -4,7 +4,7 @@ Fixed Navigation
 ==================================== -->
   <header class="navigation fixed-top" style="background-color: <?php 
   if ( $page == 'login' ){
-    echo 'black';
+    echo 'var(--dark-main)';
   }
   else{
     echo 'transparent';

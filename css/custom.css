@@ -14,12 +14,12 @@
 
   /* TROCA COR */
   .navbarScroll{
-    background-color: var(--black);
-    color: var(--black);
+    background-color: var(--dark-main);
+    color: var(--dark-main);
   }
   
   .navigation .navbar-dark .navbar-nav .nav-item .nav-link, .navigation .navbar-dark .navbar-nav .item .nav-link {
-    color: white;
+    color: var(--white);
     font-size: 18px;
     line-height: 30px;
     padding: 30px 15px;
@@ -53,7 +53,6 @@
   @media (max-width: 991px) {
     .navigation {
       box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-      background: var(--black);
     }
     .navigation .navbar-dark .navbar-nav .nav-item .nav-link, .item  {
       color: var(--white);
@@ -104,16 +103,17 @@
   /*=================================================================
   Footer section
 ==================================================================*/
-.top-footer {
-  background-color: var(--black);
-  border-top: 1px solid var(--black);
-  padding: 100px 0 80px;
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////ALTERAR DEPOIS BOX SHADOW */
+.top-footer { 
+  background-color: var(--dark-main);
+  border-top: 1px solid var(--black); 
+  padding: 70px 0 50px;
 }
 
 .top-footer h3 {
   font-size: 16px;
   line-height: 1.5;
-  color: #fff;
+  color: var(--white);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -123,7 +123,6 @@
 .top-footer p {
   font-size: 13px;
   line-height: 30px;
-  color: #bdbdbd;
   font-weight: 300;
   letter-spacing: 1px;
   padding-right: 20px;
@@ -132,7 +131,7 @@
 .top-footer li a {
   font-size: 13px;
   line-height: 30px;
-  color: #bdbdbd;
+  color: var(--light-gray);
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -144,44 +143,6 @@
 
 .top-footer li a:hover {
   color: var(--main-color);
-}
-
-.footer-bottom {
-  text-align: center;
-  background-color: #1b1b1b;
-  border-top: 1px solid #2c2c2c;
-  padding: 30px 0;
-}
-
-.footer-bottom h5 {
-  font-size: 12px;
-  line-height: 1;
-  color: #888888;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 7px;
-  margin-bottom: 3px;
-}
-
-.footer-bottom h6 {
-  font-size: 11px;
-  line-height: 15px;
-  color: #888888;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 2px;
-  margin-bottom: 0;
-}
-
-.page-404 {
-  display: flex;
-  align-items: center;
-
-}
-
-.page-404 h1 {
-  font-size: 4em;
 }
 
 /*============================================================
@@ -523,7 +484,7 @@
 }
 
 .main-btn{
-  background-color: var(--dark-gray);
+  background-color: var(--dark-main);
   color: var(--white);
   text-transform: uppercase;
   font-weight: bold;
@@ -569,9 +530,6 @@
    //Team section
 ==================================================================*/
 
-
-
-
 /*LOGIN*/
 .fundo  {
   background-color: white;
@@ -586,7 +544,7 @@
       0px 14.6px 79.9px rgba(0, 0, 0, 0.062),
       0px 22.5px 123.2px rgba(0, 0, 0, 0.071),
       0px 40px 219px rgba(0, 0, 0, 0.09);
-      color: black; 
+      color: var(--black); 
       border-radius: 20px;
 }
 
@@ -597,7 +555,7 @@
   height: 60px;
   padding: 10px 20px;
   border: none;
-  border-bottom: 2px solid var(--dark-gray);
+  border-bottom: 2px solid var(--dark-main);
   transition: .5s;
   width: 85%;
 }
@@ -605,7 +563,7 @@
   border: none;
   border-radius: 30px;
   color: var(--black);
-  background-color: white;
+  background-color: var(--white);
 }
 .img-login{
   background: hsla(19, 96%, 49%, 1);
@@ -625,7 +583,7 @@
 /* 404 */
 
 .btn-erro{
-  background-color: var(--dark-gray);
+  background-color: var(--dark-main);
   color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
@@ -643,5 +601,53 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.error{
+  padding-top: 6vh;
+}
+
+.page-404 {
+  display: flex;
+  align-items: center;
+
+}
+
+.page-404 h1 {
+  font-size: 4em;
+}
 
 /* //404 */
+
+/* INICIO CARDS */
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px
+}
+
+.badge span {
+  width: 60px;
+  height: 25px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  display: flex;
+  color: var(--main-color);
+  justify-content: center;
+  align-items: center
+}
+
+.progress div {
+  background-color: var(--main-color)
+}
+
+.text1 {
+  font-size: 14px;
+  font-weight: 600
+}
+
+/* //INICIO CARDS */

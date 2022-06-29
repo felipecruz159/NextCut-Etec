@@ -22,7 +22,7 @@
 
   if ($page != '') {
     if (file_exists($page . ".php")) {
-      if ($page != 'login') {
+      if ($page != 'login' && $page != 'cadastro_cliente') {
         include 'header.php';
         include 'carousel.php';
         include $page . ".php";

@@ -3,7 +3,7 @@
 Fixed Navigation
 ==================================== -->
   <header class="navigation fixed-top" style="background-color: <?php 
-  if ( $page == 'login' ){
+  if ( $page == 'login' || $page == 'cadastro_cliente' ){
     echo 'var(--dark-main)';
   }
   else{
@@ -62,7 +62,7 @@ Fixed Navigation
       <div id="headerRight">
         <ul class="navbar-nav">
           <li class="item <?php if($page == "cadastro") echo 'active'; ?>">
-            <a class="nav-link" href="./?page=cadastro"><span>Cadastre-se</span></a>
+            <a class="nav-link" href="./?page=cadastro_cliente"><span>Cadastre-se</span></a>
           </li>
           <li class="item <?php if($page == "login") echo 'active'; ?>">
             <a class="nav-link" href="./?page=login">Login</a>

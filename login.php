@@ -9,19 +9,19 @@
                          <h2><span class="login-text">Nextcut</span></h2>
 
                          <div class="inputs text-center mt-4 mb-4">
-                             <h2><span class="login-text">Login your account</span></h2>
+                             <h2><span class="login-text">Entre com a sua conta!</span></h2>
                              <div class="log">
 
                                  <form method="POST">
                                      <div class="row mb-4 mt-4">
                                          <div class="col-12">
-                                             <input type="text" name="nome" placeholder="E-mail">
+                                             <input type="email" name="email"  placeholder="E-mail">
                                          </div>
                                      </div>
 
                                      <div class="row mt-4">
                                          <div class="col-12">
-                                             <input type="password" name="email" placeholder="Password">
+                                             <input type="password" name="senha" placeholder="Senha">
                                          </div>
                                      </div>
 
@@ -33,8 +33,8 @@
                              </div>
 
                              <div class="row">
-                                 <div class="col-12 btn-login">
-                                     <input class="main-btn" type="submit" value="login" name="login">
+                                 <div class="col-12 ">
+                                     <input class="btn-login" type="submit" value="login" name="login">
                                  </div>
                              </div>
                              </form>

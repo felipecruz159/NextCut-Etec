@@ -639,15 +639,29 @@
     border-radius: 20px;
   }
 
+  .btn-login{
+    background-color: var(--dark-main);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 65%;
+  height: 125%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    transition: .5s;
+  }
+
   .log input {
     background-color: transparent;
-    color: var(--main-color);
+    color: var(--black);
     font-weight: bold;
-    height: 60px;
+    width: 70%;
+    height: 125%;
     padding: 10px 20px;
     border: none;
     border-bottom: 2px solid var(--dark-main);
-    transition: .5s;
+    transition: .3s;
     width: 85%;
   }
 
@@ -679,7 +693,7 @@
 
   .cadastro input {
     background-color: var(--light-gray);
-    color: var(--main-color);
+    color: var(--black);
     font-weight: bold;
     font-size: larger;
     height: 60px;
@@ -689,13 +703,7 @@
     width: 100%;
   }
 
-  .cadastro :focus {
-    border: none;
-    border-radius: 10px;
-    color: var(--black);
-    background-color: var(--white);
-  }
-
+ 
   .cadastro-btn {
     background-color: var(--black);
     color: var(--white);

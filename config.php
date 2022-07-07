@@ -4,7 +4,7 @@ function Conectar()
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "";
+    $dbname = "nextcut";
 
     // cria a conexão
     $conn = new mysqli($servername, $username, $password, $dbname);

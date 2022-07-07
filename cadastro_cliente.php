@@ -1,57 +1,100 @@
 <link rel="stylesheet" href="css/main.css">
+<a href="./?page=inicio">
+    <---- voltar</a>
+
+        <?php
+        include 'config.php';
+        
+        if (@$_POST['botao']) {
+            $nome = $_POST['nome'];
+            $sobrenome = $_POST['sobrenome'];
+            $nomeCompleto = $nome . ' ' . $sobrenome;
+            $nascimento = $_POST['nascimento'];
+            $telefone = $_POST['telefone'];
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
+
+            if ($nome != '' && $sobrenome != '' && $senha != '') {
+                $conn = Conectar();
+
+                $sql = "SELECT * FROM cliente WHERE email='$email'";
+                $result = $conn->query($sql);
+                if ($result->num_rows == 0) {
+                    $senha = md5($senha);
+                    $sql = "INSERT INTO cliente ( nome, telefone, email, senha, nascimento ) 
+                VALUES ( '$nomeCompleto' , '$telefone' , '$email' , '$senha' , '$nascimento' )";
+                    //echo $sql;
+                    $result = $conn->query($sql);
+                } else {
+                    echo "<font color='#ff6600'> 'O email já foi cadastrado!";
+                }
+            }
+        }
+
+        ?>
 
         <div class="cadastro-box">
-        <a href="./?page=inicio">
-    <---- voltar</a>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 order-1 col-md-12 align-sel-center">
-                        <form action="" method="POST" class="text-white">
+                        <form method="post" class="text-white">
 
                             <h1>Falta pouco para marcar seu corte!</h1>
                             <div class="cadastro mt-4">
                                 <div class="row">
                                     <h3 class="text-left">Dados pessoais</h3>
                                     <hr>
-                                    <div class="col-md-6 col-sm-6 mb-4">
+                                    <div class="col-md-6 col-sm-6 mb-2">
                                         <label class="" for="nome">Nome</label>
-                                        <input type="text" name="nome" >
+                                        <input type="text" name="nome" required>
                                     </div>
-                                    <div class="col-md-6 col-sm-6 mb-4">
-                                    <label class="" for="Sobrenome">Sobrenome</label>
-                                        <input type="text" name="sobrenome">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mb-4">
-                                    <label class="" for="telefone">Telefone</label>
-                                        <input type="tel" name="telefone">
+                                    <div class="col-md-6 col-sm-6 mb-2">
+                                        <label class="" for="sobrenome">Sobrenome</label>
+                                        <input type="text" name="sobrenome" required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 mb-4">
-                                    <label class="" for="email">E-mail</label>
-                                        <input type="email" name="email">
+                                    <div class="col-12 mb-2">
+                                        <label class="" for="nascimento">Data de nascimento</label>
+                                        <input type="date" name="nascimento" required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 mb-4">
-                                    <label class="" for="senha">Senha</label>
-                                        <input type="password" name="senha">
+                                    <div class="col-12 mb-2">
+                                        <label class="" for="telefone">Telefone</label>
+                                        <input type="tel" autocomplete="off" id="telefone" name="telefone" maxlength="14"  required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <label class="" for="email">E-mail</label>
+                                        <input type="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <label class="" for="senha">Senha</label>
+                                        <input type="password" name="senha" required>
                                     </div>
                                 </div>
 
-                             
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <label class="" for="senha">Confirmar senha</label>
+                                        <input type="password" name="senha2" placeholder="em breve..." readonly>
+                                    </div>
+                                </div>
+                                
                             </div>
 
                             <div class="row">
-                                <div class="col-12 mt-3 mb-3 ">
-                                    <p>Ao continuar, eu concordo que a NextCut ou seus representantes podem entrar em contato comigo por e-mail, telefone, SMS (inclusive por meios automatizados) ou WhatsApp, no endereço de e-mail ou número que eu fornecer, para fins de marketing e suporte.</p>
+                                <div class="col-12 mt-2 ">
+                                    <input type="checkbox"> Ao continuar, eu concordo que a NextCut ou seus representantes podem entrar em contato comigo por e-mail, telefone, SMS (inclusive por meios automatizados) ou WhatsApp, no endereço de e-mail ou número que eu fornecer, para fins de marketing e suporte.</input>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12 text-center btn-login mb-4 p-2">
-                                    <input class="cadastro-btn" type="submit" value="cadastre-se" name="login">
+                                <div class="col-12 text-center btn-login p-1">
+                                    <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao">
                                 </div>
                             </div>
                         </form>

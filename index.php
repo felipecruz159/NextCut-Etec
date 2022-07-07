@@ -22,16 +22,14 @@
 
   if ($page != '') {
     if (file_exists($page . ".php")) {
-      if ($page != 'login' && $page != 'cadastro_cliente') {
+      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro') {
         include 'header.php';
         include 'carousel.php';
         include $page . ".php";
         include 'footer.php';
       }
       else{
-        include 'header.php';
         include $page . ".php";
-        include 'footer.php';
       }
     }
     else {

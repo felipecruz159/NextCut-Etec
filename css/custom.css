@@ -639,17 +639,41 @@
     border-radius: 20px;
   }
 
+  .submit-lente {
+    position:absolute;
+    top:20%; right:10%;
+    z-index:10;
+    font-size: larger;
+    border:none;
+    background:transparent;
+    outline:none;
+    cursor: pointer;
+  }
+  
+  .submit-line {
+    position: relative;
+  }
+  
+  .submit-line input {
+    width: 85%;
+    height: 55px;
+  }
+
   .btn-login{
     background-color: var(--dark-main);
     color: var(--white);
     text-transform: uppercase;
     font-weight: bold;
-    width: 65%;
-  height: 125%;
+    width: 85%;
+    height: 125%;
     padding: 10px 20px;
     border-radius: 30px;
     border: 3px solid transparent;
     transition: .5s;
+  }
+
+  .login-text{
+    color: var(--dark-main) !important;
   }
 
   .log input {
@@ -687,8 +711,8 @@
 
   /*Pagina CADASTRO*/
   .cadastro-box {
-    color: black;
-    padding-top: 16vh;
+    color: var(--black);
+    padding-top: 3vh;
   }
 
   .cadastro input {
@@ -703,7 +727,6 @@
     width: 100%;
   }
 
- 
   .cadastro-btn {
     background-color: var(--black);
     color: var(--white);
@@ -721,6 +744,11 @@
     background-color: var(--main-color);
     color: var(--black);
     text-decoration: none;
+  }
+
+  .terms{
+    margin-right: 8px;
+    cursor: pointer;
   }
 
   /* //Final CADASTRO */
@@ -796,3 +824,5 @@
   }
 
   /* //INICIO CARDS */
+
+  

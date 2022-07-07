@@ -1,13 +1,11 @@
 <link rel="stylesheet" href="css/main.css">
-<a href="./?page=inicio">
-    <---- voltar</a>
+<a href="./?page=inicio"><---- voltar</a>
         <div class="cadastro-box">
             <div class="container">
                 <h1 class="text-center">Torne-se um parceiro da NextCut!</h1>
                 <div class="row">
                     <div class="col-lg-6 col-md-12 ">
                         <form action="" method="POST" class="text-white">
-
 
                             <div class="cadastro mt-4">
                                 <div class="row">

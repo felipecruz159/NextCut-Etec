@@ -3,3 +3,38 @@
      margin: 50px;
    }
  }
+
+ 
+ @media (max-width: 512px) {
+ #formulario #progress li{
+   font-size: 1em;
+ }
+}
+
+ @media (max-width: 999px) {
+  #formulario input{
+   width: 100%;
+ }
+}
+@media (max-width: 999px) {
+  #formulario .submit-lente2{
+    right: 5%;
+ }
+}
+@media (max-width: 999px) {
+  #formulario input.btn-barbeiro {
+   width: 150px;
+   display: inline;
+   
+ }
+}
+@media (max-width: 999px) {
+  #formulario label {
+   padding-left: 1%;
+ }
+}
+@media (max-width: 720px) {
+   #formulario fieldset {
+   width: 99%;
+ }
+}

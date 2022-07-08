@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/main.css">
 <a href="./?page=inicio">voltar</a>
 
@@ -17,20 +16,22 @@ if (@$_POST['botao']) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $nome = $row['nome'];
-                $senhaSistema = $row['senha'];  
+                $senhaSistema = $row['senha'];
             }
             // echo "digitada:" . md5($senha) . " ==>" . $senhaSistema;
             if (md5($senha) == $senhaSistema) {
                 setcookie("login", $nome, time() + (86400 * 30), "/");
                 echo '<font color="#ff6600">Senha OK ! <meta http-equiv = "refresh" content = "1; url = ./index.php" />';
             } else {
-                echo "<font color='#ff6600'>Senha inválida !";
+
+                $invalido_senha = "<font color='#ff6600'>Senha inválida !";
             }
         } else {
-            echo "<font color='#ff6600'>Email inválido!";
+
+            $invalido_email = "<font color='#ff6600'>Email inválido!";
         }
     } else {
-        echo "<font color='#ff6600'>Digite obrigatoriamente usuário e senha para validar!";
+        $invalido = "<font color='#ff6600'>Digite obrigatoriamente E-mail e senha para validar!";
     }
 }
 ?>
@@ -44,19 +45,21 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4 mt-3">
                     <h2><span class="login-text">Nextcut</span></h2>
-
                     <div class="inputs text-center mt-4 mb-4">
                         <h2><span class="login-text">Entre com a sua conta!</span></h2>
                         <div class="log">
-
+                        <?php echo @$invalido; ?>
+                            <?php echo @$invalido_email; ?>
                             <form method="POST">
                                 <div class="row mb-4 mt-4">
+
                                     <div class="col-12">
                                         <input type="email" name="email" placeholder="E-mail">
                                     </div>
                                 </div>
 
                                 <div class="row mt-4">
+                                <?php echo @$invalido_senha; ?>
                                     <div class="col-12">
                                         <div class="submit-line">
                                             <input type="password" id="senha" name="senha" placeholder="Senha" />

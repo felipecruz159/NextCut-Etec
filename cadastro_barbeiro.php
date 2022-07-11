@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="css/main.css">
-<a href="./?page=inicio">
-    <---- voltar</a>
-
-
+<style>
+    body{
+background-image:url("./imagens/fundo_barbeiro.png");
+background-repeat: no-repeat;
+background-size: cover;
+    }
+</style>
+<a  class="btn-back"href="./?page=inicio">voltar</a>
 
         <form id="formulario">
             <ul id="progress">
@@ -203,9 +207,8 @@
                 <input type="submit" name="next" value="Próximo" class="next btn-barbeiro">
             </fieldset>
             <fieldset>
-                <h2>Dados do Responsável</h2>
-
-
+                <h2>Crie sua senha</h2>
+                <h4>Falta pouco para concluir seu cadastro</h4>
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label for="">Senha</label>
@@ -221,9 +224,6 @@
                         <input type="password" name="senha2" placeholder=" Confirme a Senha">
                     </div>
                 </div>
-
-
-
                 <input type="submit" name="next" value="Concluir" class="next btn-barbeiro">
 
             </fieldset>

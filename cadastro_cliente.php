@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="css/main.css">
-<a href="./?page=inicio">
-    <---- voltar</a>
+<a  class="btn-back"href="./?page=inicio">voltar</a>
 
         <?php
         include 'config.php';
@@ -45,11 +44,11 @@
                                     <h3 class="text-left">Dados pessoais</h3>
                                     <hr>
                                     <div class="col-md-6 col-sm-6 mb-2">
-                                        <label class="" for="nome">Nome</label>
+                                        <label class="letra-maiuscula" for="nome">Nome</label>
                                         <input type="text" name="nome" required>
                                     </div>
                                     <div class="col-md-6 col-sm-6 mb-2">
-                                        <label class="" for="sobrenome">Sobrenome</label>
+                                        <label class="letra-maiuscula" for="sobrenome">Sobrenome</label>
                                         <input type="text" name="sobrenome" required>
                                     </div>
                                 </div>
@@ -93,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12 text-center btn-login p-1">
+                                <div class="col-12 text-center p-1">
                                     <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao">
                                 </div>
                             </div>

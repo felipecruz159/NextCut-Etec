@@ -1,7 +1,7 @@
 // Nav background com rolagem
-
+var nav = document.getElementById('colorScroll');
 window.onscroll = function () {
-    var nav = document.getElementById('colorScroll');
+
     if (window.pageYOffset > 300) {
 
         nav.classList.add("navbarScroll");
@@ -19,7 +19,8 @@ function changeHTML() {
 }
 
 if ($(window).width() < 991) {
-    changeHTML();
+    changeHTML();  
+    nav.classList.add("mobileHeader");
 }
 
 $(window).resize(function () { location.reload(); });
@@ -112,12 +113,35 @@ $(function () {
     })
 });
 
+//CELULAR
+document.getElementById('celular').addEventListener('blur', function (e) {
+    var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{5})(\d{4})/);
+    e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+});
+
+
 // /CADASTRO DE BARBEIROS
 
 // Visualizar senha - login
 function verSenha() {
     var senha = document.getElementById("senha");
     var icone = document.getElementById("senhaIcon");
+
+    if (senha.type == "password") {
+        senha.type = "text";
+        icone.classList.remove("bi-eye-slash-fill");
+        icone.classList.add("bi-eye-fill");
+    }
+    else {
+        senha.type = "password";
+        icone.classList.remove("bi-eye-fill");
+        icone.classList.add("bi-eye-slash-fill");
+    }
+}
+
+function verConfirma() {
+    var senha = document.getElementById("confirma");
+    var icone = document.getElementById("senhaIcon2");
 
     if (senha.type == "password") {
         senha.type = "text";

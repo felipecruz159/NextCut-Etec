@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/main.css">
-<a  class="btn-back"href="./?page=inicio">voltar</a>
+<a  class="btn-back" href="./?page=inicio">voltar para o início</a>
 
         <?php
         include 'config.php';
@@ -12,6 +12,7 @@
             $telefone = $_POST['telefone'];
             $email = $_POST['email'];
             $senha = $_POST['senha'];
+            $confirmaSenha = $_POST['confirma'];
 
             if ($nome != '' && $sobrenome != '' && $senha != '') {
                 $conn = Conectar();
@@ -80,7 +81,7 @@
                                 <div class="row">
                                     <div class="col-12 mb-2">
                                         <label class="" for="senha">Confirmar senha</label>
-                                        <input type="password" name="senha2" placeholder="em breve..." readonly>
+                                        <input type="password" id="confirma" name="confirma" placeholder="em breve...">
                                     </div>
                                 </div>
                                 

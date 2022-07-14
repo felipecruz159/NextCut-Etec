@@ -18,6 +18,10 @@
     color: var(--dark-main);
   }
 
+  .mobileHeader{
+    background-color: var(--dark-main);
+  }
+
   .navigation .navbar-dark .navbar-nav .nav-item .nav-link,
   .navigation .navbar-dark .navbar-nav .item .nav-link {
     color: var(--white);

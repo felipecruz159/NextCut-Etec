@@ -2,17 +2,10 @@
   <!--
 Fixed Navigation
 ==================================== -->
-  <header class="navigation fixed-top" style="background-color: <?php 
-  if ( $page == 'login' || $page == 'cadastro_cliente' ){
-    echo 'var(--dark-main)';
-  }
-  else{
-    echo 'transparent';
-  }
-  ;?>">
+  <header class="navigation fixed-top" style="background-color: transparent">
 
     <!-- main nav -->
-    <nav id="colorScroll" class="navbar navbar-expand-lg navbar-dark navbarColor">
+    <nav id="colorScroll" class="navbar navbar-expand-lg navbar-dark">
 
       <!-- logo -->
       <a class="navbar-brand logo" href="./?page=inicio">
@@ -61,10 +54,10 @@ Fixed Navigation
 
       <div id="headerRight">
         <ul class="navbar-nav">
-          <li class="item <?php if($page == "cadastro") echo 'active'; ?>">
-            <a class="nav-link" href="./?page=cadastro_cliente"><span>Cadastre-se</span></a>
+          <li class="nav-item <?php if($page == "cadastro") echo 'active'; ?>">
+            <a class="nav-link" href="./?page=cadastro_escolha"><span>Cadastre-se</span></a>
           </li>
-          <li class="item <?php if($page == "login") echo 'active'; ?>">
+          <li class="nav-item <?php if($page == "login") echo 'active'; ?>">
             <a class="nav-link" href="./?page=login">Login</a>
           </li>
         </ul>

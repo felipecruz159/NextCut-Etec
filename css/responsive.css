@@ -2,6 +2,7 @@
     .login-box {
      margin: 50px;
    }
+
  }
 
  
@@ -11,24 +12,24 @@
  }
 }
 
- @media (max-width: 999px) {
+ @media (max-width: 991px) {
   #formulario input{
    width: 100%;
  }
 }
-@media (max-width: 999px) {
+@media (max-width: 991px) {
   #formulario .submit-lente2{
     right: 5%;
  }
 }
-@media (max-width: 999px) {
+@media (max-width: 991px) {
   #formulario input.btn-barbeiro {
    width: 150px;
    display: inline;
    
  }
 }
-@media (max-width: 999px) {
+@media (max-width: 991px) {
   #formulario label {
    padding-left: 1%;
  }

@@ -63,7 +63,29 @@ window.onload = function () {
         mascara(this, mtel);
     }
 }
-// /CADASTRO
+// /CADASTRO DE CLIENTES
+
+// CADASTRO DE BARBEIROS
+//CPF
+document.getElementById('cpf').addEventListener('blur', function (e) {
+    var x = e.target.value.replace(/\D/g, "").match(/(\d{3})(\d{3})(\d{3})(\d{2})/);
+    e.target.value = x[1] + '.' + x[2] + '.' + x[3] + '-' + x[4];
+});
+
+//CNPJ
+document.getElementById('cnpj').addEventListener('blur', function (e) {
+    var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/);
+    e.target.value = x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + '-' + x[5];
+});
+
+//CEP
+document.getElementById('cep').addEventListener('blur', function (e) {
+    var x = e.target.value.replace(/\D/g, "").match(/(\d{5})(\d{3})/);
+    e.target.value = x[1] + '-' + x[2];
+});
+// /CADASTRO DE BARBEIROS
+
+// /Mascara de camada dos campos
 
 // CADASTRO DE BARBEIROS
 $(function () {
@@ -90,12 +112,7 @@ $(function () {
     })
 });
 
-
-
 // /CADASTRO DE BARBEIROS
-
-
-// /Mascara de camada dos campos
 
 // Visualizar senha - login
 function verSenha() {

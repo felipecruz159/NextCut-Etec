@@ -915,7 +915,7 @@
     content: none;
   }
 
-  .bi-eye-slash-fill {
+  .bi-eye-slash-fill, .bi-eye-fill {
     font-size: 1.5em;
   }
 

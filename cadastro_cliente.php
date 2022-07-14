@@ -61,7 +61,7 @@
                                 <div class="row">
                                     <div class="col-12 mb-2">
                                         <label class="" for="telefone">Telefone</label>
-                                        <input type="tel" autocomplete="off" id="telefone" name="telefone" maxlength="14"  required>
+                                        <input type="tel" autocomplete="off" id="telefone" class="telefone" name="telefone" maxlength="11"  required>
                                     </div>
                                 </div>
                                 <div class="row">

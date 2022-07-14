@@ -22,38 +22,38 @@ background-size: cover;
                 <div class="row">
                     <div class="col-12 mb-4 ">
                         <label for="nome">Nome Completo</label>
-                        <input type="text" class="letra-maiuscula" name="nome" placeholder="Nome do responsável legal">
+                        <input type="text" class="letra-maiuscula" name="nome">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="nascimento">Data de nascimento</label>
-                        <input type="date" name="nascimento" placeholder="__/__/____">
+                        <input type="date" name="nascimento">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <label class="" for="telefone">Telefone</label>
-                        <input type="tel" autocomplete="off" id="telefone" name="telefone" maxlength="14" placeholder="(00) 00000-0000">
+                        <label class="" for="telefone">Telefone <small class="text-muted">— apenas números</small></label>
+                        <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" maxlength="11">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <label class="text-start" class="" for="cpf">CPF</label>
-                        <input type="text" name="cpf" placeholder="000.000.000-00">
+                        <label class="text-start" class="" for="cpf">CPF <small class="text-muted">— apenas números</small></label>
+                        <input type="text" name="cpf" autocomplete="off" id="cpf" maxlength="11">
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="rg">RG</label>
-                        <input type="text" name="rg" placeholder="00.000.000-0">
+                        <input type="text" name="rg" autocomplete="off" placeholder="00.000.000-0">
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="email">E-mail</label>
-                        <input type="email" name="email" placeholder="E-mail do Responsável">
+                        <input type="email" name="email">
                     </div>
                 </div>
 
@@ -65,51 +65,51 @@ background-size: cover;
                 <h2>Sobre a Barbearia</h2>
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <label class="" class="" for="cnpf">CNPJ</label>
-                        <input type="text" name="cnpf" placeholder="00.000.000/0000-00  ">
+                        <label class="" class="" for="cnpf">CNPJ <small class="text-muted">— apenas números</small></label>
+                        <input type="text" name="cnpf" id="cnpj" maxlength="14">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label for="razao">Razão Social</label>
-                        <input type="text" name="razao" placeholder="...">
+                        <input type="text" name="razao">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label for="nome_fantasia">Nome Fantasia</label>
-                        <input type="text" name="nome_fantasia" placeholder="Nome da Barbearia">
+                        <input type="text" name="nome_fantasia">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="email2">E-mail</label>
-                        <input type="email" name="email2" placeholder="E-mail Comercial">
+                        <input type="email" name="email2">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <label class="" for="telefone">Telefone-celular</label>
-                        <input type="tel" autocomplete="off" id="telefone" name="telefone" maxlength="14" placeholder="(00) 00000-0000">
+                        <label class="" for="telefone">Telefone-celular <small class="text-muted">— apenas números</small></label>
+                        <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" maxlength="14">
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="telefone2">Telefone</label>
                         <input type="tel" autocomplete="off" id="telefone" name="telefone2" maxlength="14" placeholder="(00) 0000-0000">
                     </div>
-                </div>
+                </div> -->
                 <h3 class="mt-3">Endereço</h3>
                 <hr style="width: 70%; margin:0 auto;">
                 <div class="row">
                     <div class="col-12 mb-4 mt-2">
-                        <label class="" for="cep">CEP</label>
-                        <input type="text" name="cep" placeholder="00000-000">
+                        <label class="" for="cep">CEP <small class="text-muted">— apenas números</small></label>
+                        <input type="text" name="cep" id="cep">
 
                     </div>
                 </div>
@@ -117,28 +117,28 @@ background-size: cover;
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="estado">Estado</label>
-                        <input type="text" name="estado">
+                        <input type="text" name="estado" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="cidade">Cidade</label>
-                        <input type="text" name="cidade">
+                        <input type="text" name="cidade" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="bairro">Bairro</label>
-                        <input type="text" name="bairro">
+                        <input type="text" name="bairro" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="endereco">Endereço</label>
-                        <input type="text" name="endereco">
+                        <input type="text" name="endereco" readonly>
                     </div>
                 </div>
 
@@ -151,7 +151,7 @@ background-size: cover;
 
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <label class="" for="complemento">Complemento (Opicional)</label>
+                        <label class="" for="complemento">Complemento  <small class="text-muted">— opcional</small></label>
                         <input type="text" name="complemento">
                     </div>
                 </div>
@@ -224,6 +224,7 @@ background-size: cover;
                         <input type="password" name="senha2" placeholder=" Confirme a Senha">
                     </div>
                 </div>
+                <input type="submit" name="prev" value="Anterior" class="prev btn-barbeiro">
                 <input type="submit" name="next" value="Concluir" class="next btn-barbeiro">
 
             </fieldset>

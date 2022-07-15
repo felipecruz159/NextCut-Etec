@@ -1,43 +1,54 @@
 :root {
-    --main-color:#ff6600;
-    --white:#fff;
-    --light-gray: #bdbdbd;
-    --gray:#212225;
-    --dark-main:#121212;
-    --black:#000;
-  
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
+  --main-color: #ff6600;
+  --white: #fff;
+  --light-gray: #bdbdbd;
+  --gray: #212225;
+  --dark-main: #121212;
+  --black: #000;
 
-  body {
-    background-color: var(--dark-main) !important; 
-    position: relative !important;
-    }
+}
 
-    h1, h2, h3, h4, h5, h6, p, small{
-      color: var(--white) !important;
-    }
-    
-    input{
-      outline: none;    
-    }
+.divisao {
+  background-color: var(--gray);
+  padding: 30px 60px;
 
-    hr{
-      color: white !important;
-    }
-  
-    ::selection{
-      color: var(--main-color);
-    }
+}
 
-    .container-fluid{
-      margin: 0 !important;
-      padding: 0 !important;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
-    
-  
+body {
+  background-color: var(--dark-main) !important;
+  position: relative !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  color: var(--white) !important;
+}
+
+input {
+  outline: none;
+}
+
+hr {
+  color: white !important;
+}
+
+::selection {
+  color: var(--main-color);
+}
+
+.container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
+}

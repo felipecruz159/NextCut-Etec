@@ -18,7 +18,7 @@
     color: var(--dark-main);
   }
 
-  .mobileHeader{
+  .mobileHeader {
     background-color: var(--dark-main);
   }
 
@@ -111,7 +111,7 @@
     color: var(--main-color);
   }
 
-  .card-text span{
+  .card-text span {
     color: var(--dark-main);
   }
 
@@ -776,6 +776,37 @@
 
 
 
+  /*INICIO PAGINA CADASTRO_ESCOLHA*/
+  .cadastro-escolha {
+    text-align: center;
+    padding-top: 9%;
+  }
+
+  .cadastro-escolha .imagem-escolha {
+    margin-bottom: 40px;
+  }
+
+  .cadastro-escolha .imagem-escolha img:hover {
+    transform: scale(1.04);
+    filter: brightness(40%);
+    border: 3px solid var(--main-color);
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+
+  .cadastro-escolha .imagem-escolha a {
+    text-decoration: none;
+  }
+
+  .cadastro-escolha .imagem-escolha h3 {
+    margin-bottom: 20px;
+  }
+
+  /*FINAL PAGINA CADASTRO_ESCOLHA*/
+
+
+
+
 
   /*Pagina CADASTRO_BARBEIRO*/
 
@@ -808,13 +839,7 @@
   }
 
   #formulario fieldset:not(:first-of-type) {
- display: none;
-  }
-
-  #formulario h1,
-  h2,
-  h3 {
-    text-align: center;
+    display: none;
   }
 
   #formulario input {
@@ -919,7 +944,8 @@
     content: none;
   }
 
-  .bi-eye-slash-fill, .bi-eye-fill {
+  .bi-eye-slash-fill,
+  .bi-eye-fill {
     font-size: 1.5em;
   }
 
@@ -988,50 +1014,107 @@
 
   /* INICIO CARDS */
 
-  .icon {
-    width: 50px;
-    height: 50px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/482/482929.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 39px
-  }
-
-  .badge span {
-    width: 60px;
-    height: 25px;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    display: flex;
-    color: var(--main-color);
-    justify-content: center;
-    align-items: center
-  }
-
-  .progress div {
-    background-color: var(--main-color)
+  .avatar {
+    width: 70px;
+    height: 70px;
   }
 
   .text1 {
     font-size: 14px;
     font-weight: 600;
-    color:var(--white);
+    color: var(--white);
   }
 
-  .container .card{
+  .container .card {
     background: var(--light-gray);
-    color:var(--white);
+    color: var(--white);
+    margin-bottom: 15px;
+    border: none;
   }
 
-  .container .card p{
-    color:blueviolet;
+  .container .card:hover {
+    transform: scale(1.02);
   }
+
+  .container .card-avatar {
+    max-width: 100%;
+    position: relative;
+  }
+
+  .container .folder img {
+    filter: blur(1px);
+    filter: brightness(25%);
+  }
+
+
+  .c-details {
+    color: yellow;
+  }
+
+  .tudo {
+    display: flex;
+    align-items: center;
+  }
+
+  .container .card-img-overlay p {
+    margin-bottom: 5px;
+  }
+
 
   /* //FINAL CARDS */
+
+
+
+
+
+  /* // TELA INICIO */
+
+
+  .text-inicio h1,
+  .text-inicio h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .estilos-cabelo {
+    padding: 3%;
+
+  }
+
+  .estilos-cabelo .container .col-4 img {
+    box-shadow:
+      0px 0.9px 3.6px rgba(0, 0, 0, 0.251),
+      0px 2.5px 10px rgba(0, 0, 0, 0.36),
+      0px 6px 24.1px rgba(0, 0, 0, 0.469),
+      0px 20px 80px rgba(0, 0, 0, 0.72);
+  }
+
+  .container .container-video {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+
+  .container .container-video .video1,
+  .container .container-video .video2 {
+    width: 350px;
+    height: 250px;
+    margin: 25px;
+    background-color: rgba(0, 0, 255, 0.273);
+  }
+
+  .text-beneficio h1,
+  .text-beneficio h4 {
+    margin: 0px 25px 25px 25px;
+    text-align: center;
+  }
+
+  .container .card-beneficio img {
+    width: 40%;
+  }
+
+  /* // TELA INICIO */
+
 
 
 

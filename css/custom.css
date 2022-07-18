@@ -1060,11 +1060,22 @@
     margin-bottom: 5px;
   }
 
-
+  
   /* //FINAL CARDS */
 
 
+/* EQUIPE */
 
+#equipe h4, p{
+  text-align: center !important;
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+}
+
+/* /EQUIPE */
 
 
   /* // TELA INICIO */

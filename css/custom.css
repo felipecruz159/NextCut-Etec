@@ -1060,22 +1060,23 @@
     margin-bottom: 5px;
   }
 
-  
+
   /* //FINAL CARDS */
 
 
-/* EQUIPE */
+  /* EQUIPE */
 
-#equipe h4, p{
-  text-align: center !important;
-}
+  #equipe h4,
+  p {
+    text-align: center !important;
+  }
 
-.profile {
-  width: 200px;
-  height: 200px;
-}
+  .profile {
+    width: 200px;
+    height: 200px;
+  }
 
-/* /EQUIPE */
+  /* /EQUIPE */
 
 
   /* // TELA INICIO */
@@ -1152,3 +1153,217 @@
   }
 
   /* //FINAL BTN_BACK*/
+
+
+
+
+
+  /* PAGINA_LOGADO */
+  #header{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.768);
+  }
+
+
+  #header .btn-logado{
+    color:var(--light-gray);
+    border: 1px solid var(--light-gray);
+    font-size: 20px;
+  }
+
+  .dropdown-toggle {
+    outline: 0;
+  }
+
+  .btn-toggle::before {
+    width: 1.25em;
+    line-height: 0;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
+  }
+
+  .btn-toggle[aria-expanded="true"] {
+    color: rgba(0, 0, 0, .85);
+  }
+
+  .btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+  }
+
+  .btn-toggle-nav a {
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+  }
+
+  .btn-toggle-nav a:hover,
+  .btn-toggle-nav a:focus {
+    background-color: #d2f4ea;
+  }
+
+  .scrollarea {
+    overflow-y: auto;
+  }
+
+  section .card .image {
+    height: 140px;
+    width: 140px;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+  }
+
+  section .card .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+.swiper{
+  width: 950PX;
+}
+  section .card {
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px 0px;
+    width: 250px;
+  }
+  section .swiper-slide {
+    width: 300px !important;
+  }
+
+  section .card::before{
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-color: var(--main-color);
+    border-radius: 20px 20px 0px 0px ;
+  }
+
+  section .card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+  }
+
+  section .card .media-icons{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.swiper{
+  width: 960px !important;
+}
+
+.swiper-button-next:after{
+  color: var(--main-color);
+  padding: 10px 20px;
+  border-radius: 47%;
+  background-color: rgba(0, 0, 0, 0.604);
+}
+
+.swiper-button-prev:after{
+  color: var(--main-color);
+  padding: 10px 20px;
+  border-radius: 47%;
+  background-color: rgba(0, 0, 0, 0.604);
+}
+
+.swiper-pagination-bullet-active{
+  background-color: var(--main-color) !important;
+
+}
+
+.swiper-pagination-horizontal{
+  bottom: 0px !important;
+}
+
+.swiper-pagination-bullet{
+  color: var(--main-color) !important;
+  width: 30px !important;
+  border-radius: 5px !important;
+  margin-top: 50px !important;
+}
+
+  section .card .media-icons i{
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.651);
+    transition: all 0.3s ease;
+    font-size: 20px;
+  }
+
+  section .card .media-icons i:hover{
+    color: black;
+    cursor: pointer;
+  }
+
+  section .card .nome-fantasia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    color: var(--black);
+  }
+
+  section .card .nome-fantasia .fantasia{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  section .card .nome-fantasia .nome{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  section .card .avaliacao{
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+  }
+
+  section .card .avaliacao i{
+    font-size: 20px;
+    margin: 0px 2px;
+    color: var(--main-color);
+  }
+
+  section .card .button{
+   margin-top: 15px;
+
+  }
+
+  section .card .button button{
+    background-color: var(--main-color);
+    font-size: 17px;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+   }
+
+   section .card .button button:hover{
+   background-color: var(--black);
+   color: var(--main-color);
+   }
+   
+
+
+  /* //FINAL_LOGADO*/

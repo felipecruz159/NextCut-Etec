@@ -218,3 +218,4 @@ function verConfirma() {
 // Acordo com os termos no cadastro
 
 // /Acordo com os termos no cadastro
+

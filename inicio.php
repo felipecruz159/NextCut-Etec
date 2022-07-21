@@ -86,7 +86,7 @@
 
     </div>
 </div>
-<div class="container-fluid mb-4 mt-5 divisao">
+<div data-aos="fade-up" class="container-fluid mb-4 mt-5 divisao">
     <div class="container p-5">
         <div class="row ">
             <div class="col-lg-6 col-md-12">
@@ -198,4 +198,8 @@
         </div>
     </div>
 </div>
-</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!--plugin jquey-->
+<script>
+    AOS.init();
+</script>

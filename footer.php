@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
-          <h3>Sobre</h3>
+          <h4>NextCut</h4>
           <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
         </div>
         <!-- End of .col-sm-3 -->

@@ -304,13 +304,28 @@
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/custom.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
+
+    var largura = screen.width;
+    var variavel1;
+    var variavel2;
+
+    if (largura < 720){
+        variavel1 = 1.4;
+        variavel2 = 1;
+    }
+    else{
+        variavel1 = 3;
+        variavel2 = 3;
+    }
+
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
+        slidesPerView: variavel1,
         spaceBetween: 30,
-        slidesPerGroup: 3,
+        slidesPerGroup: variavel2,
         loop: true,
         loopFillGroupWithBlank: true,
         pagination: {

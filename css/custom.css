@@ -859,10 +859,6 @@
     border-radius: 5px;
   }
 
-  #formulario .letra-maiuscula {
-    text-transform: capitalize;
-  }
-
   #formulario input.btn-barbeiro {
     width: 200px;
     display: inline;

@@ -27,7 +27,7 @@ if (@$_POST['botao']) {
             $result = $conn->query($sql);
         } else {
             echo "<font color='#ff6600'> 'O email já foi cadastrado!";
-        }
+        } 
     }
     header('location: ./?page=form_redirect');
 }
@@ -46,12 +46,12 @@ if (@$_POST['botao']) {
                             <h3 class="text-left">Dados pessoais</h3>
                             <hr>
                             <div class="col-md-6 col-sm-6 mb-2">
-                                <label class="letra-maiuscula" for="nome">Nome</label>
-                                <input type="text" name="nome" required>
+                                <label for="nome">Nome</label>
+                                <input type="text" name="nome"  required>
                             </div>
                             <div class="col-md-6 col-sm-6 mb-2">
-                                <label class="letra-maiuscula" for="sobrenome">Sobrenome</label>
-                                <input type="text" name="sobrenome" required>
+                                <label  for="sobrenome">Sobrenome</label>
+                                <input type="text" name="sobrenome"  required>
                             </div>
                         </div>
                         <div class="row">
@@ -77,10 +77,12 @@ if (@$_POST['botao']) {
                             <div class="col-12 mb-2">
                                 <label for="">Senha</label>
                                 <div class="submit-line">
-                                    <input type="password" id="senha" name="senha" onchange="confereSenha()" required>
+                                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
                                     <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente2" onclick="verSenha()"></i>
                                 </div>
                             </div>
+                            <label id="labelForca" for="" style="display:none;">Força da senha</label>
+                            <div id="erroSenhaForca" class="container"></div> 
                         </div>
                         
                         <div class="row">
@@ -97,12 +99,12 @@ if (@$_POST['botao']) {
 
                     <div class="row">
                         <div class="col-12 mt-2 ">
-                            <input type="checkbox"> Ao continuar, eu concordo que a NextCut ou seus representantes podem entrar em contato comigo por e-mail, telefone, SMS (inclusive por meios automatizados) ou WhatsApp, no endereço de e-mail ou número que eu fornecer, para fins de marketing e suporte.</input>
+                            <input type="checkbox" id="termos" name="termos"> Ao continuar, eu concordo que a NextCut ou seus representantes podem entrar em contato comigo por e-mail, telefone, SMS (inclusive por meios automatizados) ou WhatsApp, no endereço de e-mail ou número que eu fornecer, para fins de marketing e suporte.</input>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 text-center p-1">
-                            <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao">
+                            <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao" onclick="checkbox()">
                         </div>
                     </div>
                 </form>

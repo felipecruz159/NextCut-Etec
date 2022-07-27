@@ -26,7 +26,7 @@
                         </button>
                         <div class="collapse show" id="home-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                                <li><a href="./?page=inicio" class="link-dark d-inline-flex text-decoration-none rounded">Inicio</a></li>
                                 <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
                                 <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
                             </ul>

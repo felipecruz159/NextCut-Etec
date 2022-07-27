@@ -37,6 +37,7 @@ if (@$_POST['botao']) {
     $senha = $_POST['senha'];
     $confirmaSenha = $_POST['confirma'];
 
+
     if ($nome != '' && $email != '' && $senha != '') {
         $conn = Conectar();
 
@@ -73,7 +74,7 @@ if (@$_POST['botao']) {
         <div class="row">
             <div class="col-12 mb-4">
                 <label for="nome">Nome Completo</label>
-                <input type="text" class="letra-maiuscula" name="nome" required>
+                <input type="text" name="nome" required>
             </div>
         </div>
         <div class="row">
@@ -95,7 +96,7 @@ if (@$_POST['botao']) {
                 <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();" required>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="" for="email">E-mail</label>
@@ -256,11 +257,13 @@ if (@$_POST['botao']) {
             <div class="col-12 mb-4">
                 <label for="">Senha</label>
                 <div class="submit-line">
-                    <input type="password" id="senha" name="senha" onchange="confereSenha()" required>
+                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
                     <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente2" onclick="verSenha()"></i>
                 </div>
             </div>
         </div>
+        <label id="labelForca" style="display:none;" for="">Força da senha</label>
+        <div id="erroSenhaForca" class="container"></div> <!-- pode estar na div errada -->
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="" for="senha">Confirme a Senha</label>

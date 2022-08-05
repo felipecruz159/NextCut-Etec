@@ -44,3 +44,10 @@
     width: 100% !important;    
 }
 }
+
+@media (max-width: 992px) {
+  .container .intro-sobre {
+    width: 100% ; 
+    text-align: center;   
+}
+}

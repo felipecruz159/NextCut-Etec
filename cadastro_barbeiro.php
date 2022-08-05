@@ -32,11 +32,12 @@ if (@$_POST['botao']) {
     $numero = $_POST['numero'];
     $complemento = $_POST['complemento'];
 
-    $plano = '';
+    $plano = $_POST['plano'];
+    echo $plano;  
 
     $senha = $_POST['senha'];
-    $confirmaSenha = $_POST['confirma'];
-
+    
+    $nome = strtoupper($nome);
 
     if ($nome != '' && $email != '' && $senha != '') {
         $conn = Conectar();
@@ -74,33 +75,33 @@ if (@$_POST['botao']) {
         <div class="row">
             <div class="col-12 mb-4">
                 <label for="nome">Nome Completo</label>
-                <input type="text" name="nome" required>
+                <input type="text" class="letra-maiuscula" name="nome">
             </div>
         </div>
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="" for="nascimento">Data de nascimento</label>
-                <input type="date" name="nascimento" required>
+                <input type="date" name="nascimento">
             </div>
         </div>
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="" for="telefone">Telefone <small class="text-muted">— apenas números</small></label>
-                <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" maxlength="11" onkeypress="return onlynumber();" required>
+                <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" maxlength="11" onkeypress="return onlynumber();">
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="text-start" class="" for="cpf">CPF <small class="text-muted">— apenas números</small></label>
-                <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();" required>
+                <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();">
             </div>
         </div>
-
+        
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="" for="email">E-mail</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email">
             </div>
         </div>
 
@@ -127,7 +128,7 @@ if (@$_POST['botao']) {
         <div class="row">
             <div class="col-12 mb-4">
                 <label for="nome_fantasia">Nome Fantasia</label>
-                <input type="text" name="fantasia" required>
+                <input type="text" name="fantasia">
             </div>
         </div>
 
@@ -153,7 +154,7 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4 mt-2">
                     <label class="" for="cep">CEP <small class="text-muted">— apenas números</small></label>
-                    <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off" required>
+                    <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off">
                 </div>
             </div>
 
@@ -188,7 +189,7 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" for="numero">Número</label>
-                    <input type="text" name="numero" onkeypress="return onlynumber();" required>
+                    <input type="text" name="numero" onkeypress="return onlynumber();">
                 </div>
             </div>
 
@@ -224,10 +225,10 @@ if (@$_POST['botao']) {
 
     <fieldset>
         <h2>Planos Diponíveis</h2>
-        <div class="container">]
+        <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <h3>Basico</h3>
+                <div class="col-lg-6 col-md-12 plano " id="plano1">
+                    <h3>Básico</h3>
                     <img src="http://i.mlcdn.com.br/portaldalu/fotosconteudo/742.jpg" class="img-fluid" alt="">
                     <p><i class="bi bi-check2-circle"></i>1 mês gratis para testar nosso app!</p>
                     <p><i class="bi bi-check2-circle"></i>10% do valor dos pedidos.</p>
@@ -235,8 +236,8 @@ if (@$_POST['botao']) {
                     <p><i class="bi bi-check2-circle"></i>Mensalidade de R$ 100,00 por mês, apenas se voçê faturar mais do que R$ 1.500,00.</p>
                     <p><i class="bi bi-check2-circle"></i>Cancele seu plano quando quiser.</p>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <h3>Vip</h3>
+                <div class="col-lg-6 col-md-12 plano " id="plano2">
+                    <h3>Premium</h3>
                     <img src="http://i.mlcdn.com.br/portaldalu/fotosconteudo/742.jpg" class="img-fluid" alt="">
                     <p><i class="bi bi-check2-circle"></i>1 mês gratis para testar nosso app!</p>
                     <p><i class="bi bi-check2-circle"></i>5% do valor dos pedidos.</p>
@@ -246,6 +247,8 @@ if (@$_POST['botao']) {
                 </div>
             </div>
         </div>
+
+        <input type="hidden" id="escolhido" value="" name="plano"> <!-- input criado para pegar o plano escolhido -->
 
         <input type="submit" name="prev" value="Anterior" class="prev btn-barbeiro">
         <input type="submit" name="next" value="Próximo" class="next btn-barbeiro">
@@ -257,7 +260,7 @@ if (@$_POST['botao']) {
             <div class="col-12 mb-4">
                 <label for="">Senha</label>
                 <div class="submit-line">
-                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
+                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()">
                     <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente2" onclick="verSenha()"></i>
                 </div>
             </div>
@@ -268,7 +271,7 @@ if (@$_POST['botao']) {
             <div class="col-12 mb-4">
                 <label class="" for="senha">Confirme a Senha</label>
                 <div class="submit-line">
-                    <input type="password" id="confirma" name="confirma" onchange="confereSenha()" required>
+                    <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()">
                     <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente2" onclick="verConfirma()"></i>
                 </div>
             </div>

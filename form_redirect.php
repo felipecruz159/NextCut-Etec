@@ -1,5 +1,15 @@
 <link rel="stylesheet" href="css/main.css">
 
+<?php 
+// $sql = "SELECT * FROM cliente WHERE id='$id'";
+// $result = $conn->query($sql);
+// if ($result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $nome = $row['nome'];
+//     }
+// }
+?>
+
 <div class="header-logado" id="header">
 
     <button class="btn btn-logado" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
@@ -17,7 +27,7 @@
                     <svg class="bi pe-none me-2" width="30" height="24">
                         <use xlink:href="#bootstrap" />
                     </svg>
-                    <span class="fs-5 fw-semibold">Olá Rafael Gomes</span>
+                    <span class="fs-5 fw-semibold">Olá, <?php echo @$nome ?></span> <!-- arrumar $sql -->
                 </a>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">

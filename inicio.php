@@ -92,7 +92,7 @@
             <div class="col-lg-6 col-md-12">
                 <div class="text-inicio">
                     <h1>Todos tipos de cabelo!</h1>
-                    <h4>só criar seu cadastro para cortar com nossos melhores Cabeleireiros</h4>
+                    <h4>Crie seu cadastro para cortar com os melhores cabeleireiros</h4>
                     <div class="estilos-cabelo">
                         <div class="container">
                             <div class="row mb-5 mt-5">
@@ -162,7 +162,7 @@
         <div class="row ">
             <div class="text-beneficio mb-4">
                 <h1>Benefícios dos Serviços da NextCut</h1>
-                <h4>A equipe da NextCut está focado na individualidade de cada um dos nossos clientes e estamos determinados a proporcionar a melhor experiência possível criando o ambiente personalizado e o visual ideal único para voçê.</h4>
+                <h4>A equipe da NextCut está focado na individualidade de cada um dos nossos clientes e estamos determinados a proporcionar a melhor experiência possível criando o ambiente personalizado e o visual ideal único para você.</h4>
             </div>
 
             <div class="col-md-4 col-sm-12 ">
@@ -170,7 +170,7 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/1584/1584892.png" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Economize Tempo</h5>
-                        <p class="card-text">Valorizamos muito o tempo dos nossos clientes, através do agendamento pelo App podemos evitar filas e demoras para iniciar o serviço.</p>
+                        <p class="card-text">Valorizamos muito o seu tempo! Através do agendamento pelo site ou aplicativo, podemos evitar filas e demoras para iniciar o serviço.</p>
                     </div>
                 </div>
             </div>

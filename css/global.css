@@ -2,6 +2,7 @@
   --main-color: #ff6600;
   --white: #fff;
   --light-gray: #bdbdbd;
+  --medium-gray: #535353;
   --gray: #212225;
   --dark-main: #121212;
   --black: #000;
@@ -52,3 +53,4 @@ hr {
   margin: 0 !important;
   padding: 0 !important;
 }
+

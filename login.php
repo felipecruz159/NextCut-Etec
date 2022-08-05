@@ -25,14 +25,12 @@ if (@$_POST['botao']) {
                 echo '<font color="#ff6600">Senha OK ! <meta http-equiv = "refresh" content = "1; url = ./index.php" />';
             } else {
 
-                $invalido_senha = "<font color='#ff6600'>Senha inválida !";
+                $invalido_senha ='<span style="color:#ff6600;">Senha inválida!</span>';
             }
         } else {
 
-            $invalido_email = "<font color='#ff6600'>Email inválido!";
+            $invalido_email = '<span style="color:#ff6600;">Email inválido</span>';
         }
-    } else {
-        $invalido = "<font color='#ff6600'>Digite obrigatoriamente E-mail e senha para validar!";
     }
 }
 ?>
@@ -49,8 +47,8 @@ if (@$_POST['botao']) {
                     <div class="inputs text-center mt-4 mb-4">
                         <h2><span class="login-text">Entre com a sua conta!</span></h2>
 
-                        <?php echo @$invalido; ?>
                         <?php echo @$invalido_email; ?>
+                        <?php echo @$invalido_senha; ?>
                         <form method="POST">
                             <div class="log">
                                 <div class="row mb-4 mt-4 text-center">
@@ -60,7 +58,6 @@ if (@$_POST['botao']) {
                                 </div>
 
                                 <div class="row mt-4">
-                                    <?php echo @$invalido_senha; ?>
                                     <div class="col-12">
                                         <div class="submit-line">
                                             <input type="password" id="senha" name="senha" placeholder="Senha" />

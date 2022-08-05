@@ -9,7 +9,7 @@ Fixed Navigation
 
       <!-- logo -->
       <a class="navbar-brand logo" href="./?page=inicio">
-        <img class="logo-white" src="/template/images/logo-white.png" alt="logo" />
+        <img class="img-fluid" style="width: 100px;" src="https://www.seekpng.com/png/full/7-73431_orange-and-white-logo-of-youtube-orange-youtube.png" alt="logo" />
       </a>
       <!-- /logo -->
 
@@ -27,12 +27,6 @@ Fixed Navigation
             <li class="nav-item <?php if($page == "sobre") echo 'active'; ?>">
               <a class="nav-link" href="./?page=sobre">Sobre</a>
             </li>
-            <li class="nav-item <?php if($page == "servicos") echo 'active'; ?>">
-              <a class="nav-link" href="./?page=servicos">Serviços</a>
-            </li>
-            <li class="nav-item <?php if($page == "portfolio") echo 'active'; ?>">
-              <a class="nav-link" href="./?page=portfolio">Portfolio</a>
-            </li>
             <li class="nav-item <?php if($page == "equipe") echo 'active'; ?>">
               <a class="nav-link" href="./?page=equipe">Equipe</a>
             </li>
@@ -41,9 +35,6 @@ Fixed Navigation
             </li>
             <li class="nav-item <?php if($page == "contato") echo 'active'; ?>">
               <a class="nav-link" href="./?page=contato">Contato</a>
-            </li>
-            <li class="nav-item <?php if($page == "assine") echo 'active'; ?>">
-              <a class="nav-link" href="./?page=assine">Assine já</a>
             </li>
           </ul>
         </div>

@@ -1,3 +1,62 @@
+<?php
+$page = @$_GET['page'];
+
+//PADRÃO
+$img1 = 'imagens/backgroundHeader.jpg';
+$img2 = 'https://hips.hearstapps.com/esq.h-cdn.co/assets/17/29/1500667303-es-072117-talk-to-your-barber-about-your-hair.jpg';
+$img3 = 'https://img.freepik.com/free-photo/vintage-wooden-table-with-beard-shaping-salon-tools_53876-127084.jpg?w=2000';
+
+$title1 = 'NextCut';
+$title2 = 'NextCut2';
+$title3 = 'NextCut3';
+
+$desc1 = 'Conte conosco, temos mais de 30 barbearias no portfólio.';
+$desc2 = 'Conte conosco, temos mais de 30 barbearias no portfólio.2';
+$desc3 = 'Conte conosco, temos mais de 30 barbearias no portfólio.3';
+
+$botao1 = 'Ver portfólio';
+$botao2 = 'Ver portfólio2';
+$botao3 = 'Ver portfólio3';
+
+if ($page == ''){
+    $img1 = '';
+    $img2 = '';
+    $img3 = '';
+
+    $title1 = '';
+    $title2 = '';
+    $title3 = '';
+
+    $desc1 = '';
+    $desc2 = '';
+    $desc3 = '';
+
+    $botao1 = '';
+    $botao2 = '';
+    $botao3 = '';
+}
+else if ($page == ''){
+    $img1 = '';
+    $img2 = '';
+    $img3 = '';
+
+    $title1 = '';
+    $title2 = '';
+    $title3 = '';
+
+    $desc1 = '';
+    $desc2 = '';
+    $desc3 = '';
+
+    $botao1 = '';
+    $botao2 = '';
+    $botao3 = '';
+}
+else{
+
+}
+?>
+
 <main>
     <div class="container-fluid">
         <div id="mainSlider" class="carousel slide" data-ride="carousel">
@@ -8,29 +67,29 @@
             </ol>
             <div class="carousel-inner background-header">
                 <div class="carousel-item active">
-                    <img src="imagens/backgroundHeader.jpg" class="d-block w-100" alt="">
+                    <img src="<?php echo $img1 ?>" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h2>NextCut</h2>
-                        <p>Conte conosco, temos mais de 30 barbearias no portfólio.</p>
-                        <a href="#" class="main-btn">Ver portfolio</a>
+                        <h2><?php echo $title1 ?></h2>
+                        <p><?php echo $desc1 ?></p>
+                        <a href="#" class="main-btn"><?php echo $botao1 ?></a>
                     </div>
                 </div>
 
                 <div class="carousel-item">
-                    <img src="https://hips.hearstapps.com/esq.h-cdn.co/assets/17/29/1500667303-es-072117-talk-to-your-barber-about-your-hair.jpg" class="d-block w-100" alt="">
+                    <img src="<?php echo $img2 ?>" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h2>NextCut</h2>
-                        <p>Conte conosco, temos mais de 30 barbearias no portfólio.</p>
-                        <a href="#" class="main-btn">Ver portfolio</a>
+                        <h2><?php echo $title2 ?></h2>
+                        <p><?php echo $desc2 ?></p>
+                        <a href="#" class="main-btn"><?php echo $botao2 ?></a>
                     </div>
                 </div>
 
                 <div class="carousel-item">
-                    <img src="https://img.freepik.com/free-photo/vintage-wooden-table-with-beard-shaping-salon-tools_53876-127084.jpg?w=2000" class="d-block w-100" alt="">
+                    <img src="<?php echo $img3 ?>" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h2>NextCut</h2>
-                        <p>Conte conosco, temos mais de 30 barbearias no portfólio.</p>
-                        <a href="#" class="main-btn">Ver portfolio</a>
+                        <h2><?php echo $title3 ?></h2>
+                        <p><?php echo $desc3 ?></p>
+                        <a href="#" class="main-btn"><?php echo $botao3 ?></a>
                     </div>
                 </div>
             </div>

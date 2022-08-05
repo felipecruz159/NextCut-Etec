@@ -2,76 +2,63 @@
 
 <footer id="footer" class="bg-one mt-4">
   <div class="top-footer ">
-    <div class="container">
+    <a href="#"><div class="content-voltar"><i class="bi bi-arrow-up"></i></div></a>
+    <div class="container ">
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
-          <h4>NextCut</h4>
-          <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
+          <img class="img-fluid" style="width: 250px;" src="https://www.seekpng.com/png/full/7-73431_orange-and-white-logo-of-youtube-orange-youtube.png" alt="logo" />
         </div>
-        <!-- End of .col-sm-3 -->
 
         <div class="col-md-6 col-lg-3 mb-4">
-          <ul>
-          <h3>Links</h3>
-            <div class="row">
-              <div class="col-6">
-              <li><a href="inicio.php">Início</a></li>
-              </div>
-              <div class="col-6">
-              <li><a href="#">Sobre</a></li>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <li><a href="#">Serviços</a></li>
-              </div>
-              <div class="col-6">
-              <li><a href="#">Portfolio</a></li>
+          <div class="row">
+            <div class="col-6">
+              <div class="empresa-footer">
+                <h2>Empresa</h2>
+                <a href="./?page=inicio">Início</a>
+                <a href="./?page=sobre">Sobre</a>
+                <a href="./?page=equipe">Equipe</a>
+                <a href="./?page=inicio">Carreiras</a>
+                <a href="./?page=inicio">Contato</a>
               </div>
             </div>
-            <div class="row">
-              <div class="col-6">
-              <li><a href="equipe.php">Equipe</a></li>
-              </div>
-              <div class="col-6">
-              <li><a href="#">Carreiras</a></li>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <li><a href="#">Contato</a></li>
-              </div>
-              <div class="col-6">
-              <li><a href="#">Assine já</a></li>
+            <div class="col-6">
+              <div class="empresa-footer">
+                <h2>Contato</h2>
+                <a href="./?page=suporte">Suporte</a>
+                <a href="#">nextcut@gmail.com</a>
+                <a href="#">(11) 94582-1423</a>
               </div>
             </div>
-          </ul>
+          </div>
         </div>
-     
 
         <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
-          <ul>
-              <h3>Nossos serviços</h3>
-            <li><a href="#">Graphic Design</a></li>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-          </ul>
+          <div class="social-footer">
+            <h2>Social</h2>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
-        <!-- End of .col-sm-3 -->
-
-        <!-- End of .col-sm-3 -->
 
         <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
-          <ul>
-              <h3>Desenvolvedores</h2>
-            <li><a href="https://www.linkedin.com/in/kátia-c-7a94a2228/" target="_blank">Kátia Cursi</a></li>
-            <li><a href="https://www.linkedin.com/in/marcos-felipe-cruz-beraldo/" target="_blank">Marcos Felipe</a></li>
-            <li><a href="https://www.linkedin.com/in/rafaelgms0/" target="_blank">Rafael Gomes</a></li>
-            <li><a href="https://www.linkedin.com/in/vitor-soler-0037b1201/" target="_blank">Vitor Soler</a></li>
-          </ul>
+          <div class="endereco-footer">
+            <h2>Endereço</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.7786177446583!2d-47.2901751!3d-23.2874925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf5ab2d35d2b0d%3A0x90131a5f0c2272b3!2sEtec%20Martinho%20Di%20Ciero!5e0!3m2!1spt-BR!2sbr!4v1659551457531!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
-        <!-- End of .col-sm-3 -->
+
+        <hr>
+        <div class="devs">
+          <a href="./?page=equipe">
+            <h3>Desenvolvido por <span>NextCut</span></h3>
+          </a>
+          <p>© Copyright 2022 NextCut – Tecnologia para Gestão de agendamento. Todos os direitos reservados. <br>
+            <a href="">política de Cookies</a> <a href="">política de privacidade</a>
+          </p>
         </div>
+      </div>
     </div>
   </div>
 </footer>

@@ -96,11 +96,11 @@ document.getElementById('telefone').addEventListener('blur', function(e){
 
     if (tamanho == 11){
         var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{5})(\d{4})/);
-        e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+        e.target.value = '(' + x[1] + ')' + x[2] + '-' + x[3];
     }
     else if (tamanho == 10){
         var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{4})(\d{4})/);
-        e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+        e.target.value = '(' + x[1] + ')' + x[2] + '-' + x[3];
     }
 });
 
@@ -123,11 +123,11 @@ document.getElementById('celular').addEventListener('blur', function(e){
 
     if (tamanho == 11){
         var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{5})(\d{4})/);
-        e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+        e.target.value = '(' + x[1] + ')' + x[2] + '-' + x[3];
     }
     else if (tamanho == 10){
         var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{4})(\d{4})/);
-        e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+        e.target.value = '(' + x[1] + ')' + x[2] + '-' + x[3];
     }
 });
 
@@ -277,4 +277,24 @@ function checkbox(){
 }
 
 // /Acordo com os termos no cadastro
+
+// Escolha plano
+
+    var p1 = document.getElementById('plano1');
+    var p2 = document.getElementById('plano2');
+    var escolhido = document.getElementById('escolhido');
+
+    p1.addEventListener('click', function planoCor() {
+        p2.classList.remove("plano-selecionado");
+        p1.classList.add("plano-selecionado");
+        escolhido.value = 1;
+    });
+
+    p2.addEventListener('click', function planoCor2() {
+        p1.classList.remove("plano-selecionado");
+        p2.classList.add("plano-selecionado");
+        escolhido.value = 2;
+    });
+
+// /Escolha plano
 

@@ -12,7 +12,8 @@ if (@$_POST['botao']) {
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $confirmaSenha = $_POST['confirma'];
+   
+    $nomeCompleto = strtoupper($nomeCompleto);
 
     if ($nome != '' && $sobrenome != '' && $senha != '') {
         $conn = Conectar();
@@ -27,7 +28,7 @@ if (@$_POST['botao']) {
             $result = $conn->query($sql);
         } else {
             echo "<font color='#ff6600'> 'O email já foi cadastrado!";
-        } 
+        }
     }
     header('location: ./?page=form_redirect');
 }
@@ -47,11 +48,11 @@ if (@$_POST['botao']) {
                             <hr>
                             <div class="col-md-6 col-sm-6 mb-2">
                                 <label for="nome">Nome</label>
-                                <input type="text" name="nome"  required>
+                                <input class="letra-maiuscula" type="text" name="nome" required>
                             </div>
                             <div class="col-md-6 col-sm-6 mb-2">
-                                <label  for="sobrenome">Sobrenome</label>
-                                <input type="text" name="sobrenome"  required>
+                                <label for="sobrenome">Sobrenome</label>
+                                <input class="letra-maiuscula" type="text" name="sobrenome" required>
                             </div>
                         </div>
                         <div class="row">
@@ -77,8 +78,8 @@ if (@$_POST['botao']) {
                             <div class="col-12 mb-2">
                                 <label for="">Senha</label>
                                 <div class="submit-line">
-                                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
-                                    <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente2" onclick="verSenha()"></i>
+                                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()"required>
+                                    <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente3" onclick="verSenha()"></i>
                                 </div>
                             </div>
                             <label id="labelForca" for="" style="display:none;">Força da senha</label>
@@ -89,10 +90,11 @@ if (@$_POST['botao']) {
                             <div class="col-12 mb-2">
                                 <label class="" for="senha">Confirme a Senha</label>
                                 <div class="submit-line">
-                                    <input type="password" id="confirma" name="confirma" onchange="confereSenha()" required>
-                                    <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente2" onclick="verConfirma()"></i>
+                                    <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
+                                    <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente3" onclick="verConfirma()"></i>
                                 </div>
                             </div>
+                            
                         </div>
 
                     </div>

@@ -54,3 +54,11 @@ hr {
   padding: 0 !important;
 }
 
+.label-icons{
+  margin-left: 5px;
+  color: var(--main-color);
+}
+
+/* .label-icons:hover{
+  cursor: pointer;
+} */

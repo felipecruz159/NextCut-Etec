@@ -5,32 +5,46 @@
 include 'config.php';
 
 if (@$_POST['botao']) {
-    $nome = $_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
-    $nomeCompleto = $nome . ' ' . $sobrenome;
+    $nomeCompleto = $_POST['nome'];
+    $sexo = $_POST['sexo'];
     $nascimento = $_POST['nascimento'];
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-   
+
+    $outroSexo = $_POST['outroSexo'];
+
+    if ($sexo == 1){
+        $sexo = strtoupper("Masculino");
+    }
+    else if ($sexo == 2){
+        $sexo = strtoupper("Feminino");
+    }
+    else if ($sexo == 3){
+        $sexo = strtoupper($outroSexo);
+    }
+    else if ($sexo == 4){
+        $sexo = "N/A";
+    }
+
     $nomeCompleto = strtoupper($nomeCompleto);
 
-    if ($nome != '' && $sobrenome != '' && $senha != '') {
+    if ($nomeCompleto != '' && $senha != '') {
         $conn = Conectar();
 
-        $sql = "SELECT * FROM cliente WHERE email='$email'";
+        $sql = "SELECT * FROM pessoa WHERE email='$email' OR telefone='$telefone'";
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
             $senha = md5($senha);
-            $sql = "INSERT INTO cliente ( nome, telefone, email, senha, nascimento ) 
-                VALUES ( '$nomeCompleto' , '$telefone' , '$email' , '$senha' , '$nascimento' )";
-            //echo $sql;
+            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone ) 
+                VALUES ( '$nomeCompleto' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone' )";
+            // echo $sql;
             $result = $conn->query($sql);
+            header('location: ./?page=form_redirect');
         } else {
-            echo "<font color='#ff6600'> 'O email já foi cadastrado!";
+            echo "<font color='#ff6600'> 'O email ou telefone já foi cadastrado!";
         }
     }
-    header('location: ./?page=form_redirect');
 }
 
 ?>
@@ -46,19 +60,31 @@ if (@$_POST['botao']) {
                         <div class="row">
                             <h3 class="text-left">Dados pessoais</h3>
                             <hr>
-                            <div class="col-md-6 col-sm-6 mb-2">
-                                <label for="nome">Nome</label>
+                            <div class="col-12 mb-2">
+                                <label for="nome">Nome completo</label>
                                 <input class="letra-maiuscula" type="text" name="nome" required>
-                            </div>
-                            <div class="col-md-6 col-sm-6 mb-2">
-                                <label for="sobrenome">Sobrenome</label>
-                                <input class="letra-maiuscula" type="text" name="sobrenome" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 mb-2">
                                 <label class="" for="nascimento">Data de nascimento</label>
                                 <input type="date" name="nascimento" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-2"> 
+                                <label for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
+                                <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
+                                    <option selected value="1">Masculino</option>
+                                    <option value="2">Feminino</option>
+                                    <option value="3">Outro...</option>
+                                    <option value="4">Prefiro não dizer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <input type="hidden" id="outroSexo" name="outroSexo" placeholder="Qual?" maxlength="12" autocomplete="off">
                             </div>
                         </div>
                         <div class="row">
@@ -78,23 +104,23 @@ if (@$_POST['botao']) {
                             <div class="col-12 mb-2">
                                 <label for="">Senha</label>
                                 <div class="submit-line">
-                                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()"required>
+                                    <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
                                     <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente3" onclick="verSenha()"></i>
                                 </div>
                             </div>
                             <label id="labelForca" for="" style="display:none;">Força da senha</label>
-                            <div id="erroSenhaForca" class="container"></div> 
+                            <div id="erroSenhaForca" class="container"></div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-12 mb-2">
-                                <label class="" for="senha">Confirme a Senha</label>
+                                <label class="" for="senha">Confirme a senha</label>
                                 <div class="submit-line">
                                     <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
                                     <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente3" onclick="verConfirma()"></i>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -106,7 +132,7 @@ if (@$_POST['botao']) {
                     </div>
                     <div class="row">
                         <div class="col-12 text-center p-1">
-                            <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao" onclick="checkbox()">
+                            <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao" onclick="checkbox()" onclick="postSexo()">
                         </div>
                     </div>
                 </form>

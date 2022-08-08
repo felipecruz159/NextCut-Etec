@@ -278,6 +278,29 @@ function checkbox(){
 
 // /Acordo com os termos no cadastro
 
+// Form sexo
+
+function getSexo(){
+    var sexo = document.getElementById('sexo');
+    var optionValue = sexo.options[sexo.selectedIndex];
+    var outroSexo = document.getElementById('outroSexo');
+
+    var value = optionValue.value;
+    
+    if (value == 3){
+        outroSexo.type = "text";
+        outroSexo.required = true;
+    }
+    else{
+        outroSexo.type = "hidden";
+        outroSexo.required = false;
+    }
+    
+}
+
+
+// /Form sexo
+
 // Escolha plano
 
     var p1 = document.getElementById('plano1');

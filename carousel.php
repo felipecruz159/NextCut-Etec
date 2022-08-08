@@ -18,7 +18,7 @@ $botao1 = 'Ver portfólio';
 $botao2 = 'Ver portfólio2';
 $botao3 = 'Ver portfólio3';
 
-if ($page == ''){
+if ($page == 'xxx'){
     $img1 = '';
     $img2 = '';
     $img3 = '';
@@ -35,23 +35,23 @@ if ($page == ''){
     $botao2 = '';
     $botao3 = '';
 }
-else if ($page == ''){
-    $img1 = '';
-    $img2 = '';
-    $img3 = '';
+// else if ($page == ''){
+//     $img1 = '';
+//     $img2 = '';
+//     $img3 = '';
 
-    $title1 = '';
-    $title2 = '';
-    $title3 = '';
+//     $title1 = '';
+//     $title2 = '';
+//     $title3 = '';
 
-    $desc1 = '';
-    $desc2 = '';
-    $desc3 = '';
+//     $desc1 = '';
+//     $desc2 = '';
+//     $desc3 = '';
 
-    $botao1 = '';
-    $botao2 = '';
-    $botao3 = '';
-}
+//     $botao1 = '';
+//     $botao2 = '';
+//     $botao3 = '';
+// }
 else{
 
 }

@@ -33,10 +33,10 @@ if (@$_POST['botao']) {
     $complemento = $_POST['complemento'];
 
     $plano = $_POST['plano'];
-    echo $plano;  
+    echo $plano;
 
     $senha = $_POST['senha'];
-    
+
     $nome = strtoupper($nome);
 
     if ($nome != '' && $email != '' && $senha != '') {
@@ -71,6 +71,7 @@ if (@$_POST['botao']) {
     </ul>
 
     <fieldset>
+        <!-- BARBEIRO -->
         <h2>Dados do Responsável</h2>
         <div class="row">
             <div class="col-12 mb-4">
@@ -97,7 +98,7 @@ if (@$_POST['botao']) {
                 <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();">
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-12 mb-4">
                 <label class="" for="email">E-mail</label>
@@ -110,6 +111,7 @@ if (@$_POST['botao']) {
     </fieldset>
 
     <fieldset>
+        <!-- ESTABELECIMENTO -->
         <h2>Sobre a Barbearia</h2>
         <div class="row">
             <div class="col-12 mb-4">
@@ -148,6 +150,7 @@ if (@$_POST['botao']) {
             </div>
         </div>
 
+        <!-- ENDEREÇO -->
         <h3 class="mt-3">Endereço</h3>
         <hr style="width: 70%; margin:0 auto;">
         <div id="appCep">
@@ -201,11 +204,34 @@ if (@$_POST['botao']) {
             </div>
         </div>
 
+        <!-- PERGUNTAS IMPORTANTES -->
+        <h3 class="mt-3">Título para perguntas importantes</h3>
+        <hr style="width: 70%; margin:0 auto;">
+
+        <div class="row">
+            <div class="col-12 mb-4 mt-2">
+                <label class="" for="cep">Horário de funcionamento</label>
+                <input type="???">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-2">
+                <label for="sexo">Quem você atende?</label><i title="isso nos ajuda a recomendar você para seu público-alvo, porém seu estabelecimento continuará sendo mostrado para todos" class="bi bi-question-circle label-icons"></i>
+                <select class="form-select" id="atendimento" name="atendimento">
+                    <option selected value="1">Unissex</option>
+                    <option value="2">Feminino</option>
+                    <option value="3">Masculino</option>
+                </select>
+            </div>
+        </div>
+
         <input type="submit" name="prev" value="Anterior" class="prev btn-barbeiro">
         <input type="submit" name="next" value="Próximo" class="next btn-barbeiro">
     </fieldset>
 
     <fieldset>
+        <!-- INSTRUÇÕES -->
         <h2>Como Funciona!</h2>
         <div class="row">
             <div class="container">
@@ -224,6 +250,7 @@ if (@$_POST['botao']) {
     </fieldset>
 
     <fieldset>
+        <!-- PLANOS -->
         <h2>Planos Diponíveis</h2>
         <div class="container">
             <div class="row">
@@ -253,7 +280,9 @@ if (@$_POST['botao']) {
         <input type="submit" name="prev" value="Anterior" class="prev btn-barbeiro">
         <input type="submit" name="next" value="Próximo" class="next btn-barbeiro">
     </fieldset>
+
     <fieldset>
+        <!-- SENHA -->
         <h2>Crie sua senha</h2>
         <h4>Falta pouco para concluir seu cadastro</h4>
         <div class="row">

@@ -18,22 +18,22 @@ $botao1 = 'Ver portfólio';
 $botao2 = 'Ver portfólio2';
 $botao3 = 'Ver portfólio3';
 
-if ($page == 'xxx'){
-    $img1 = '';
-    $img2 = '';
-    $img3 = '';
+if ($page == 'sobre'){
+    $img1 = 'https://xerpay.com.br/blog/wp-content/uploads/sites/2/2018/09/reuni%C3%A3o-produtiva-1434x957.jpg';
+    $img2 = 'https://blog.tangerino.com.br/wp-content/uploads/2020/09/Missao-visao-e-valores-definindo-os-conceitos-da-sua-empresa.jpg';
+    $img3 = 'https://blog.fortestecnologia.com.br/wp-content/uploads/2019/02/fortes-tecnologia-missao-visao-valores.png';
 
-    $title1 = '';
-    $title2 = '';
-    $title3 = '';
+    $title1 = 'Sobre Nós';
+    $title2 = 'Sobre Nós';
+    $title3 = 'Sobre Nós';
 
     $desc1 = '';
     $desc2 = '';
     $desc3 = '';
 
-    $botao1 = '';
-    $botao2 = '';
-    $botao3 = '';
+    $botao1 = 'Ver equipe';
+    $botao2 = 'Ver equipe';
+    $botao3 = 'Ver equipe';
 }
 // else if ($page == ''){
 //     $img1 = '';

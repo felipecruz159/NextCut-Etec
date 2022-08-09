@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="section-title mb-4 pb-2 ">
-                    <h4 class="title mb-4 mt-5 text-center">As mentes por trás da <span>NextCut</span></h4>
-                    <p class="para-desc mx-auto mb-0 text-center">Aqui você irá encontrar pessoas capacitadas, integração total dos times e com entusiasmo para te atender bem.</p>
+                    <h2 class="title mb-4 mt-5 text-center">As mentes por trás da <span>NextCut</span></h2>
+                    <p class="text-center">Aqui você irá encontrar pessoas capacitadas, integração total dos times e com entusiasmo para te atender bem.</p>
                 </div>
             </div><!--end col-->
         </div><!--end row-->

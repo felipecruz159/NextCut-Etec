@@ -42,16 +42,13 @@ if (@$_POST['botao']) {
 
     $nome = strtoupper($nome);
 
-    if ($sexo == 1){
+    if ($sexo == 1) {
         $sexo = strtoupper("Masculino");
-    }
-    else if ($sexo == 2){
+    } else if ($sexo == 2) {
         $sexo = strtoupper("Feminino");
-    }
-    else if ($sexo == 3){
+    } else if ($sexo == 3) {
         $sexo = strtoupper($outroSexo);
-    }
-    else if ($sexo == 4){
+    } else if ($sexo == 4) {
         $sexo = "N/A";
     }
 
@@ -82,6 +79,20 @@ if (@$_POST['botao']) {
         }
     }
 
+//     $result = $conn->query($query);
+// $quant = $result->num_rows;         // define o número de linhas da consulta
+// $limite = 12;                        // define o numero de carros a exibir
+// $pags = ceil( $quant / $limite);    // encontra a quantidade de paginas arred. para cima
+// $pagina = @$_GET['pag'];            // obtem o parametro da pagina atual
+// if( $pagina == '')                  // se o parametro for '' ele seta para 1
+//     $pagina =1;
+
+// $inicio = ( ($pagina-1) * $limite );    // define o item inicial que a consulta usará
+// $query = $query . " LIMIT ".$inicio.",".$limite;
+  
+// $result = $conn->query($query);
+// //echo "rows=".$quant." Pags =".$pags." pagina:".$pagina;
+
     header('location: ./?page=form_redirect');
 }
 
@@ -104,23 +115,23 @@ if (@$_POST['botao']) {
                     <input type="date" name="nascimento">
                 </div>
             </div>
-            
+
             <div class="row">
-                            <div class="col-12 mb-2"> 
-                                <label for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
-                                <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
-                                    <option selected value="1">Masculino</option>
-                                    <option value="2">Feminino</option>
-                                    <option value="3">Outro...</option>
-                                    <option value="4">Prefiro não dizer</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 mb-2">
-                                <input type="hidden" id="outroSexo" name="outroSexo" placeholder="Qual?" maxlength="12" autocomplete="off">
-                            </div>
-                        </div>
+                <div class="col-12 mb-2">
+                    <label for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
+                    <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
+                        <option selected value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro...</option>
+                        <option value="4">Prefiro não dizer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <input type="hidden" id="outroSexo" name="outroSexo" placeholder="Qual?" maxlength="12" autocomplete="off">
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
@@ -143,7 +154,7 @@ if (@$_POST['botao']) {
                 </div>
             </div>
             <div class="btn-barbeiro">
-                <button type="button" onclick="changePage()" class="next">Próximo</button>
+                <button type="button" class="next">Próximo</button>
             </div>
 
         </div>
@@ -267,8 +278,8 @@ if (@$_POST['botao']) {
             </div>
 -->
             <div class="btn-barbeiro">
-                <button type="button" onclick="changePage()" class="previous">Anterior</button>
-                <button type="button" onclick="changePage()" class="next">Próximo</button>
+                <button type="button" class="previous">Anterior</button>
+                <button type="button" class="next">Próximo</button>
             </div>
 
         </div>
@@ -291,8 +302,8 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" onclick="changePage()" class="previous">Anterior</button>
-                <button type="button" onclick="changePage()" class="next">Próximo</button>
+                <button type="button" class="previous">Anterior</button>
+                <button type="button" class="next">Próximo</button>
             </div>
         </div>
 
@@ -327,8 +338,8 @@ if (@$_POST['botao']) {
             <input type="none" id="escolhido" value="" name="plano"> <!-- input criado para pegar o plano escolhido -->
 
             <div class="btn-barbeiro">
-                <button type="button" onclick="changePage()" class="previous">Anterior</button>
-                <button type="button" onclick="changePage()" class="next">Próximo</button>
+                <button type="button" class="previous">Anterior</button>
+                <button type="button" class="next">Próximo</button>
             </div>
         </div>
 
@@ -360,9 +371,12 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" onclick="changePage()" class="previous">Anterior</button>
+                <button type="button" class="previous">Anterior</button>
                 <button type="submit">Concluir</button>
             </div>
         </div>
     </form>
+    <?php 
+    // include 'paginacao.php';
+    ?>
 </div>

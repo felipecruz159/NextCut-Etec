@@ -24,7 +24,10 @@ if ($(window).width() < 991) {
     nav.classList.add("mobileHeader");
 }
 
-$(window).resize(function () { location.reload(); });
+var existeHeader = document.getElementById('colorScroll');
+if (existeHeader){
+    $(window).resize(function () { location.reload(); });
+}
 
 // /Realoca layout no responsivo/web
 
@@ -311,48 +314,7 @@ function getSexo(){
 
 // Cadastro barbeiro next page
 
-// function changePage(){
 
-// var page = [
-//     document.getElementById('barbeiro1'),
-//     document.getElementById('barbeiro2'),
-//     document.getElementById('barbeiro3'),
-//     document.getElementById('barbeiro4'),
-//     document.getElementById('barbeiro5')
-// ];
-
-// var next = document.querySelectorAll('.next');
-// var prev = document.querySelectorAll('.previous');
-
-// var contador = 0;
-
-// if (next.clicked){
-//     contador += 1; 
-// }
-// else if (prev.clicked){
-//     contador -= 1;
-// }
-
-// if (contador == 0 || contador < 0){
-//     contador = null;
-// }
-// else if (contador > 5){
-//     contador = 5;
-// }
-
-// if (next.clicked){
-//     page[contador-1].style.display = "none";
-//     page[contador].style.display = "";
-//     console.log('caralho');
-
-// }
-// else if (prev.clicked){
-//     page[contador-1].style.display = "none";
-//     page[contador].style.display = "";
-// }
-
-
-// }
 
 
 // /Cadastro barbeiro next page

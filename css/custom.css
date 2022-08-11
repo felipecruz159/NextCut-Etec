@@ -265,7 +265,7 @@ span {
 }
 
 .carousel-caption {
-  margin-bottom: 15vh;
+  margin-bottom: 25vh;
 }
 
 .carousel-caption h2 {
@@ -275,6 +275,10 @@ span {
 
 .carousel-caption p {
   font-size: 18pt;
+}
+
+.carousel-inner{
+  height: 80vh;
 }
 
 

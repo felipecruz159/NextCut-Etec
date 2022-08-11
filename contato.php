@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/main.css">
 
-<div id="contato">
+<div id="contato" class="mt-5 pt-5">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 text-center botao-contato">
-                            <input type="submit" value="enviar">
+                            <input type="submit" value="enviar" class="mb-5">
                         </div>
                     </div>
                 </form>

@@ -29,7 +29,7 @@
         else{
           include 'header_logado.php';
         }
-        if ($page == 'form_redirect'){
+        if ($page == 'form_redirect' || $page == 'contato'){
 
         }
         else{

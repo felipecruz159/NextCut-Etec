@@ -9,6 +9,6 @@
 ?>
 
 <?php
-include 'header_logado.php';
+include 'validate_login.php';
 include 'card_loop.php'; 
 ?>

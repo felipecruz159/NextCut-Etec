@@ -1,53 +1,61 @@
 @media (min-width: 991px) {
-    .login-box {
-     margin: 50px;
-   }
+  .login-box {
+   margin: 50px;
  }
+}
 
+
+@media (max-width: 512px) {
+#formulario #progress li{
+ font-size: 1em;
+}
+}
+
+@media (max-width: 991px) {
+#formulario input{
+ width: 100%;
+}
+}
+@media (max-width: 991px) {
+#formulario .submit-lente2{
+  right: 5%;
+}
+}
+@media (max-width: 991px) {
+#formulario input.btn-barbeiro {
+ width: 150px;
+ display: inline;
  
- @media (max-width: 512px) {
- #formulario #progress li{
-   font-size: 1em;
- }
 }
-
- @media (max-width: 991px) {
-  #formulario input{
-   width: 100%;
- }
 }
 @media (max-width: 991px) {
-  #formulario .submit-lente2{
-    right: 5%;
- }
+#formulario label {
+ padding-left: 1%;
 }
-@media (max-width: 991px) {
-  #formulario input.btn-barbeiro {
-   width: 150px;
-   display: inline;
-   
- }
-}
-@media (max-width: 991px) {
-  #formulario label {
-   padding-left: 1%;
- }
 }
 @media (max-width: 720px) {
-   #formulario fieldset {
-   width: 99%;
- }
-}
-
-@media (max-width: 992px) {
-  .swiper {
-    width: 100% !important;    
+ #formulario fieldset {
+ width: 99%;
 }
 }
 
 @media (max-width: 992px) {
-  .container .intro-sobre {
-    width: 100% ; 
-    text-align: center;   
+.swiper {
+  width: 100% !important;    
 }
 }
+
+@media (max-width: 992px) {
+.container .intro-sobre,
+.container .intro-carreira {
+  width: 100% ; 
+  text-align: center;   
+}
+}
+
+/* @media (max-width: 991px){
+  #erroSenhaForca{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+} */

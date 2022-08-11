@@ -32,7 +32,7 @@ if (@$_POST['botao']) {
     if ($nomeCompleto != '' && $senha != '') {
         $conn = Conectar();
 
-        $sql = "SELECT * FROM pessoa WHERE email='$email' OR telefone='$telefone'";
+        $sql = "SELECT * FROM pessoa WHERE email='$email'";
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
             $senha = md5($senha);

@@ -12,7 +12,7 @@ if (@$_POST['botao']) {
     if ($email != '' && $senha != '') {
         $conn = Conectar();
 
-        $sql = "SELECT * FROM cliente WHERE email='$email'";
+        $sql = "SELECT * FROM pessoa WHERE email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -21,8 +21,8 @@ if (@$_POST['botao']) {
             }
             // echo "digitada:" . md5($senha) . " ==>" . $senhaSistema;
             if (md5($senha) == $senhaSistema) {
-                setcookie("login", $nome, time() + (86400 * 30), "/");
-                echo '<font color="#ff6600">Senha OK ! <meta http-equiv = "refresh" content = "1; url = ./index.php" />';
+                setcookie("login", $email, time() + (86400 * 30), "/");
+                echo '<meta http-equiv = "refresh" content = "0; url = ./?page=form_redirect" />';
             } else {
 
                 $invalido_senha ='<span style="color:#ff6600;">Senha inválida!</span>';

@@ -22,9 +22,19 @@
 
   if ($page != '') {
     if (file_exists($page . ".php")) {
-      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha' && $page != 'form_redirect') {
-        include 'header.php';
-        include 'carousel.php';
+      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha') {
+        if(!isset($_COOKIE["login"])) {
+          include 'header.php';
+        } 
+        else{
+          include 'header_logado.php';
+        }
+        if ($page == 'form_redirect'){
+
+        }
+        else{
+          include 'carousel.php';
+        }
         include $page . ".php";
         include 'footer.php';
       }
@@ -37,7 +47,12 @@
     }
   }
   else {
-    include 'header.php';
+    if(!isset($_COOKIE["login"])) {
+      include 'header.php';
+    } 
+    else{
+      include 'header_logado.php';
+    }
     include 'carousel.php';
     include 'inicio.php';
     include 'footer.php';

@@ -131,34 +131,7 @@ document.getElementById('celular').addEventListener('blur', function(e){
     }
 });
 
-
-
 // /Mascara dos campos
-
-// Progress bar e paginação
-$(function () {
-    var atual_fs, next_fs, prev_fs;
-    $('.next').click(function () {
-        atual_fs = $(this).parent();
-        next_fs = $(this).parent().next();
-
-        $('#progress li').eq($('fieldset').index(next_fs)).addClass('ativo')
-        atual_fs.fadeOut(200);
-        next_fs.fadeIn(500);
-    });
-
-    $('.prev').click(function () {
-        atual_fs = $(this).parent();
-        prev_fs = $(this).parent().prev();
-
-        $('#progress li').eq($('fieldset').index(atual_fs)).removeClass('ativo')
-        atual_fs.fadeOut(200);
-        prev_fs.fadeIn(500);
-    });
-    $('#formulario input[type=submit]').click(function () {
-        return false;
-    })
-});
 
 // /CADASTRO DE BARBEIROS
 
@@ -215,16 +188,31 @@ function validarSenhaForca(){
 
 function mostrarForca(forca){
 
+    var barra = document.getElementById("erroSenhaForca");
+    var label = document.getElementById('labelForca');
+    var url = window.location.href;
+    
+    if (url == 'http://localhost/nextcut/?page=cadastro_barbeiro'){
+        barra.style.width = "65%";
+        barra.style.margin = "auto";
+    } 
+    else {
+        barra.style.width = "100%";
+        label.style.textAlign = "center";
+    }
 	if(forca < 30 ){ 
-		document.getElementById("erroSenhaForca").innerHTML = '<div class="progress" ><div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>';
+		barra.innerHTML = '<div class="progress" ><div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>';
 	}else if((forca >= 30) && (forca < 50)){
-		document.getElementById("erroSenhaForca").innerHTML = '<div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>';
+		barra.innerHTML = '<div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>';
 	}else if((forca >= 50) && (forca < 70)){
-		document.getElementById("erroSenhaForca").innerHTML = '<div class="progress"><div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>';
+		barra.innerHTML = '<div class="progress"><div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>';
 	}else if((forca >= 70) && (forca < 100)){
-		document.getElementById("erroSenhaForca").innerHTML = '<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+		barra.innerHTML = '<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
 	}
+
+    console.log(url);   
 }
+
 
 // /VALIDAR FORÇA DA SENHA
 
@@ -320,4 +308,52 @@ function getSexo(){
     });
 
 // /Escolha plano
+
+// Cadastro barbeiro next page
+
+// function changePage(){
+
+// var page = [
+//     document.getElementById('barbeiro1'),
+//     document.getElementById('barbeiro2'),
+//     document.getElementById('barbeiro3'),
+//     document.getElementById('barbeiro4'),
+//     document.getElementById('barbeiro5')
+// ];
+
+// var next = document.querySelectorAll('.next');
+// var prev = document.querySelectorAll('.previous');
+
+// var contador = 0;
+
+// if (next.clicked){
+//     contador += 1; 
+// }
+// else if (prev.clicked){
+//     contador -= 1;
+// }
+
+// if (contador == 0 || contador < 0){
+//     contador = null;
+// }
+// else if (contador > 5){
+//     contador = 5;
+// }
+
+// if (next.clicked){
+//     page[contador-1].style.display = "none";
+//     page[contador].style.display = "";
+//     console.log('caralho');
+
+// }
+// else if (prev.clicked){
+//     page[contador-1].style.display = "none";
+//     page[contador].style.display = "";
+// }
+
+
+// }
+
+
+// /Cadastro barbeiro next page
 

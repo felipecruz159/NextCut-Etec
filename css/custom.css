@@ -505,18 +505,9 @@ span {
   position: relative;
 }
 
-#formulario fieldset {
-  box-sizing: border-box;
-  position: relative;
-  margin: 10px auto;
-  box-sizing: border-box;
-  width: 80%;
+#formulario .barbeiros {
+  margin: 30px auto;
   text-align: center;
-
-}
-
-#formulario fieldset:not(:first-of-type) {
-  display: none;
 }
 
 #formulario input {
@@ -540,7 +531,7 @@ span {
   text-transform: capitalize;
 }
 
-#formulario input.btn-barbeiro {
+#formulario .btn-barbeiro button {
   width: 200px;
   display: inline;
   height: 55px;
@@ -552,7 +543,13 @@ span {
   font-weight: bolder;
 }
 
-#formulario input.btn-barbeiro:hover {
+#formulario .btn-barbeiro {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0px;
+}
+
+#formulario .btn-barbeiro button:hover {
   background-color: var(--main-color);
   color: var(--black);
   transition: .3s;
@@ -644,6 +641,24 @@ small.text-muted {
   color: var(--light-gray) !important;
 }
 
+#formulario .plano {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+#formulario .plano:hover {
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  background-color: #000000a6;
+}
+
+#formulario .plano-selecionado {
+  border: 2px solid rgb(199, 0, 0);
+  border-radius: 5px;
+  background-color: #000000a6;
+}
+
+
 /*FINAL PAGINA CADASTRO_BARBEIRO*/
 
 
@@ -663,21 +678,22 @@ small.text-muted {
 #contato .container .input-contato {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
 #contato .container .input-contato input {
   background-color: var(--light-gray);
   color: var(--black);
-  height: 45px;
+  height: 50px;
   padding: 0px 10px;
   margin-bottom: 20px;
   font-weight: bold;
   font-size: large;
   border: 3px solid transparent;
 }
-#contato .container .input-contato input:focus{
+
+#contato .container .input-contato input:focus {
   border: 3px solid var(--main-color);
   border-radius: 5px;
 }
@@ -691,7 +707,14 @@ small.text-muted {
   background-color: var(--light-gray);
   color: var(--black);
 }
-#contato .container .botao-contato input{
+#contato .container .input-contato textarea:focus {
+  border: none;
+outline: none;
+  border: 3px solid var(--main-color);
+  border-radius: 5px;
+}
+
+#contato .container .botao-contato input {
   background-color: var(--black);
   color: var(--white);
   font-size: larger;
@@ -701,7 +724,32 @@ small.text-muted {
   height: 50px;
   border-radius: 30px;
   border: 3px solid transparent;
-  transition: .5s;
+  transition: .3s;
+}
+
+#contato .container .botao-contato input:hover {
+  background-color: var(--main-color);
+  color: var(--black);
+  font-size: larger;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 40%;
+  height: 50px;
+  border-radius: 30px;
+  border: 3px solid transparent;
+  transition: .4s;
+}
+
+#contato .container .informacoes-contato{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#contato .container .informacoes-contato .icon-contato i{
+  color: var(--white) !important;
+  font-size: 55px;
+  padding: 10px;
 }
 
 
@@ -1163,18 +1211,74 @@ section .card .button button:hover {
   margin: 60px 0px;
 }
 
-/* ========= PLANO ========== */
 
-.plano {
-  cursor: pointer;
+
+
+/* Carreira Page */
+
+/* SOBRE PAGE*/
+
+.container .intro-carreira {
+  width: 80%;
 }
 
-.plano:hover {
-  border: 2px solid var(--main-color);
-  border-radius: 5px;
+.container .intro-car h2 {
+  font-size: 2.2em;
 }
 
-.plano-selecionado {
-  border: 2px solid pink;
-  border-radius: 5px;
+.container .intro-carreira .text-1,
+#historia-carreira .container .text-1,
+ #motivacao-carreira .container .text-1 {
+  font-size: 2em;
+  margin-top: 20px;
 }
+
+.container .intro-carreira .text-2,
+#historia-carreira .container .text-2,
+#motivacao-carreira .text-parceiro {
+  font-size: 1.4em;
+}
+
+
+#carreira {
+  margin: 5%;
+}
+
+#card-carreira .content-carreira {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: var(--gray);
+  border: 2px solid var(--medium-gray);
+  border-radius: 10px;
+  box-shadow:
+    0px 0.9px 3.6px rgba(0, 0, 0, 0.251),
+    0px 2.5px 10px rgba(0, 0, 0, 0.36),
+    0px 6px 24.1px rgba(0, 0, 0, 0.469),
+    0px 20px 80px rgba(0, 0, 0, 0.72);
+
+}
+
+
+
+#card-carreira .content-carreira .icon-carreira i {
+  color: var(--main-color);
+  font-size: 40px;
+}
+
+#historia-carreira {
+  margin: 60px 0px;
+}
+
+/* Forca da senha  */
+/* #erroSenhaForca {
+  width: 65%;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+#labelForca {
+  padding: 0px !important;
+} */
+
+/* Final força senha  */

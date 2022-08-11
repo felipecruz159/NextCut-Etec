@@ -71,7 +71,7 @@ else{
                     <div class="carousel-caption d-none d-md-block">
                         <h2><?php echo $title1 ?></h2>
                         <p><?php echo $desc1 ?></p>
-                        <a href="#" class="main-btn"><?php echo $botao1 ?></a>
+                        <a href="./?page=equipe" class="main-btn"><?php echo $botao1 ?></a>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ else{
                     <div class="carousel-caption d-none d-md-block">
                         <h2><?php echo $title2 ?></h2>
                         <p><?php echo $desc2 ?></p>
-                        <a href="#" class="main-btn"><?php echo $botao2 ?></a>
+                        <a href="./?page=equipe" class="main-btn"><?php echo $botao2 ?></a>
                     </div>
                 </div>
 
@@ -89,7 +89,7 @@ else{
                     <div class="carousel-caption d-none d-md-block">
                         <h2><?php echo $title3 ?></h2>
                         <p><?php echo $desc3 ?></p>
-                        <a href="#" class="main-btn"><?php echo $botao3 ?></a>
+                        <a href="./?page=equipe" class="main-btn"><?php echo $botao3 ?></a>
                     </div>
                 </div>
             </div>

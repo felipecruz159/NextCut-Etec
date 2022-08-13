@@ -24,9 +24,6 @@ Fixed Navigation
             <li class="nav-item <?php if($page == "inicio" || $page == '') echo 'active'; ?>">
               <a class="nav-link" href="./?page=inicio">Início</a>
             </li>
-            <li class="nav-item <?php if ($page == "form_redirect") echo 'active'; ?>">
-            <a class="nav-link" href="./?page=form_redirect">Serviços</a>
-          </li>
             <li class="nav-item <?php if($page == "sobre") echo 'active'; ?>">
               <a class="nav-link" href="./?page=sobre">Sobre</a>
             </li>

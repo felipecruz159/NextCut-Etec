@@ -8,11 +8,10 @@
         box-sizing: border-box;
     }
 
-    body {}
 </style>
 
 <section>
-    <h1 class="text-center mt-5">Promoção</h1>
+    <h1 class="text-center mt-5 pt-5 pb-5 mb-5">Promoção</h1>
     <div class="swiper mySwiper conteiner">
         <div class="swiper-wrapper content">
 

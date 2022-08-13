@@ -79,20 +79,6 @@ if (@$_POST['botao']) {
         }
     }
 
-//     $result = $conn->query($query);
-// $quant = $result->num_rows;         // define o número de linhas da consulta
-// $limite = 12;                        // define o numero de carros a exibir
-// $pags = ceil( $quant / $limite);    // encontra a quantidade de paginas arred. para cima
-// $pagina = @$_GET['pag'];            // obtem o parametro da pagina atual
-// if( $pagina == '')                  // se o parametro for '' ele seta para 1
-//     $pagina =1;
-
-// $inicio = ( ($pagina-1) * $limite );    // define o item inicial que a consulta usará
-// $query = $query . " LIMIT ".$inicio.",".$limite;
-  
-// $result = $conn->query($query);
-// //echo "rows=".$quant." Pags =".$pags." pagina:".$pagina;
-
     header('location: ./?page=form_redirect');
 }
 
@@ -154,7 +140,7 @@ if (@$_POST['botao']) {
                 </div>
             </div>
             <div class="btn-barbeiro">
-                <button type="button" class="next">Próximo</button>
+                <button type="button" id="next1" onclick="goto1()">Próximo</button>
             </div>
 
         </div>
@@ -278,8 +264,8 @@ if (@$_POST['botao']) {
             </div>
 -->
             <div class="btn-barbeiro">
-                <button type="button" class="previous">Anterior</button>
-                <button type="button" class="next">Próximo</button>
+                <button type="button" id="prev1" onclick="previ1()">Anterior</button>
+                <button type="button" id="next2" onclick="goto2()">Próximo</button>
             </div>
 
         </div>
@@ -302,8 +288,8 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" class="previous">Anterior</button>
-                <button type="button" class="next">Próximo</button>
+                <button type="button" id="prev2" onclick="previ2()">Anterior</button>
+                <button type="button" class="next3" onclick="goto3()">Próximo</button>
             </div>
         </div>
 
@@ -335,11 +321,11 @@ if (@$_POST['botao']) {
                 </div>
             </div>
 
-            <input type="none" id="escolhido" value="" name="plano"> <!-- input criado para pegar o plano escolhido -->
+            <input type="hidden" id="escolhido" value="" name="plano"> <!-- input criado para pegar o plano escolhido -->
 
             <div class="btn-barbeiro">
-                <button type="button" class="previous">Anterior</button>
-                <button type="button" class="next">Próximo</button>
+                <button type="button" id="prev3" onclick="previ3()">Anterior</button>
+                <button type="button" id="next4" onclick="goto4()">Próximo</button>
             </div>
         </div>
 
@@ -371,7 +357,7 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" class="previous">Anterior</button>
+                <button type="button" id="prev4" onclick="previ4()">Anterior</button>
                 <button type="submit">Concluir</button>
             </div>
         </div>

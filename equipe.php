@@ -71,7 +71,7 @@
                         <small class="">Banco de dados</small>
                         <ul class="list-unstyled mt-3 social-icon social mb-0">
                             <!-- <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li> -->
-                            <li class="list-inline-item"><a href="https://www.instagram.com/_vitor.soler_/" target="_blank" class="rounded"><i class="mdi mdi-instagram" title="Instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/vitor.soler_/" target="_blank" class="rounded"><i class="mdi mdi-instagram" title="Instagram"></i></a></li>
                             <!-- <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-twitter" title="Twitter"></i></a></li>
                             <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li> -->
                             <li class="list-inline-item"><a href="https://www.linkedin.com/in/vitor-soler-0037b1201/" target="_blank" class="rounded"><i class="mdi mdi-linkedin" title="Linkedin"></i></a></li>

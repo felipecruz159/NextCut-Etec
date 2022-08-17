@@ -5,7 +5,7 @@
 include 'config.php';
 
 if (@$_POST['botao']) {
-    $nomeCompleto = $_POST['nome'];
+    $nome = $_POST['nome'];
     $sexo = $_POST['sexo'];
     $nascimento = $_POST['nascimento'];
     $telefone = $_POST['telefone'];
@@ -27,9 +27,9 @@ if (@$_POST['botao']) {
         $sexo = "N/A";
     }
 
-    $nomeCompleto = strtoupper($nomeCompleto);
+    $nome = strtoupper($nome);
 
-    if ($nomeCompleto != '' && $senha != '') {
+    if ($nome != '' && $senha != '') {
         $conn = Conectar();
 
         $sql = "SELECT * FROM pessoa WHERE email='$email'";
@@ -37,9 +37,10 @@ if (@$_POST['botao']) {
         if ($result->num_rows == 0) {
             $senha = md5($senha);
             $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone ) 
-                VALUES ( '$nomeCompleto' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone' )";
+                VALUES ( '$nome' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone' )";
             // echo $sql;
             $result = $conn->query($sql);
+            setcookie("login", $email, time() + (86400 * 30), "/");
             header('location: ./?page=form_redirect');
         } else {
             echo "<font color='#ff6600'> 'O email ou telefone já foi cadastrado!";
@@ -62,13 +63,13 @@ if (@$_POST['botao']) {
                             <hr>
                             <div class="col-12 mb-2">
                                 <label for="nome">Nome completo</label>
-                                <input class="letra-maiuscula" type="text" name="nome" required>
+                                <input class="letra-maiuscula" type="text" name="nome" value="<?php echo $nome ?>" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 mb-2">
                                 <label class="" for="nascimento">Data de nascimento</label>
-                                <input type="date" name="nascimento" required>
+                                <input type="date" name="nascimento" value="<?php echo $nascimento ?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -90,13 +91,13 @@ if (@$_POST['botao']) {
                         <div class="row">
                             <div class="col-12 mb-2">
                                 <label class="" for="telefone">Telefone</label>
-                                <input type="tel" autocomplete="off" id="telefone" class="telefone" name="telefone" minlength="11" maxlength="11" required>
+                                <input type="tel" autocomplete="off" id="telefone" class="telefone" name="telefone" minlength="11" maxlength="11" value="<?php echo $telefone ?>" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 mb-2">
                                 <label class="" for="email">E-mail</label>
-                                <input type="email" name="email" required>
+                                <input type="email" name="email" value="<?php echo $email ?>" required>
                             </div>
                         </div>
 
@@ -132,7 +133,7 @@ if (@$_POST['botao']) {
                     </div>
                     <div class="row">
                         <div class="col-12 text-center p-1">
-                            <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao" onclick="checkbox()" onclick="postSexo()">
+                            <input type="submit" class="cadastro-btn" value="cadastre-se" name="botao" onclick="checkbox()">
                         </div>
                     </div>
                 </form>

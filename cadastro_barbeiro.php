@@ -129,7 +129,7 @@ if (@$_POST['botao']) {
 
             <div class="row">
                 <div class="col-12 mb-2">
-                    <label class="sexoLabel" for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
+                    <label class="sexoLabel text-center" for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
                     <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
                         <option selected value="1">Masculino</option>
                         <option value="2">Feminino</option>
@@ -289,7 +289,7 @@ if (@$_POST['botao']) {
             </div>
 -->
             <div class="btn-barbeiro">
-                <button type="button" id="prev1" onclick="previ1()">Anterior</button>
+                <button type="button" class="mb-3" id="prev1" onclick="previ1()">Anterior</button>
                 <button type="button" id="next2" onclick="goto2()">Próximo</button>
             </div>
 
@@ -313,7 +313,7 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" id="prev2" onclick="previ2()">Anterior</button>
+                <button type="button" class="mb-3" id="prev2" onclick="previ2()">Anterior</button>
                 <button type="button" class="next3" onclick="goto3()">Próximo</button>
             </div>
         </div>
@@ -349,7 +349,7 @@ if (@$_POST['botao']) {
             <input type="hidden" id="escolhido" value="" name="plano"> <!-- input criado para pegar o plano escolhido -->
 
             <div class="btn-barbeiro">
-                <button type="button" id="prev3" onclick="previ3()">Anterior</button>
+                <button type="button" class="mb-3" id="prev3" onclick="previ3()">Anterior</button>
                 <button type="button" id="next4" onclick="goto4()">Próximo</button>
             </div>
         </div>
@@ -382,7 +382,7 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" id="prev4" onclick="previ4()">Anterior</button>
+                <button type="button" class="mb-3" id="prev4" onclick="previ4()">Anterior</button>
                 <input type="submit" name="botao" class="cadastro-btn" value="Concluir"></input>
             </div>
         </div>

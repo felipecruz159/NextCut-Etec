@@ -67,13 +67,12 @@ if (@$_POST['botao']) {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 mb-2">
+                            <div class=" col-lg-6 col-md-6 col-sm-12 mb-2">
                                 <label class="" for="nascimento">Data de nascimento</label>
                                 <input type="date" name="nascimento" value="" required>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 mb-2"> 
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
                                 <label for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
                                 <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
                                     <option selected value="1">Masculino</option>

@@ -195,7 +195,7 @@ function mostrarForca(forca) {
     var label = document.getElementById('labelForca');
     var url = window.location.href;
 
-    if (url == 'http://localhost/nextcut/?page=cadastro_barbeiro') {
+    if (url == 'http://localhost/NextCut/?page=cadastro_barbeiro') {
         barra.style.width = "65%";
         barra.style.margin = "auto";
         label.style.textAlign = "center";

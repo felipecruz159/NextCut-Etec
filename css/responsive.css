@@ -1,56 +1,80 @@
 @media (min-width: 991px) {
   .login-box {
-   margin: 50px;
- }
+    margin: 50px;
+  }
 }
 
 
 @media (max-width: 512px) {
-#formulario #progress li{
- font-size: 1em;
-}
+  #formulario #progress li {
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 991px) {
-#formulario input{
- width: 100%;
+  #formulario option {
+    width: 100px;
+  }
 }
-}
+
 @media (max-width: 991px) {
-#formulario .submit-lente2{
-  right: 5%;
+
+  #formulario input,
+  #formulario select {
+    width: 100%;
+  }
 }
-}
+
 @media (max-width: 991px) {
-#formulario input.btn-barbeiro {
- width: 150px;
- display: inline;
- 
+  #formulario .submit-lente2 {
+    right: 5%;
+  }
 }
-}
+
 @media (max-width: 991px) {
-#formulario label {
- padding-left: 1%;
+  #formulario input.btn-barbeiro {
+    width: 150px;
+    display: inline;
+
+  }
 }
+
+@media (max-width: 991px) {
+  #formulario label {
+    padding-left: 1%;
+  }
 }
+
 @media (max-width: 720px) {
- #formulario fieldset {
- width: 99%;
-}
-}
-
-@media (max-width: 992px) {
-.swiper {
-  width: 100% !important;    
-}
+  #formulario fieldset {
+    width: 99%;
+  }
 }
 
 @media (max-width: 992px) {
-.container .intro-sobre,
-.container .intro-carreira {
-  width: 100% ; 
-  text-align: center;   
+  .swiper {
+    width: 100% !important;
+  }
 }
+
+@media (max-width: 992px) {
+
+  .container .intro-sobre,
+  .container .intro-carreira {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1152px) {
+  #header-logado .links-logado {
+    display: none;
+  }
+}
+@media (max-width: 893px) {
+  #header-logado .busca {
+    display: none;
+  }
 }
 
 /* @media (max-width: 991px){

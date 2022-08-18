@@ -71,7 +71,6 @@ if (@$_POST['botao']) {
 
             $sql = "INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, cep, estado, cidade, bairro, rua, numero, complemento ) 
                 VALUES ( '$cnpj', '$razaoSocial', '$nomeFantasia', '$emailBarbearia', '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento' );";
-                echo $sql;
             $result = $conn->query($sql);
 
             $sql = "SELECT MAX(idPessoa) idPessoa FROM pessoa;";
@@ -103,8 +102,18 @@ if (@$_POST['botao']) {
             setcookie("login", $email, time() + (86400 * 30), "/");
             header('location: ./?page=form_redirect');
         } else {
-            echo "<font color='#ff6600'> 'O email já foi cadastrado!";
-        }
+                die($conn->error);
+            }
+
+            $sql = "SELECT MAX(idEstabelecimento) idEstabelecimento FROM estabelecimento;";
+            $result = $conn->query($sql);
+
+            if ($result) {
+                while ($row = $result->fetch_assoc()) {
+                    $idEstabelecimento = $row['idEstabelecimento'];
+                }
+            } else {
+                die($conn->error);
     }
 }
 
@@ -130,7 +139,7 @@ if (@$_POST['botao']) {
 
             <div class="row">
                 <div class="col-12 mb-2">
-                    <label class="sexoLabel" for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
+                    <label class="sexoLabel text-center" for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
                     <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
                         <option selected value="1">Masculino</option>
                         <option value="2">Feminino</option>
@@ -290,7 +299,7 @@ if (@$_POST['botao']) {
             </div>
 -->
             <div class="btn-barbeiro">
-                <button type="button" id="prev1" onclick="previ1()">Anterior</button>
+                <button type="button" class="mb-3" id="prev1" onclick="previ1()">Anterior</button>
                 <button type="button" id="next2" onclick="goto2()">Próximo</button>
             </div>
 
@@ -314,7 +323,7 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" id="prev2" onclick="previ2()">Anterior</button>
+                <button type="button" class="mb-3" id="prev2" onclick="previ2()">Anterior</button>
                 <button type="button" class="next3" onclick="goto3()">Próximo</button>
             </div>
         </div>
@@ -350,7 +359,7 @@ if (@$_POST['botao']) {
             <input type="hidden" id="escolhido" value="" name="plano"> <!-- input criado para pegar o plano escolhido -->
 
             <div class="btn-barbeiro">
-                <button type="button" id="prev3" onclick="previ3()">Anterior</button>
+                <button type="button" class="mb-3" id="prev3" onclick="previ3()">Anterior</button>
                 <button type="button" id="next4" onclick="goto4()">Próximo</button>
             </div>
         </div>
@@ -383,7 +392,7 @@ if (@$_POST['botao']) {
             </div>
 
             <div class="btn-barbeiro">
-                <button type="button" id="prev4" onclick="previ4()">Anterior</button>
+                <button type="button" class="mb-3" id="prev4" onclick="previ4()">Anterior</button>
                 <input type="submit" name="botao" class="cadastro-btn" value="Concluir"></input>
             </div>
         </div>

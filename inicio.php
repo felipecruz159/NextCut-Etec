@@ -130,7 +130,9 @@
                 </div>
                 <div class="card-body p-4">
                     <h4>Em duvida do corte?</h4>
-                    <p class="card-text">O Site de cabeleireiros líder no mundo, oferece serviços de beleza e cuidados com os cabelos. Oferecemos uma experiência que atende às necessidades de cabelos curto, longo, reto, encaracolado, ondulado a altamente texturizado – os afiliados da NextCut criarão um corte e estilo para se adequar ao seu visual e estilo de vida.</p>
+                    <div><p class="card-text">O Site de cabeleireiros líder no mundo, oferece serviços de beleza e cuidados com os cabelos.
+                        <br> Oferecemos uma experiência que atende às necessidades de cabelos curto, longo, reto, encaracolado, ondulado a altamente texturizado – os afiliados da NextCut criarão um corte e estilo para se adequar ao seu visual e estilo de vida.</p></div>
+                    
                 </div>
             </div>
         </div>
@@ -162,39 +164,41 @@
         <div class="row ">
             <div class="text-beneficio mb-4">
                 <h1>Benefícios dos Serviços da NextCut</h1>
-                <h4>A equipe da NextCut está focado na individualidade de cada um dos nossos clientes e estamos determinados a proporcionar a melhor experiência possível criando o ambiente personalizado e o visual ideal único para você.</h4>
+                <h4>A equipe da NextCut está focado na individualidade<br> de cada um dos nossos clientes e estamos determinados a proporcionar a melhor<br> experiência possível criando o ambiente personalizado e o visual ideal único para você.</h4>
             </div>
+            <div class="row mt-5">
+                <div class="col-md-4 col-sm-12 ">
+                    <div class="card-beneficio text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1584/1584892.png" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1 mt-2">Economize Tempo</h5>
+                            <p class="card-text">Valorizamos muito o seu tempo! Através do agendamento pelo site ou aplicativo, podemos evitar filas e demoras para iniciar o serviço.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="col-md-4 col-sm-12 ">
-                <div class="card-beneficio text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1584/1584892.png" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Economize Tempo</h5>
-                        <p class="card-text">Valorizamos muito o seu tempo! Através do agendamento pelo site ou aplicativo, podemos evitar filas e demoras para iniciar o serviço.</p>
+                <div class="col-md-4 col-sm-12">
+                    <div class="card-beneficio text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2162/2162502.png" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1 mt-2">Estilistas Profissionais</h5>
+                            <p class="card-text">Existe um tipo de corte perfeito para cada indivíduo, podemos trabalhar juntos para formar um plano ideal para o seu cabelo que combine com seu modelo de rosto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                    <div class="card-beneficio text-center">
+                        <img src="http://misterbarbershop.brindey.com.br/wp-content/uploads/2021/06/tesoura-e-pente-branco.png" class="card-img-top img-fluid" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title mb-1 mt-2">Não sei o que por </h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-12">
-                <div class="card-beneficio text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2162/2162502.png" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Estilistas Profissionais</h5>
-                        <p class="card-text">Existe um tipo de corte perfeito para cada indivíduo, podemos trabalhar juntos para formar um plano ideal para o seu cabelo que combine com seu modelo de rosto</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-                <div class="card-beneficio text-center">
-                    <img src="http://misterbarbershop.brindey.com.br/wp-content/uploads/2021/06/tesoura-e-pente-branco.png" class="card-img-top img-fluid" alt="...">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Não sei o que por </h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

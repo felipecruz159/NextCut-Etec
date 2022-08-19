@@ -77,9 +77,9 @@
   }
 }
 
-/* @media (max-width: 991px){
-  #erroSenhaForca{
-    width: 100%;
-    margin-bottom: 20px;
+ @media (max-width: 720px){
+  section .card .media-icons{
+    right: 7px;
+
   }
-} */
+} 

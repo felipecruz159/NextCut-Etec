@@ -8,7 +8,18 @@
 // }
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
 <?php
 include 'validate_login.php';
-include 'card_loop.php'; 
+include 'todosCardBarbeiro.php'; 
 ?>

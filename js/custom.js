@@ -321,34 +321,51 @@ const div5 = document.getElementById('barbeiro5');
 function goto1(){
     div1.style.display = "none";
     div2.style.display = "";
+    window.scrollTo(0, 0);
 }
 function goto2(){
     div2.style.display = "none"
     div3.style.display = "";
+    window.scrollTo(0, 0);
 }
 function goto3(){
     div3.style.display = "none"
     div4.style.display = "";
+    window.scrollTo(0, 0);
 }
 function goto4(){
     div4.style.display = "none"
     div5.style.display = "";
+    window.scrollTo(0, 0);
 }
 function previ1(){
     div2.style.display = "none"
     div1.style.display = "";
+    window.scrollTo(0, 0);
 }
 function previ2(){
     div3.style.display = "none"
     div2.style.display = "";
+    window.scrollTo(0, 0);
 }
 function previ3(){
     div4.style.display = "none"
     div3.style.display = "";
+    window.scrollTo(0, 0);
 }
 function previ4(){
     div5.style.display = "none"
     div4.style.display = "";
+    window.scrollTo(0, 0);
 }
-// /Cadastro ba{rbeiro next page
+// /Cadastro barbeiro next page
+
+// Reload quando post falha
+
+function reloadError(){
+    location.reload();
+    div1.style.display = "";
+}
+
+// /Reload quando post falha
 

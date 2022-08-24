@@ -61,19 +61,36 @@ if (@$_POST['botao']) {
     if ($nome != '' && $senha != '') {
         $conn = Conectar();
 
-        $sql = "SELECT * FROM pessoa WHERE email='$email'";
+        $sql = "SELECT email FROM pessoa WHERE email='$email'";
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
-            $senha = md5($senha);
-            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, plano ) 
-                VALUES ( '$nome', '$sexo', '$nascimento', '$email', '$senha', '$telefone', '$plano' );";
+
+            $senha = md5($senha); //criptografia da senha
+            
+            $sql = "INSERT INTO endereco ( cep, estado, cidade, bairro, rua, numero, complemento )
+            VALUES ( '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento' );"; // inserção do endereço do estabelecimento
             $result = $conn->query($sql);
 
-            $sql = "INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, cep, estado, cidade, bairro, rua, numero, complemento ) 
-                VALUES ( '$cnpj', '$razaoSocial', '$nomeFantasia', '$emailBarbearia', '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento' );";
+            $sql = "SELECT MAX(idEndereco) idEndereco FROM endereco;"; // get id endereco 
             $result = $conn->query($sql);
 
-            $sql = "SELECT MAX(idPessoa) idPessoa FROM pessoa;";
+            if ($result) {
+                while ($row = $result->fetch_assoc()) {
+                    $idEndereco = $row['idEndereco'];
+                }
+            } else {
+                die($conn->error);
+            }
+
+            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, plano, Endereco_idEndereco, cargo ) 
+                VALUES ( '$nome', '$sexo', '$nascimento', '$email', '$senha', '$telefone', '$plano', '$idEndereco', 'BARBEIRO' );"; //inserção dos dados pessoais 
+            $result = $conn->query($sql);
+
+            $sql = "INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, Endereco_idEndereco ) 
+                VALUES ( '$cnpj', '$razaoSocial', '$nomeFantasia', '$emailBarbearia', '$idEndereco' );"; // insercao dados do estabelecimento + FK endereco
+            $result = $conn->query($sql);
+
+            $sql = "SELECT MAX(idPessoa) idPessoa FROM pessoa;"; // get id pessoa
             $result = $conn->query($sql);
 
             if ($result) {
@@ -84,7 +101,7 @@ if (@$_POST['botao']) {
                 die($conn->error);
             }
 
-            $sql = "SELECT MAX(idEstabelecimento) idEstabelecimento FROM estabelecimento;";
+            $sql = "SELECT MAX(idBarbearia) idEstabelecimento FROM estabelecimento;"; //get id estabelecimento
             $result = $conn->query($sql);
 
             if ($result) {
@@ -99,12 +116,6 @@ if (@$_POST['botao']) {
                 VALUES ( '$idPessoa', '$idEstabelecimento', '$cpf' ); ";
             $result = $conn->query($sql);
 
-            setcookie("login", $email, time() + (86400 * 30), "/");
-            header('location: ./?page=form_redirect');
-        } else {
-                die($conn->error);
-            }
-
             $sql = "SELECT MAX(idEstabelecimento) idEstabelecimento FROM estabelecimento;";
             $result = $conn->query($sql);
 
@@ -114,6 +125,14 @@ if (@$_POST['botao']) {
                 }
             } else {
                 die($conn->error);
+            }
+
+            setcookie("login", $email, time() + (86400 * 30), "/");
+            header('location: ./?page=form_redirect');
+        }
+        else{
+            $emailError = "<font color='#ff6600'> O email já foi cadastrado!"; //possível fazer estilização do input
+        }
     }
 }
 
@@ -127,20 +146,20 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" class="letra-maiuscula" name="nome" value="" onkeydown="return /[a-z ]/i.test(event.key)">
+                    <input type="text" class="letra-maiuscula" name="nome" value="<?php if (isset($nome)){ echo $nome; } else { echo ''; } ?>" onkeydown="return /[a-z ]/i.test(event.key)" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" for="nascimento">Data de nascimento</label>
-                    <input type="date" name="nascimento" value="">
+                    <input type="date" name="nascimento" value="<?php if (isset($nascimento)){ echo $nascimento; } else { echo ''; } ?>" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-2">
                     <label class="sexoLabel text-center" for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
-                    <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
+                    <select class="form-select" id="sexo" name="sexo" onchange="getSexo()" required>
                         <option selected value="1">Masculino</option>
                         <option value="2">Feminino</option>
                         <option value="3">Outro...</option>
@@ -157,30 +176,28 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" for="telefone">Telefone <small class="text-muted">— apenas números</small></label>
-                    <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="">
+                    <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefone)){ echo $telefone; } else { echo ''; } ?>" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="text-start" class="" for="cpf">CPF <small class="text-muted">— apenas números</small></label>
-                    <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();" value="">
+                    <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($cpf)){ echo $cpf; } else { echo ''; } ?>" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
-                    <label class="" for="email">E-mail</label>
-                    <input type="email" name="email" value="">
+                    
+                    <label class="" for="email">E-mail <?php if (isset($emailError)){ echo $emailError; } else{ echo ''; }?></label> <!-- possível fazer estilização do input -->
+                    <input type="email" name="email" value="<?php if (isset($email)){ echo $email; } else { echo ''; } ?>" required>
                 </div>
             </div>
             <div class="btn-barbeiro">
                 <button type="button" id="next1" onclick="goto1()">Próximo</button>
             </div>
-
         </div>
-
-
 
         <div id="barbeiro2" class="barbeiros" style="display: none;">
             <!-- ESTABELECIMENTO -->
@@ -188,21 +205,21 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" class="" for="cnpf">CNPJ <small class="text-muted">— apenas números (opcional)</small></label>
-                    <input type="text" name="cnpj" id="cnpj" autocomplete="off" minlength="14" maxlength="14" onkeypress="return onlynumber();" value="">
+                    <input type="text" name="cnpj" id="cnpj" autocomplete="off" minlength="14" maxlength="14" onkeypress="return onlynumber();" value="<?php if (isset($cnpj)){ echo $cnpj; } else { echo ''; } ?>">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
                     <label for="razao">Razão Social <small class="text-muted">— (opcional)</small></label>
-                    <input type="text" name="razao" value="">
+                    <input type="text" name="razao" value="<?php if (isset($razaoSocial)){ echo $razaoSocial; } else { echo ''; } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
                     <label for="nome_fantasia">Nome Fantasia</label>
-                    <input type="text" name="fantasia" value="" onkeydown="return /[a-z]/i.test(event.key)">
+                    <input type="text" name="fantasia" value="<?php if (isset($nomeFantasia)){ echo $nomeFantasia; } else { echo ''; } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)" required>
                 </div>
             </div>
 
@@ -210,7 +227,7 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <!-- ATENÇÃO, TALVEZ NECESSITE DE LÓGICA PARA EMAIL IGUAL BARBEIRO ETC -->
                     <label class="" for="email2">E-mail</label>
-                    <input type="email" name="email2" value="">
+                    <input type="email" name="email2" value="<?php if (isset($email)){ echo $email; } else { echo ''; } ?>" required>
                 </div>
             </div>
 
@@ -218,7 +235,7 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <!-- ATENÇÃO, TALVEZ NECESSITE DE LÓGICA PARA TELEFONE IGUAL BARBEIRO ETC -->
                     <label class="" for="telefone">Telefone-celular <small class="text-muted">— apenas números</small></label>
-                    <input type="tel" autocomplete="off" class="telefone" id="celular" name="celular" maxlength="11" maxlength="11" onkeypress="return onlynumber();" value="">
+                    <input type="tel" autocomplete="off" class="telefone" id="celular" name="celular" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefoneBarbearia)){ echo $telefoneBarbearia; } else { echo ''; } ?>" required>
                 </div>
             </div>
 
@@ -229,83 +246,58 @@ if (@$_POST['botao']) {
                 <div class="row">
                     <div class="col-12 mb-4 mt-2">
                         <label class="" for="cep">CEP <small class="text-muted">— apenas números</small></label>
-                        <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off" value="">
+                        <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off" value="<?php if (isset($cep)){ echo $cep; } else { echo ''; } ?>" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="estado">Estado</label>
-                        <input type="text" name="estado" v-model="endereco.estado" value="" readonly >
+                        <input type="text" name="estado" v-model="endereco.estado" value="<?php if (isset($estado)){ echo $estado; } else { echo ''; } ?>" readonly >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="cidade">Cidade</label>
-                        <input type="text" name="cidade" v-model="endereco.cidade" value="" readonly>
+                        <input type="text" name="cidade" v-model="endereco.cidade" value="<?php if (isset($cidade)){ echo $cidade; } else { echo ''; } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="bairro">Bairro</label>
-                        <input type="text" name="bairro" v-model="endereco.bairro" value="" readonly>
+                        <input type="text" name="bairro" v-model="endereco.bairro" value="<?php if (isset($bairro)){ echo $bairro; } else { echo ''; } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="endereco">Rua</label>
-                        <input type="text" name="endereco" v-model="endereco.rua" value="" readonly>
+                        <input type="text" name="endereco" v-model="endereco.rua" value="<?php if (isset($rua)){ echo $rua; } else { echo ''; } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="numero">Número</label>
-                        <input type="text" name="numero" onkeypress="return onlynumber();" value="">
+                        <input type="text" name="numero" onkeypress="return onlynumber();" value="<?php if (isset($numero)){ echo $numero; } else { echo ''; } ?>" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="complemento">Complemento <small class="text-muted">— opcional</small></label>
-                        <input type="text" name="complemento" value="" >
+                        <input type="text" name="complemento" value="<?php if (isset($complemento)){ echo $complemento; } else { echo ''; } ?>" >
                     </div>
                 </div>
             </div>
 
-            <!-- PERGUNTAS IMPORTANTES Colocar no perfil do barbeiro logado 
-            <h3 class="mt-3">Título para perguntas importantes</h3>
-            <hr style="width: 70%; margin:0 auto;">
-
-            <div class="row">
-                <div class="col-12 mb-4 mt-2">
-                    <label class="" for="cep">Horário de funcionamento</label>
-                    <input type="???">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 mb-2">
-                    <label for="sexo">Quem você atende?</label><i title="isso nos ajuda a recomendar você para seu público-alvo, porém seu estabelecimento continuará sendo mostrado para todos" class="bi bi-question-circle label-icons"></i>
-                    <select class="form-select" id="atendimento" name="atendimento">
-                        <option selected value="1">Unissex</option>
-                        <option value="2">Feminino</option>
-                        <option value="3">Masculino</option>
-                    </select>
-                </div>
-            </div>
--->
             <div class="btn-barbeiro">
                 <button type="button" class="mb-3" id="prev1" onclick="previ1()">Anterior</button>
                 <button type="button" id="next2" onclick="goto2()">Próximo</button>
             </div>
-
         </div>
-
-
 
         <div id="barbeiro3" class="barbeiros" style="display: none;">
             <!-- INSTRUÇÕES -->
@@ -327,8 +319,6 @@ if (@$_POST['botao']) {
                 <button type="button" class="next3" onclick="goto3()">Próximo</button>
             </div>
         </div>
-
-
 
         <div id="barbeiro4" class="barbeiros" style="display: none;">
             <!-- PLANOS -->
@@ -364,8 +354,6 @@ if (@$_POST['botao']) {
             </div>
         </div>
 
-
-
         <div id="barbeiro5" class="barbeiros" style="display: none;">
             <!-- SENHA -->
             <h2>Crie sua senha</h2>
@@ -374,7 +362,7 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <label for="">Senha</label>
                     <div class="submit-line">
-                        <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()">
+                        <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
                         <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente2" onclick="verSenha()"></i>
                     </div>
                 </div>
@@ -385,7 +373,7 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <label class="" for="senha">Confirme a Senha</label>
                     <div class="submit-line">
-                        <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()">
+                        <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
                         <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente2" onclick="verConfirma()"></i>
                     </div>
                 </div>

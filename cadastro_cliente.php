@@ -36,18 +36,17 @@ if (@$_POST['botao']) {
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
             $senha = md5($senha);
-            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone ) 
-                VALUES ( '$nome' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone' )";
+            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, cargo ) 
+                VALUES ( '$nome' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone', 'CLIENTE' )";
             // echo $sql;
             $result = $conn->query($sql);
             setcookie("login", $email, time() + (86400 * 30), "/");
             header('location: ./?page=form_redirect');
         } else {
-            echo "<font color='#ff6600'> 'O email ou telefone já foi cadastrado!";
+            echo "<font color='#ff6600'> O email já foi cadastrado!"; //possível fazer estilização do input
         }
     }
 }
-
 ?>
 
 <div class="cadastro-box">
@@ -63,7 +62,7 @@ if (@$_POST['botao']) {
                             <hr>
                             <div class="col-12 mb-2">
                                 <label for="nome">Nome completo</label>
-                                <input class="letra-maiuscula" type="text" name="nome" value="" required>
+                                <input class="letra-maiuscula" type="text" name="nome" value="" onkeydown="return /[a-z ]/i.test(event.key)" required>
                             </div>
                         </div>
                         <div class="row">
@@ -74,7 +73,7 @@ if (@$_POST['botao']) {
 
                             <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
                                 <label for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
-                                <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
+                                <select class="form-select" id="sexo" name="sexo" onchange="getSexo()" required>
                                     <option selected value="1">Masculino</option>
                                     <option value="2">Feminino</option>
                                     <option value="3">Outro...</option>
@@ -90,7 +89,7 @@ if (@$_POST['botao']) {
                         <div class="row">
                             <div class="col-12 mb-2">
                                 <label class="" for="telefone">Telefone</label>
-                                <input type="tel" autocomplete="off" id="telefone" class="telefone" name="telefone" minlength="11" maxlength="11" value="" onkeypress="return onlynumber();" required>
+                                <input type="tel" autocomplete="off" id="telefone" class="telefone" name="telefone" minlength="10" maxlength="11" value="" onkeypress="return onlynumber();" required>
                             </div>
                         </div>
                         <div class="row">
@@ -120,7 +119,6 @@ if (@$_POST['botao']) {
                                     <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente3" onclick="verConfirma()"></i>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>

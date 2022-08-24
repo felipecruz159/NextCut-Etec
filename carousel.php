@@ -19,7 +19,7 @@ $botao2 = 'Ver portfólio2';
 $botao3 = 'Ver portfólio3';
 
 if ($page == 'sobre'){
-    $img1 = 'https://xerpay.com.br/blog/wp-content/uploads/sites/2/2018/09/reuni%C3%A3o-produtiva-1434x957.jpg';
+    $img1 = 'https://blog.tangerino.com.br/wp-content/uploads/2020/09/Missao-visao-e-valores-definindo-os-conceitos-da-sua-empresa.jpg';
     $img2 = 'https://blog.tangerino.com.br/wp-content/uploads/2020/09/Missao-visao-e-valores-definindo-os-conceitos-da-sua-empresa.jpg';
     $img3 = 'https://blog.fortestecnologia.com.br/wp-content/uploads/2019/02/fortes-tecnologia-missao-visao-valores.png';
 

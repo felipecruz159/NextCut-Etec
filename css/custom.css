@@ -131,7 +131,6 @@ span {
   font-size: 15px;
   line-height: 27px;
   color: var(--light-gray);
-  text-transform: capitalize;
   transition: color .3s;
   text-decoration: none;
 }
@@ -1243,6 +1242,10 @@ section .card .button button:hover {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+
+.dropdown-menu a{
+  color: var(--black) !important;
 }
 
 @media (min-width: 768px) {

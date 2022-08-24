@@ -15,51 +15,41 @@
 
 <body>
 
-
   <?php
-
   $page = @$_GET['page'];
 
-  if ($page != '') {
-    if (file_exists($page . ".php")) {
-      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha') {
-        if(!isset($_COOKIE["login"])) {
-          include 'header.php';
-        } 
-        else{
+  if ($page != ''){ // verifica se a pag é vazia'
+    if (file_exists($page . ".php")){ // verifica se existe o arquivo 
+      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha') { // exceções para header
+        if (isset($_COOKIE['login'])){ // verifica cookie login
           include 'header_logado.php';
         }
-        if ($page == 'form_redirect' || $page == 'contato'){
-
+        else{ // else cookie login
+          include 'header.php';
         }
-        else{
+        if ($page == 'inicio' || $page == 'sobre'){ // incluir carousel em paginas especificas
           include 'carousel.php';
         }
-        include $page . ".php";
+        else{ // else outras paginas
+          // não fazer nada
+        }
+        include $page . '.php';
         include 'footer.php';
       }
-      else{
-        include $page . ".php";
+      else{ //else paginas exceções
+        include $page . '.php';
       }
     }
-    else {
+    else{ // else file exists
       include '404.php';
     }
   }
-  else {
-    if(!isset($_COOKIE["login"])) {
-      include 'header.php';
-    } 
-    else{
-      include 'header_logado.php';
-    }
+  else{ // else pagina diferente
     include 'carousel.php';
     include 'inicio.php';
     include 'footer.php';
   }
-
   ?>
-
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> <!--framework - vue.js-->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--consumo de api / node-->

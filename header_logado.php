@@ -1,15 +1,30 @@
 <link rel="stylesheet" href="css/main.css">
 
 <?php
-// $sql = "SELECT * FROM cliente WHERE id='$id'";
-// $result = $conn->query($sql);
-// if ($result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         $nome = $row['nome'];
-//     }
-// }
-?>
+include 'config.php';
+$cookieEmail = $_COOKIE["login"];
 
+$conn = Conectar();
+$sql = "SELECT nome FROM pessoa WHERE email='$cookieEmail'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $nome = $row['nome'];
+  }
+}
+
+
+$sql = "SELECT cep, rua FROM endereco";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $cep = $row['cep'];
+    $rua = $row['rua'];
+  }
+} else {
+  $cep = '';
+}
+?>
 
 <header class="fixed-top" id="header-logado">
 
@@ -19,9 +34,21 @@
   </a>
   <!-- /logo -->
   <div class="links-logado">
-    <a href="">Cortes</a>
-    <a href="">Estética</a>
-    <a href="">Sombrancelhas</a>
+    <a href="./?page=form_redirect">Cortes</a>
+    <a href="./?page=form_redirect">Estética</a>
+    <a href="./?page=form_redirect">Sombrancelhas</a>
+    <div class="dropdown">
+      <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Navegação
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="./?page=sobre">Sobre</a></li>
+        <li><a class="dropdown-item" href="./?page=equipe">Equipe</a></li>
+        <li><a class="dropdown-item" href="./?page=carreiras">Carreiras</a></li>
+        <li><a class="dropdown-item" href="./?page=contato">Contato</a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="busca">
@@ -32,7 +59,12 @@
   <div class="endereco-logado">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Rua Carlos Cassani <i class="bi bi-chevron-down"></i>
+      <?php if ($cep == '') {
+        echo 'Adicione um endereço...';
+      } else {
+        echo $rua . ' ';
+      }
+      ?><i class="bi bi-chevron-down"></i>
     </button>
 
     <!-- Modal -->
@@ -44,7 +76,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+            <!-- ADICIONAR AQUI A OPÇÃO DE ADICIONAR UM ENDEREÇO, CASO CEP == '' E OUTRA FUNCIONALIDADE, CASO JA TENHA ENDEREÇO, TIPO MUDAR ENDEREÇO -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -55,14 +87,10 @@
     </div>
   </div>
 
-
-
   <div class="canva">
     <button class="btn btn-person" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
       <i class="bi bi-person"></i>
     </button>
-
-
 
     <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       <div class="offcanvas-header">
@@ -76,7 +104,8 @@
               <svg class="bi pe-none me-2" width="30" height="24">
                 <use xlink:href="#bootstrap" />
               </svg>
-              <span class="fs-5 fw-semibold">Olá RF \Apelido...</span> <!--colocar o nome definido pelo usuario..-->
+              <!--<img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> aqui fica melhor? -->
+              <p style="color: var(--black) !important; font-size: 14pt; font-weight: bold;">Olá, <span class="fs-5 fw-semibold"><?php echo strtok($nome, " "); ?></span></p>
             </a>
             <ul class="list-unstyled ps-0">
               <li class="mb-1">
@@ -104,35 +133,22 @@
                   </ul>
                 </div>
               </li>
-              <li class="mb-1">
-                <!--
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                </button>
-                <div class="collapse" id="orders-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
-                  </ul>
-                 </div> -->
-              </li>
             </ul>
           </div>
         </div>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>Conta</strong>
+            <strong>Perfil</strong>
           </a>
           <ul class="dropdown-menu text-small shadow">
-            <li><a class="dropdown-item" href="#">Informações</a></li>
             <li><a class="dropdown-item" href="#">Configurações</a></li>
-            <li><a class="dropdown-item" href="#">Privacidade Seguraança</a></li>
+            <li><a class="dropdown-item" href="#">Termos e condições de uso</a></li>
+            <li><a class="dropdown-item" href="#">Privacidade</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="./logout.php" style="color: red;">Sair / Início</a></li>
+            <li><a class="dropdown-item" href="./logout.php" style="color:red !important;">Fazer logout</a></li>
           </ul>
         </div>
       </div>
@@ -140,5 +156,3 @@
     </div>
   </div>
 </header>
-
-

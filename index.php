@@ -44,7 +44,13 @@
       include '404.php';
     }
   }
-  else{ // else pagina diferente
+  else { // pagina diferente
+    if(isset($_COOKIE["login"])) {
+      include 'header_logado.php';
+    } 
+    else{
+      include 'header.php';
+    }
     include 'carousel.php';
     include 'inicio.php';
     include 'footer.php';

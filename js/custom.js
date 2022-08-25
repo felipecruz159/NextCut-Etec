@@ -360,12 +360,4 @@ function previ4(){
 }
 // /Cadastro barbeiro next page
 
-// Reload quando post falha
-
-function reloadError(){
-    location.reload();
-    div1.style.display = "";
-}
-
-// /Reload quando post falha
 

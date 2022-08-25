@@ -5,24 +5,36 @@ include 'config.php';
 $cookieEmail = $_COOKIE["login"];
 
 $conn = Conectar();
-$sql = "SELECT nome FROM pessoa WHERE email='$cookieEmail'";
+$sql = "SELECT nome, idPessoa, Endereco_idEndereco FROM pessoa WHERE email='$cookieEmail'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     $nome = $row['nome'];
+    $idPessoa = $row['idPessoa'];
+    $idEndereco = $row['Endereco_idEndereco'];
   }
 }
 
-
-$sql = "SELECT cep, rua FROM endereco";
+$sql = "SELECT cep, rua FROM endereco WHERE idEndereco='$idEndereco'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     $cep = $row['cep'];
     $rua = $row['rua'];
   }
-} else {
-  $cep = '';
+}
+
+if (@$_POST['salvaCep']) {
+  $cep = $_POST['addCep'] || $_POST['changeCep'];
+  $estado = $_POST['estado'];
+  $cidade = $_POST['cidade'];
+  $bairro = $_POST['bairro'];
+  $rua = $_POST['endereco'];
+  $numero = $_POST['numero'];
+  $complemento = $_POST['complemento'];
+
+  $sql = "UPDATE endereco
+  SET cep = '$cep', estado = '$estado', cidade='$cidade', bairro='$bairro', rua= ";
 }
 ?>
 
@@ -59,10 +71,12 @@ if ($result->num_rows > 0) {
   <div class="endereco-logado">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <?php if ($cep == '') {
+      <?php if (!isset($cep)) {
         echo 'Adicione um endereço...';
       } else {
-        echo $rua . ' ';
+        if (isset($rua)) {
+          echo $rua . ' ';
+        }
       }
       ?><i class="bi bi-chevron-down"></i>
     </button>
@@ -72,20 +86,71 @@ if ($result->num_rows > 0) {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- ADICIONAR AQUI A OPÇÃO DE ADICIONAR UM ENDEREÇO, CASO CEP == '' E OUTRA FUNCIONALIDADE, CASO JA TENHA ENDEREÇO, TIPO MUDAR ENDEREÇO -->
+            <?php if (isset($cep)) {
+              echo '<div>' . $rua . '</div>';
+              echo '<div>' . 'Alterar endereço...' . '</div>';
+            } else {
+              include 'enderecoInputFalse.php';
+            } ?>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: blue;">Voltar</button>
+            <button type="button" class="btn btn-primary" style="background-color: pink;" name="salvaCep">Salvar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div id="appCep" style="display: none;">
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="" for="estado">Estado</label>
+        <input type="text" name="estado" v-model="endereco.estado" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="" for="cidade">Cidade</label>
+        <input type="text" name="cidade" v-model="endereco.cidade" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="" for="bairro">Bairro</label>
+        <input type="text" name="bairro" v-model="endereco.bairro" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="" for="endereco">Rua</label>
+        <input type="text" name="endereco" v-model="endereco.rua" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="" for="numero">Número</label>
+        <input type="text" name="numero" onkeypress="return onlynumber();" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="" for="complemento">Complemento <small class="text-muted">— opcional</small></label>
+        <input type="text" name="complemento">
+      </div>
+    </div>
+  </div>
+
 
   <div class="canva">
     <button class="btn btn-person" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
@@ -104,7 +169,7 @@ if ($result->num_rows > 0) {
               <svg class="bi pe-none me-2" width="30" height="24">
                 <use xlink:href="#bootstrap" />
               </svg>
-              <!--<img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> aqui fica melhor? -->
+
               <p style="color: var(--black) !important; font-size: 14pt; font-weight: bold;">Olá, <span class="fs-5 fw-semibold"><?php echo strtok($nome, " "); ?></span></p>
             </a>
             <ul class="list-unstyled ps-0">

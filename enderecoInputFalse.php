@@ -1,1 +1,0 @@
-<input type="text" placeholder="Digite o cep aqui..." style="border: 3px solid black;" name="addCep">

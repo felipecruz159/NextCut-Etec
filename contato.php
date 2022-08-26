@@ -45,7 +45,7 @@
                                     <i class="bi bi-geo-alt"></i>
                                 </div>
                                 <div>
-                                    <p>Avenida Plaza, 6 – Edifício Campus Offices Sala A2 CEP: 13.302-100 Jardim Paraíso Itu/SP Telefone: (11) 91424-4215</p>
+                                    <p>Av. Barata Ribeiro, 410 - Vila Prudente de Moraes, Itu - SP, 13306-220</p>
                                 </div>
                             </div>
                         </div>

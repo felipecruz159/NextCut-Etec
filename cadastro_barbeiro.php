@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/main.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <style>
     body {
         background-image: url("./imagens/fundo_barbeiro.png");
@@ -51,10 +52,9 @@ if (@$_POST['botao']) {
         $sexo = "N/A";
     }
 
-    if ($plano == 2){
+    if ($plano == 2) {
         $plano = strtoupper("Premium");
-    }
-    else{
+    } else {
         $plano = strtoupper("Básico");
     }
 
@@ -66,7 +66,7 @@ if (@$_POST['botao']) {
         if ($result->num_rows == 0) {
 
             $senha = md5($senha); //criptografia da senha
-            
+
             $sql = "INSERT INTO endereco ( cep, estado, cidade, bairro, rua, numero, complemento )
             VALUES ( '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento' );"; // inserção do endereço do estabelecimento
             $result = $conn->query($sql);
@@ -116,21 +116,9 @@ if (@$_POST['botao']) {
                 VALUES ( '$idPessoa', '$idEstabelecimento', '$cpf' ); ";
             $result = $conn->query($sql);
 
-            $sql = "SELECT MAX(idEstabelecimento) idEstabelecimento FROM estabelecimento;";
-            $result = $conn->query($sql);
-
-            if ($result) {
-                while ($row = $result->fetch_assoc()) {
-                    $idEstabelecimento = $row['idEstabelecimento'];
-                }
-            } else {
-                die($conn->error);
-            }
-
             setcookie("login", $email, time() + (86400 * 30), "/");
             header('location: ./?page=form_redirect');
-        }
-        else{
+        } else {
             $emailError = "<font color='#ff6600'> O email já foi cadastrado!"; //possível fazer estilização do input
         }
     }
@@ -146,13 +134,21 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" class="letra-maiuscula" name="nome" value="<?php if (isset($nome)){ echo $nome; } else { echo ''; } ?>" onkeydown="return /[a-z ]/i.test(event.key)" required>
+                    <input type="text" class="letra-maiuscula" name="nome" value="<?php if (isset($nome)) {
+                                                                                        echo $nome;
+                                                                                    } else {
+                                                                                        echo '';
+                                                                                    } ?>" onkeydown="return /[a-z ]/i.test(event.key)" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" for="nascimento">Data de nascimento</label>
-                    <input type="date" name="nascimento" value="<?php if (isset($nascimento)){ echo $nascimento; } else { echo ''; } ?>" required>
+                    <input type="date" name="nascimento" value="<?php if (isset($nascimento)) {
+                                                                    echo $nascimento;
+                                                                } else {
+                                                                    echo '';
+                                                                } ?>" required>
                 </div>
             </div>
 
@@ -176,22 +172,38 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" for="telefone">Telefone <small class="text-muted">— apenas números</small></label>
-                    <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefone)){ echo $telefone; } else { echo ''; } ?>" required>
+                    <input type="tel" autocomplete="off" class="telefone" id="telefone" name="telefone" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefone)) {
+                                                                                                                                                                                    echo $telefone;
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    echo '';
+                                                                                                                                                                                } ?>" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="text-start" class="" for="cpf">CPF <small class="text-muted">— apenas números</small></label>
-                    <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($cpf)){ echo $cpf; } else { echo ''; } ?>" required>
+                    <input type="text" name="cpf" autocomplete="off" id="cpf" minlength="11" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($cpf)) {
+                                                                                                                                                            echo $cpf;
+                                                                                                                                                        } else {
+                                                                                                                                                            echo '';
+                                                                                                                                                        } ?>" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
-                    
-                    <label class="" for="email">E-mail <?php if (isset($emailError)){ echo $emailError; } else{ echo ''; }?></label> <!-- possível fazer estilização do input -->
-                    <input type="email" name="email" value="<?php if (isset($email)){ echo $email; } else { echo ''; } ?>" required>
+
+                    <label class="" for="email">E-mail <?php if (isset($emailError)) {
+                                                            echo $emailError;
+                                                        } else {
+                                                            echo '';
+                                                        } ?></label> <!-- possível fazer estilização do input -->
+                    <input type="email" name="email" value="<?php if (isset($email)) {
+                                                                echo $email;
+                                                            } else {
+                                                                echo '';
+                                                            } ?>" required>
                 </div>
             </div>
             <div class="btn-barbeiro">
@@ -205,21 +217,33 @@ if (@$_POST['botao']) {
             <div class="row">
                 <div class="col-12 mb-4">
                     <label class="" class="" for="cnpf">CNPJ <small class="text-muted">— apenas números (opcional)</small></label>
-                    <input type="text" name="cnpj" id="cnpj" autocomplete="off" minlength="14" maxlength="14" onkeypress="return onlynumber();" value="<?php if (isset($cnpj)){ echo $cnpj; } else { echo ''; } ?>">
+                    <input type="text" name="cnpj" id="cnpj" autocomplete="off" minlength="14" maxlength="14" onkeypress="return onlynumber();" value="<?php if (isset($cnpj)) {
+                                                                                                                                                            echo $cnpj;
+                                                                                                                                                        } else {
+                                                                                                                                                            echo '';
+                                                                                                                                                        } ?>">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
                     <label for="razao">Razão Social <small class="text-muted">— (opcional)</small></label>
-                    <input type="text" name="razao" value="<?php if (isset($razaoSocial)){ echo $razaoSocial; } else { echo ''; } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)">
+                    <input type="text" name="razao" value="<?php if (isset($razaoSocial)) {
+                                                                echo $razaoSocial;
+                                                            } else {
+                                                                echo '';
+                                                            } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-4">
                     <label for="nome_fantasia">Nome Fantasia</label>
-                    <input type="text" name="fantasia" value="<?php if (isset($nomeFantasia)){ echo $nomeFantasia; } else { echo ''; } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)" required>
+                    <input type="text" name="fantasia" value="<?php if (isset($nomeFantasia)) {
+                                                                    echo $nomeFantasia;
+                                                                } else {
+                                                                    echo '';
+                                                                } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)" required>
                 </div>
             </div>
 
@@ -227,7 +251,11 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <!-- ATENÇÃO, TALVEZ NECESSITE DE LÓGICA PARA EMAIL IGUAL BARBEIRO ETC -->
                     <label class="" for="email2">E-mail</label>
-                    <input type="email" name="email2" value="<?php if (isset($email)){ echo $email; } else { echo ''; } ?>" required>
+                    <input type="email" name="email2" value="<?php if (isset($email)) {
+                                                                    echo $email;
+                                                                } else {
+                                                                    echo '';
+                                                                } ?>" required>
                 </div>
             </div>
 
@@ -235,7 +263,11 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <!-- ATENÇÃO, TALVEZ NECESSITE DE LÓGICA PARA TELEFONE IGUAL BARBEIRO ETC -->
                     <label class="" for="telefone">Telefone-celular <small class="text-muted">— apenas números</small></label>
-                    <input type="tel" autocomplete="off" class="telefone" id="celular" name="celular" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefoneBarbearia)){ echo $telefoneBarbearia; } else { echo ''; } ?>" required>
+                    <input type="tel" autocomplete="off" class="telefone" id="celular" name="celular" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefoneBarbearia)) {
+                                                                                                                                                                                    echo $telefoneBarbearia;
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    echo '';
+                                                                                                                                                                                } ?>" required>
                 </div>
             </div>
 
@@ -246,49 +278,77 @@ if (@$_POST['botao']) {
                 <div class="row">
                     <div class="col-12 mb-4 mt-2">
                         <label class="" for="cep">CEP <small class="text-muted">— apenas números</small></label>
-                        <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off" value="<?php if (isset($cep)){ echo $cep; } else { echo ''; } ?>" required>
+                        <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off" value="<?php if (isset($cep)) {
+                                                                                                                                                                                                        echo $cep;
+                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                        echo '';
+                                                                                                                                                                                                    } ?>" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="estado">Estado</label>
-                        <input type="text" name="estado" v-model="endereco.estado" value="<?php if (isset($estado)){ echo $estado; } else { echo ''; } ?>" readonly >
+                        <input type="text" name="estado" v-model="endereco.estado" value="<?php if (isset($estado)) {
+                                                                                                echo $estado;
+                                                                                            } else {
+                                                                                                echo '';
+                                                                                            } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="cidade">Cidade</label>
-                        <input type="text" name="cidade" v-model="endereco.cidade" value="<?php if (isset($cidade)){ echo $cidade; } else { echo ''; } ?>" readonly>
+                        <input type="text" name="cidade" v-model="endereco.cidade" value="<?php if (isset($cidade)) {
+                                                                                                echo $cidade;
+                                                                                            } else {
+                                                                                                echo '';
+                                                                                            } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="bairro">Bairro</label>
-                        <input type="text" name="bairro" v-model="endereco.bairro" value="<?php if (isset($bairro)){ echo $bairro; } else { echo ''; } ?>" readonly>
+                        <input type="text" name="bairro" v-model="endereco.bairro" value="<?php if (isset($bairro)) {
+                                                                                                echo $bairro;
+                                                                                            } else {
+                                                                                                echo '';
+                                                                                            } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="endereco">Rua</label>
-                        <input type="text" name="endereco" v-model="endereco.rua" value="<?php if (isset($rua)){ echo $rua; } else { echo ''; } ?>" readonly>
+                        <input type="text" name="endereco" v-model="endereco.rua" value="<?php if (isset($rua)) {
+                                                                                                echo $rua;
+                                                                                            } else {
+                                                                                                echo '';
+                                                                                            } ?>" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="numero">Número</label>
-                        <input type="text" name="numero" onkeypress="return onlynumber();" value="<?php if (isset($numero)){ echo $numero; } else { echo ''; } ?>" required>
+                        <input type="text" name="numero" onkeypress="return onlynumber();" value="<?php if (isset($numero)) {
+                                                                                                        echo $numero;
+                                                                                                    } else {
+                                                                                                        echo '';
+                                                                                                    } ?>" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="complemento">Complemento <small class="text-muted">— opcional</small></label>
-                        <input type="text" name="complemento" value="<?php if (isset($complemento)){ echo $complemento; } else { echo ''; } ?>" >
+                        <input type="text" name="complemento" value="<?php if (isset($complemento)) {
+                                                                            echo $complemento;
+                                                                        } else {
+                                                                            echo '';
+                                                                        } ?>">
                     </div>
                 </div>
             </div>

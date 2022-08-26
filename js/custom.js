@@ -75,6 +75,18 @@ new Vue({
     }
 })
 
+// Mostra cep quando logado
+
+function mostraCep(){
+    modalCep = document.getElementById('appCep');
+    clickCep = document.getElementById('clickCep');
+    clickCep2 = document.getElementById('clickCep2');
+
+    // clickCep.style.display = "none";
+    // clickCep2.style.display = "none";
+    modalCep.style.display = "";
+}
+
 // /API Cep
 
 // Validação entrada somente de números
@@ -360,4 +372,8 @@ function previ4(){
 }
 // /Cadastro barbeiro next page
 
+//Reload
 
+function reload(){
+    location.reload()    
+}

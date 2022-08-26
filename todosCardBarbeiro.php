@@ -13,7 +13,7 @@
     <hr>
     <div class="row">
 
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-6">
             <section>
                 <div class="card">
                     <div class="card-content">
@@ -48,7 +48,7 @@
             </section>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-6">
             <section>
                 <div class="card">
                     <div class="card-content">
@@ -83,7 +83,7 @@
             </section>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-6">
             <section>
                 <div class="card">
                     <div class="card-content">
@@ -118,7 +118,7 @@
             </section>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6 fundo-card">
+        <div class="col-lg-3 col-md-4 col-6 fundo-card">
             <section>
                 <div class="card">
                     <div class="card-content">

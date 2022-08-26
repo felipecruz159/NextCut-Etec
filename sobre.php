@@ -7,7 +7,7 @@
                 <div class="intro-sobre">
                     <h2>Bem-vindo, junte-se a nós!</h2>
                     <p class="text-1"><span>NextCut</span> um passo para o seu corte </p>
-                    <p class="text-2">Nossa missão é padronizar o processo de gestão de leads e otimizar o investimento em marketing, aumentando o volume de novos negócios e o ROI dos nossos clientes.
+                    <p class="text-2">Nossa missão é melhorar as experiências tanto dos clientes como dos cabeleireiros. Para isso, desenvolvemos um aplicativo onde agiliza e melhora o atendimento aos clientes, diminuindo os atrasos e as filas nos estabelecimentos.
                     </p>
                 </div>
             </div>
@@ -24,8 +24,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                 <div class="content-sobre">
                     <div class="icon-sobre">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <h4>title</h4>
+                        <i class="bi bi-person-plus"></i>
+                        <h4>+ de 50 Usuários</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                 </div>
@@ -33,8 +33,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                 <div class="content-sobre">
                     <div class="icon-sobre">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <h4>title</h4>
+                        <i class="bi bi-patch-check"></i>
+                        <h4>Certificada GPTW</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                 <div class="content-sobre">
                     <div class="icon-sobre">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <h4>title</h4>
+                        <i class="bi bi-house"></i>
+                        <h4>Desde 2021</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                 </div>
@@ -51,8 +51,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                 <div class="content-sobre">
                     <div class="icon-sobre">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <h4>title</h4>
+                        <i class="bi bi-laptop"></i>
+                        <h4>+ 3 Desenvolvedores</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                 </div>
@@ -69,12 +69,14 @@
             </div>
             <div class="col-md-6 col-sm-12">
                 <h5>Nossa História</h5>
-                <p class="text-1">Startup de tecnologia criada em 2014 pelos irmãos Anderson e André Gil</p>
-                <p class="text-2">A empresa desenvolve um software de gestão de leads que permite ao usuário simplificar e padronizar o processo de atendimento a vendas, além de analisar o desempenho da equipe comercial e das ações de marketing de maneira simples e objetiva, possibilitando ainda mais produtividade e aumentando os lucros para a empresa.
+                <p class="text-1">Startup de tecnologia criada em 2021, pela equipe ETEC</p>
+                <p class="text-2">O início do projeto começou a ter forma quando notamos um grande problema nas barbearias locais, a necessidade de melhor gerenciamento de horário para cortes de cabelo, um problema muito comum no dia a dia. Quem nunca passou por uma situação parecida?
+                    Você escolhe um horário que melhor atende suas necessidade, ao chegar lá, há uma fila de pessoas na espera…
+
                     <br><br>
-                    A solução permite ainda agendamentos e automação de vendas, bem como o acompanhamento de resultados por meio de relatórios detalhados por equipes e recursos.
+                    A “NextCut” tem como principal objetivo otimizar e ministrar melhor o tempo do cabeleireiro, assim evitando filas imensas para agendar muitas vezes um simples corte; ajustando as preferências de acordo com as exigências do usuário.
                     <br><br>
-                    Considerado um sistema SaaS (Software como serviço, do inglês Software as a Service, uma forma de distribuição e comercialização de software), a plataforma possui atualmente mais de 12.000 usuários ativos em empresas dos setores automotivo, telecomunicações, educacional, imobiliário e de serviços.
+                    Obtendo um melhor desempenho para o cabeleleiro e uma melhor experiência ao cliente, possibilitando vários locais que o mesmo se sente confortavel e acolhido gerando feedbacks para uma melhora significativa do ambiente, atendimento e equipamentos.
                 </p>
             </div>
         </div>
@@ -88,9 +90,9 @@
             <div class="col-md-6 col-sm-12">
                 <div class="text-parceiro mt-5">
                     <h2>Somos seu parceiro de sucesso</h2>
-                    <p>“Nós utilizamos a plataforma do Followize há pouco mais de um ano e meio e o que eu posso dizer sobre a ferramenta é que ela nos deu um auxílio muito grande, tanto na gestão dos leads, como na análise de métricas, visando conversões melhores e nosso trabalho está crescendo a cada dia graças ao Followize.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolores aliquam nostrum sequi vel perspiciatis aperiam, magnam harum? Incidunt facere necessitatibus, enim culpa perspiciatis nulla eaque obcaecati dicta ipsum in.
                     </p>
-                    <p> Nossa equipe de vendas web aumentou, nossas vendas também e eu devo muito deste trabalho ao Followize e a toda equipe deles, a toda a estrutura da plataforma. “</p>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem soluta tempora nihil veritatis perspiciatis voluptate repellat neque voluptatum a numquam deleniti quibusdam nostrum ut dolorem officiis reprehenderit, illo asperiores. Aliquam!</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">

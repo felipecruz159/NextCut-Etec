@@ -512,9 +512,6 @@ span {
 /*FINAL PAGINA CADASTRO_ESCOLHA*/
 
 
-
-
-
 /*Pagina CADASTRO_BARBEIRO*/
 
 .submit-lente2 {
@@ -736,9 +733,6 @@ small.text-muted {
 
 /*FINAL PAGINA CADASTRO_BARBEIRO*/
 
-
-
-
 /* Contato Page */
 
 #contato .container .intro-contato h1 {
@@ -864,7 +858,6 @@ small.text-muted {
 .page-404 h1 {
   font-size: 4em;
 }
-
 /* //404 */
 
 
@@ -883,13 +876,10 @@ small.text-muted {
   margin: 0 auto;
   width: 70%;
 }
-
-
 /* /EQUIPE */
 
 
 /* // TELA INICIO */
-
 
 .text-inicio h1,
 .text-inicio h4 {
@@ -940,12 +930,6 @@ small.text-muted {
 
 /* // TELA INICIO */
 
-
-
-
-
-
-
 /* //BTN_BACK*/
 .btn-back {
   background-color: var(--main-color);
@@ -964,7 +948,6 @@ small.text-muted {
 
 
 }
-
 /* //FINAL BTN_BACK*/
 
 
@@ -1025,353 +1008,7 @@ small.text-muted {
 .container .card-img-overlay p {
   margin-bottom: 5px;
 }
-
-
 /* //FINAL CARDS */
-
-
-/* PAGINA_LOGADO */
-
-#todos-cards section {
-  display: flex;
-  justify-content: center;
-}
-
-section .card .image {
-  height: 130px;
-  width: 130px;
-  border: 3px solid var(--pastel-orange);
-  border-radius: 50%;
-}
-
-section .card .image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--gray);
-  background: rgb(249, 249, 249);
-}
-
-section .card {
-  position: relative;
-  background-color: white;
-  border-radius: 20px;
-  margin: 20px 0px;
-  width: 260px;
-}
-
-section .card::before {
-  content: "";
-  position: absolute;
-  height: 35%;
-  width: 100%;
-  background-color: var(--pastel-orange);
-  border-radius: 20px 20px 0px 0px;
-}
-
-section .card .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  position: relative;
-  z-index: 100;
-}
-
-section .card .media-icons {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-section .card .media-icons i {
-  margin-top: 10px;
-  color: rgba(0, 0, 0, 0.651);
-  transition: all 0.3s ease;
-  font-size: 20px;
-}
-
-section .card .media-icons i:hover {
-  color: black;
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-section .card .nome-fantasia {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  color: var(--black);
-}
-
-section .card .nome-fantasia .fantasia {
-  color: rgb(255, 255, 255);
-  font-size: 20px;
-  font-weight: bold;
-}
-
-section .card .nome-fantasia .nome {
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-  font-weight: 500;
-}
-
-section .card .avaliacao {
-  display: flex;
-  align-items: center;
-}
-
-section .card .avaliacao i {
-  font-size: 20px;
-  margin: 0px 2px;
-  color: var(--pastel-orange);
-}
-
-section .card .button {
-  margin-top: 15px;
-}
-
-section .card .button button {
-  background-color: var(--pastel-orange);
-  font-size: 17px;
-  font-weight: 700;
-  outline: none;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 20px;
-  transition: all 0.5s ease;
-}
-
-section .card .button button:hover {
-  background-color: var(--black);
-  color: var(--main-color);
-}
-
-#header-logado {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 10px;
-  background-color: rgba(8, 8, 8, 0.985);
-}
-
-#header-logado .links-logado {
-  display: flex;
-  margin-left: 1%;
-  background-color: transparent;
-}
-
-#header-logado .links-logado a {
-  padding: 3px;
-  font-size: 14px;
-  margin: 0px 5px;
-  text-decoration: none;
-  color: white;
-}
-
-#header-logado .busca {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 5%;
-  width: 500px;
-  height: 40px;
-  border-radius: 5px;
-  background-color: var(--dark-main);
-  border: 2px solid var(--medium-gray);
-}
-
-#header-logado .busca input {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  font-size: 1em;
-  padding-left: 10px;
-  color: var(--white);
-}
-
-#header-logado .busca button {
-  margin: 0 auto;
-  height: 100%;
-  background-color: transparent;
-  padding: 0px 10px;
-  color: var(--light-gray);
-}
-
-#header-logado .endereco-logado {
-  margin-left: 2%;
-  margin-right: 10px;
-}
-
-#header-logado .endereco-logado button {
-  color: var(--white);
-  font-size: 14px;
-  padding: 3px;
-  border: none;
-  background-color: transparent;
-}
-
-#header-logado .canva {
-  background: transparent;
-  margin-right: 2%;
-  margin-left: auto;
-  border: 2px solid var(--medium-gray);
-  border-radius: 5px;
-
-}
-
-#header-logado .canva .btn-person {
-  background: transparent;
-  margin-left: auto;
-  color: var(--light-gray);
-  font-size: 25px;
-  padding: 0px 6px;
-  border: none;
-}
-
-/* offcanvas */
-
-#header-logado .bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-#staticBackdrop .offcanvas-body .dropdown-menu{
-  background-color: var(--gray);
-  border: 1px solid var(--medium-gray);
-}
-
-.dropdown-menu a {
-  color: var(--white) !important;
-
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
-#staticBackdrop .offcanvas-header {
-  justify-content: end;
-}
-
-#staticBackdrop .offcanvas-header .btn-close-off {
-  background-color: transparent;
-  font-size: 25px;
-  color: white;
-  justify-content: end;
-}
-
-#staticBackdrop .offcanvas-body,
-#staticBackdrop .offcanvas-header,
-#staticBackdrop .offcanvas-body .offConteudo {
-  background-color: var(--gray);
-  color: var(--white);
-  font-size: 1.1em;
-}
-
-#header-logado .dropdown-toggle {
-  outline: 0;
- 
-}
-
-#header-logado .btn-toggle {
-  padding: .25rem .5rem;
-  font-weight: 600;
-  color: var(--white);
-  background-color: transparent;
-}
-
-#header-logado .btn-toggle:hover,
-#header-logado .btn-toggle:focus {
-  color: var(--white);
-  background-color: var(--medium-gray);
-}
-
-#header-logado .btn-toggle-nav a {
-  padding: .1875rem .5rem;
-  margin-top: .125rem;
-  margin-left: 1.25rem;
-  color: var(--white) !important;
-}
-
-#header-logado .btn-toggle-nav a:hover,
-#header-logado .btn-toggle-nav a:focus {
-  background-color: var(--medium-gray);
-  color: var(--white);
-}
-
-#exampleModal .modal-content {
-  background-color: var(--gray) !important;
-  color: white;
-}
-
-#exampleModal .modal-body {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.1em;
-}
-
-#exampleModal .modal-header {
-  border-bottom: 1px solid var(--medium-gray) !important;
-  font-size: 16px;
-  justify-content: end;
-}
-
-#exampleModal .modal-body .modal-footer input {
-  background-color: var(--pastel-orange);
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: var(--black);
-}
-
-#exampleModal .modal-body .modal-footer input:hover {
-  background-color: var(--black);
-  color: var(--pastel-orange);
-  transform: scale(1.05);
-  transition: 0.5s;
-}
-
-#appCep input {
-  width: 50%;
-}
-
-#appCep .principais input {
-  padding-left: 5px;
-  font-weight: bold;
-  border-radius: 5px;
-  color: var(--white);
-  background-color: var(--medium-gray);
-}
-
-#appCep .desabilitados input {
-  padding-left: 5px;
-  background-color: transparent;
-  color: var(--white);
-  font-weight: bold;
-}
-
-#clickCep {
-  padding-bottom: 15px;
-  font-weight: 300;
-  color: var(--white);
-}
-
-
-
-/* //FINAL_LOGADO*/
-
-
 
 
 /* SOBRE PAGE*/
@@ -1424,13 +1061,11 @@ section .card .button button:hover {
 #historia-sobre {
   margin: 60px 0px;
 }
-
+/* SOBRE PAGE*/
 
 
 
 /* Carreira Page */
-
-/* SOBRE PAGE*/
 
 .container .intro-carreira {
   width: 80%;
@@ -1481,55 +1116,9 @@ section .card .button button:hover {
 #historia-carreira {
   margin: 60px 0px;
 }
+/* /Carreira */
 
-/* Barbeiro_logado */
 
-.container .conteudo-page {
-  width: 100%;
-  height: 500px;
-  border-radius: 11px;
-  background-color: var(--gray);
 
-}
 
-.container .conteudo-page .folder-logado {
-  width: 100%;
-  height: 170px;
-  background-color: transparent;
-  border-radius: 11px 11px 0px 0px;
-  margin: 0 auto;
-  position: relative;
-}
 
-.container .conteudo-page .folder-logado img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px 10px 0px 0px;
-  background: rgb(249, 249, 249);
-}
-
-.container .conteudo-page .folder-logado .imagem-logado {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid var(--gray);
-  top: 40%;
-  left: 3%;
-  position: absolute;
-}
-
-.container .conteudo-page .folder-logado .imagem-logado img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  background: rgb(249, 249, 249);
-}
-
-.container .quem-viu {
-  width: 100%;
-  height: 1000px;
-  border-radius: 10px;
-  background-color: var(--gray);
-}

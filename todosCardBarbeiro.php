@@ -7,6 +7,51 @@
     }
 </style>
 
+<?php 
+
+$sql = "SELECT idCabeleireiro, foto, linkFacebook, linkInstagram, Pessoa_idPessoa, Estabelecimento_idBarbearia
+FROM cabeleireiro;";
+$result = $conn->query($sql);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $idCabeleireiro = $row['idCabeleireiro'];
+        $idPessoa = $row['Pessoa_idPessoa'];
+        $Estabelecimento_idBarbearia = $row['Estabelecimento_idBarbearia'];
+        $foto = $row['foto'];
+        $linkFacebook = $row['linkFacebook'];
+        $linkInstagram = $row['linkInstagram'];
+    }
+} else {
+    die($conn->error);
+}
+
+$sql = "SELECT nomeFantasia, email FROM estabelecimento WHERE idBarbearia = '$Estabelecimento_idBarbearia';";
+$result = $conn->query($sql);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $nomeFantasia = $row['nomeFantasia'];
+        $email = $row['email'];
+    }
+} else {
+    die($conn->error);
+}
+
+$sql = "SELECT nome FROM pessoa WHERE idPessoa = '$idPessoa';";
+$result = $conn->query($sql);
+
+if ($result){
+    while ($row = $result->fetch_assoc()){
+        $nome = $row['nome'];
+    }
+} else {
+    die($conn->error);
+}
+
+$nome = strtok($nome, " "); $nome = strtolower($nome); $nome = ucfirst($nome);
+?>
+
 <div id="todos-cards">
 <div class="container">
     <div class="mt-2"><h1>Todos</h1></div>
@@ -23,13 +68,13 @@
                         </div>
 
                         <div class="media-icons">
-                            <i class="bi bi-facebook"></i>
-                            <i class="bi bi-instagram"></i>
+                            <a href="<?php echo $linkFacebook; ?>"><i class="bi bi-facebook"></i></a>
+                            <a href="<?php echo $linkInstagram; ?>"><i class="bi bi-instagram"></i></a>
                         </div>
 
                         <div class="nome-fantasia">
-                            <span class="fantasia">Rafaelos'hair 2</span>
-                            <span class="nome">Rafael Gomes</span>
+                            <span class="fantasia"><?php echo $nomeFantasia; ?></span>
+                            <span class="nome"><?php echo $nome; ?></span>
                         </div>
 
                         <div class="avaliacao">
@@ -41,13 +86,13 @@
                         </div>
 
                         <div class="button">
-                            <button class="perfil">Ver perfil</button>
+                            <button class="perfil">Ver perfil</button> <!-- ver perfil where id = id -->
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-
+<!-- 
         <div class="col-lg-3 col-md-4 col-6">
             <section>
                 <div class="card">
@@ -151,11 +196,11 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </div> -->
 
     </div>
 </div>
-</div>
+
 
 
 

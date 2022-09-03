@@ -148,7 +148,6 @@ if (@$_POST['botao2']) {
             </div>';  
             } ?>
           </div>
-          
           </form>
         </div>
       </div>

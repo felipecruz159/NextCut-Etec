@@ -34,7 +34,7 @@
                     <div class="col-6">
                         <div class="info-barbeiaria">
                             <h4></h4>
-                            <button>horario de funcionamento</button>
+                            <?php include "horarios.php" ?>
                         </div>
                     </div>
                 </div>

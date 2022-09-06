@@ -5,51 +5,48 @@
         padding-top: 150px;
     }
 
-    .container .horarios-container .semanas {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
 
-    .container .horarios-container .semanas .dias label {
-        width: 150px;
-        padding: 40px;
-        border-radius: 5px;
-        text-align: center;
-        background-color: white;
-        border-left: 2px solid var(--gray);
-    }
-
-    .container .horarios-container .semanas .dias input {
-        position: absolute;
-        margin-top: 15px;
-        height: 25px;
-        width: 30px;
-    }
-
-    .container .horarios-container .semanas .dias {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 40px;
-    }
 </style>
 
 
-<div class="container">
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="btn-modalHora" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Personalizar <i class="bi bi-calendar2-week"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-horario">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Disponibilidade de Horário</h5>
+      </div>
+      <div class="modal-body">
+        
+
+      <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="horarios-container">
-                <form action="">
+                <form action="" method="POST">
 
                     <div class="row">
-                        <div class="col-6">
-                            <label for="">Horario Inicio</label>
-                            <input type="time">
+                        <div class="col-6 hrcoluna">
+                            <label for="hora1">Horário Início</label>
+                            <input type="time" id="hora1">
                         </div>
-                        <div class="col-6">
-                            <label for="">Horario Termino</label>
-                            <input type="time">
+                        <div class="col-6 hrcoluna">
+                            <label for="hora2">Horário Término</label>
+                            <input type="time" id="hora2">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="alerta-minutos text-center">
+                            <p>Por padrão, o intervalo entre os cortes serão de 30 minutos!</p>
                         </div>
                     </div>
 
@@ -92,3 +89,18 @@
         </div>
     </div>
 </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

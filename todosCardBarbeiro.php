@@ -9,7 +9,7 @@
 
 <?php 
 
-$sql = "SELECT idCabeleireiro, foto, linkFacebook, linkInstagram, Pessoa_idPessoa, Estabelecimento_idBarbearia
+$sql = "SELECT idCabeleireiro, foto, linkFacebook, linkInstagram, Pessoa_idPessoa, Estabelecimento_idEstabelecimento
 FROM cabeleireiro;";
 $result = $conn->query($sql);
 
@@ -17,7 +17,7 @@ if ($result) {
     while ($row = $result->fetch_assoc()) {
         $idCabeleireiro = $row['idCabeleireiro'];
         $idPessoa = $row['Pessoa_idPessoa'];
-        $Estabelecimento_idBarbearia = $row['Estabelecimento_idBarbearia'];
+        $Estabelecimento_idEstabelecimento = $row['Estabelecimento_idEstabelecimento'];
         $foto = $row['foto'];
         $linkFacebook = $row['linkFacebook'];
         $linkInstagram = $row['linkInstagram'];
@@ -26,7 +26,7 @@ if ($result) {
     die($conn->error);
 }
 
-$sql = "SELECT nomeFantasia, email FROM estabelecimento WHERE idBarbearia = '$Estabelecimento_idBarbearia';";
+$sql = "SELECT nomeFantasia, email FROM estabelecimento WHERE idEstabelecimento = '$Estabelecimento_idEstabelecimento';";
 $result = $conn->query($sql);
 
 if ($result) {

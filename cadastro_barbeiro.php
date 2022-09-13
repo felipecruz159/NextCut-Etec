@@ -81,13 +81,13 @@ if (@$_POST['botao']) {
             } else {
                 die($conn->error);
             }
-            // ADICIONAR TELEFONE BARBEARIA NA TABELA ESTABELECIMENTO
+
             $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, plano, Endereco_idEndereco, cargo ) 
                 VALUES ( '$nome', '$sexo', '$nascimento', '$email', '$senha', '$telefone', '$plano', '$idEndereco', 'BARBEIRO' );"; //inserção dos dados pessoais 
             $result = $conn->query($sql);
 
-            $sql = "INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, Endereco_idEndereco ) 
-                VALUES ( '$cnpj', '$razaoSocial', '$nomeFantasia', '$emailBarbearia', '$idEndereco' );"; // insercao dados do estabelecimento + FK endereco
+            $sql = "INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, telefone, Endereco_idEndereco ) 
+                VALUES ( '$cnpj', '$razaoSocial', '$nomeFantasia', '$emailBarbearia', '$telefoneBarbearia', '$idEndereco' );"; // insercao dados do estabelecimento + FK endereco
             $result = $conn->query($sql);
 
             $sql = "SELECT MAX(idPessoa) idPessoa FROM pessoa;"; // get id pessoa
@@ -101,7 +101,7 @@ if (@$_POST['botao']) {
                 die($conn->error);
             }
 
-            $sql = "SELECT MAX(idBarbearia) idEstabelecimento FROM estabelecimento;"; //get id estabelecimento
+            $sql = "SELECT MAX(idEstabelecimento) idEstabelecimento FROM estabelecimento;"; //get id estabelecimento
             $result = $conn->query($sql);
 
             if ($result) {
@@ -112,7 +112,7 @@ if (@$_POST['botao']) {
                 die($conn->error);
             }
 
-            $sql = "INSERT INTO cabeleireiro ( Pessoa_idPessoa, Estabelecimento_idBarbearia, cpf ) 
+            $sql = "INSERT INTO cabeleireiro ( Pessoa_idPessoa, Estabelecimento_idEstabelecimento, cpf ) 
                 VALUES ( '$idPessoa', '$idEstabelecimento', '$cpf' ); ";
             $result = $conn->query($sql);
 
@@ -249,7 +249,6 @@ if (@$_POST['botao']) {
 
             <div class="row">
                 <div class="col-12 mb-4">
-                    <!-- ATENÇÃO, TALVEZ NECESSITE DE LÓGICA PARA EMAIL IGUAL BARBEIRO ETC -->
                     <label class="" for="email2">E-mail</label>
                     <input type="email" name="email2" value="<?php if (isset($email)) {
                                                                     echo $email;
@@ -261,7 +260,6 @@ if (@$_POST['botao']) {
 
             <div class="row">
                 <div class="col-12 mb-4">
-                    <!-- ATENÇÃO, TALVEZ NECESSITE DE LÓGICA PARA TELEFONE IGUAL BARBEIRO ETC -->
                     <label class="" for="telefone">Telefone-celular <small class="text-muted">— apenas números</small></label>
                     <input type="tel" autocomplete="off" class="telefone" id="celular" name="celular" minlength="10" maxlength="11" onkeypress="return onlynumber();" value="<?php if (isset($telefoneBarbearia)) {
                                                                                                                                                                                     echo $telefoneBarbearia;

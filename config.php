@@ -14,4 +14,7 @@ function Conectar()
     }
     return $conn;
 }
+
+$pdo = new PDO('mysql:host=localhost;dbname=nextcut', 'root', '');
+$pdo->exec("set names utf8");
 ?>

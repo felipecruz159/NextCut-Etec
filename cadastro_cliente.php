@@ -36,8 +36,8 @@ if (@$_POST['botao']) {
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
             $senha = md5($senha);
-            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, cargo ) 
-                VALUES ( '$nome' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone', 'CLIENTE' )";
+            $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, cargo, plano ) 
+                VALUES ( '$nome' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone', 'CLIENTE', 'BÁSICO' );";
             // echo $sql;
             $result = $conn->query($sql);
             setcookie("login", $email, time() + (86400 * 30), "/");

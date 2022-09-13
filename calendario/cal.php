@@ -1,5 +1,5 @@
 <?php
-    include '../config.php';
+    include './config.php';
     include 'calendario.php';
     $info = array(
         'tabela' => 'Agendamento',
@@ -13,7 +13,7 @@
     <head>
         <meta charset=UTF-8>
         <title>Calendário de eventos</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="./css/style.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -28,7 +28,8 @@
      </div>
     </div>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/functions.js"></script>
     </body>
 </html>

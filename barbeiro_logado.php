@@ -76,7 +76,7 @@
     <div class="row">
         <div class="col-lg-9 col-md-12">
             <div class="calendario-conteudo">
-                <?php include "calendario.php" ?>
+                <?php include "calendario/cal.php" ?>
             </div>
         </div>
     </div>

@@ -6,13 +6,13 @@
             <div class="col-lg-6 col-md-12 align-self-center">
                 <div class="intro-carreira">
                     <h2>Carreiras</h2>
-                    <p class="text-1"><span>Dê uma sprint na carreira, cresça com a Followize</span></p>
+                    <p class="text-1"><span>Dê uma UP na carreira, cresça com a NextCut</span></p>
                     <p class="text-2">Estamos comprometidos em gerar experiências incríveis de vendas unindo o melhor entre pessoas e a tecnologia. E vamos formar uma equipe nota 1.000 para tornar isso possível. Então junte-se a nós!
                     </p>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-                <img src="https://followize.com.br/wp-content/uploads/2021/09/carreiras_followize-768x768.jpg" class="img-fluid" alt="">
+            <div class="col-lg-6 col-md-12 mt-3">
+                <img src="http://www.integrasist.com.br/dados/editor/image/WhatsApp_Image_2021_04_05_at_21.13.13.jpeg" class="img-fluid" alt="">
             </div>
         </div>
     </div>
@@ -22,10 +22,10 @@
     <div class="container">
         <div class="row">
             <div class="titulo-card text-center col-12">
-                <h1>Decole sua carreira em uma das
+                <h1 class="mb-5">Decole sua carreira em uma das
                     melhores empresas<br> para se trabalhar no Brasil!</h1>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 ">
 
                 <div class="content-carreira">
                     <div class="icon-carreira">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="content-carreira">
                     <div class="icon-carreira">
                         <i class="bi bi-graph-up-arrow"></i>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="content-carreira">
                     <div class="icon-carreira">
                         <i class="bi bi-graph-up-arrow"></i>
@@ -61,15 +61,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-                <img src="https://followize.com.br/wp-content/uploads/2021/07/vida-na-followize-2-1.png" class="img-fluid" alt="">
+                <img src="./imagens/comoVida.png" class="img-fluid" alt="">
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12 align-self-center">
                 <h5>Um Lugar Incrível</h5>
                 <p class="text-1">Como é a Vida na NextCut?</p>
                 <p class="text-2">
-                    Um Lugar Incrível
-                    Como é a Vida na Follow?
-                    Uma experiência incrível e transformadora para todos!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quasi est. Natus reprehenderit labore, incidunt vitae ad nemo. Inventore quos libero 
 <br><br>
                     Aqui você vivencia o prazer de superar grandes desafios, em uma empresa inovadora que cresce de forma acelerada, reconhecida como uma das melhores empresas para se trabalhar pelos seus colaboradores.
                 </p>
@@ -86,13 +84,13 @@
                 <div class="text-parceiro mt-5">
                     <h5>Evoluímos Juntos</h5>
                     <p class="text-1">Como é a Vida na NextCut?</p>
-                    <p>“Nós utilizamos a plataforma do Followize há pouco mais de um ano e meio e o que eu posso dizer carreira a ferramenta é que ela nos deu um auxílio muito grande, tanto na gestão dos leads, como na análise de métricas, visando conversões melhores e nosso trabalho está crescendo a cada dia graças ao Followize.
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, sed. Quaerat molestias eum ipsam excepturi ut, recusandae cumque inventore accusamus quidem fuga aperiam distinctio reprehenderit ab saepe unde expedita officiis.
                     </p>
-                    <p> Nossa equipe de vendas web aumentou, nossas vendas também e eu devo muito deste trabalho ao Followize e a toda equipe deles, a toda a estrutura da plataforma. “</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique et assumenda cumque fuga, atque reprehenderit sed, dignissimos laborum earum veritatis beatae voluptas dolores eaque officiis temporibus, rerum ratione modi nobis!</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
-                <img src="https://followize.com.br/wp-content/uploads/2021/08/follow.png" class="img-fluid" alt="">
+                <img src="./imagens/evolucaoDev.png" class="img-fluid" alt="">
             </div>
         </div>
     </div>

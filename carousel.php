@@ -19,8 +19,8 @@ $botao2 = 'Ver portfólio2';
 $botao3 = 'Ver portfólio3';
 
 if ($page == 'sobre'){
-    $img1 = 'https://blog.tangerino.com.br/wp-content/uploads/2020/09/Missao-visao-e-valores-definindo-os-conceitos-da-sua-empresa.jpg';
-    $img2 = 'https://blog.tangerino.com.br/wp-content/uploads/2020/09/Missao-visao-e-valores-definindo-os-conceitos-da-sua-empresa.jpg';
+    $img1 = 'https://inovacaosebraeminas.com.br/wp-content/uploads/2018/08/criatividade.jpg';
+    $img2 = 'https://setting.com.br/wp-content/uploads/2020/12/qualidades-equipe-alta-performance-1280x720.jpg';
     $img3 = 'https://blog.fortestecnologia.com.br/wp-content/uploads/2019/02/fortes-tecnologia-missao-visao-valores.png';
 
     $title1 = 'Sobre Nós';

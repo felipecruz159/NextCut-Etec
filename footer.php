@@ -6,7 +6,7 @@
     <div class="container ">
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
-          <img class="img-fluid" style="width: 250px;" src="https://www.seekpng.com/png/full/7-73431_orange-and-white-logo-of-youtube-orange-youtube.png" alt="logo" />
+          <img class="img-fluid" style="width: 250px;" src="https://logopng.com.br/logos/namecheap-146.png" alt="logo" />
         </div>
 
         <div class="col-md-6 col-lg-3 mb-4">

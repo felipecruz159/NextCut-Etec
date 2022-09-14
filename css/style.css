@@ -5,7 +5,7 @@ body{
 
 .calendario{
     margin:40px;
-    width:350px;
+    width:600px;
     background:white;
     font-size:14px;
     text-align:center;
@@ -21,7 +21,7 @@ body{
     color:#666;
 }
 .calendario td.evento{
-    background:#069;
+    background:rgb(153, 79, 0);
 }
 .calendario td.atual{
     background:#EC2F00;
@@ -36,7 +36,7 @@ body{
     font-size:15px;
 }
 .calendario .mes_title td{
-    background:#069;
+    background:rgb(143, 0, 153);
     padding:5px;
     padding-bottom:6px;
     color:white;
@@ -70,7 +70,7 @@ body{
     margin-right:5px;
 }
 .blue{
-    background:#069;
+    background:rgb(153, 0, 0);
 }
 .red{
     background:#EC2F00;

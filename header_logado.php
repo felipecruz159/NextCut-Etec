@@ -2,7 +2,15 @@
 
 <?php
 include 'config.php';
-$cookieEmail = $_COOKIE["login"];
+if (isset($_COOKIE["cliente"])){
+  $cookieEmail = $_COOKIE["cliente"];
+}
+else if (isset($_COOKIE["cabeleireiro"])){
+  $cookieEmail = $_COOKIE["cabeleireiro"];
+}
+else {
+  echo '<span style="color:#ff6600;">Login inválido</span>';
+}
 
 $conn = Conectar();
 $sql = "SELECT nome, idPessoa, Endereco_idEndereco FROM pessoa WHERE email='$cookieEmail'";
@@ -79,7 +87,7 @@ if (@$_POST['botao2']) {
 
   <!-- logo -->
   <a class="navbar-brand logo" href="./?page=inicio">
-    <img class="img-fluid" style="width: 80px;" src="https://www.seekpng.com/png/full/7-73431_orange-and-white-logo-of-youtube-orange-youtube.png" alt="logo" />
+    <img class="img-fluid" style="width: 80px;" src="https://logopng.com.br/logos/namecheap-146.png" alt="logo" />
   </a>
   <!-- /logo -->
   <div class="links-logado">

@@ -18,11 +18,17 @@ if (@$_POST['botao']) {
             while ($row = $result->fetch_assoc()) {
                 $nome = $row['nome'];
                 $senhaSistema = $row['senha'];
+                $cargo = $row['cargo'];
             }
             // echo "digitada:" . md5($senha) . " ==>" . $senhaSistema;
             if (md5($senha) == $senhaSistema) {
-                setcookie("login", $email, time() + (86400 * 30), "/");
-                echo '<meta http-equiv = "refresh" content = "0; url = ./?page=form_redirect" />';
+                if ($cargo == 'cabeleireiro'){
+                    setcookie("cabeleireiro", $email, time() + (86400 * 30), "/");
+                }
+                else {
+                    setcookie("cliente", $email, time() + (86400 * 30), "/");
+                }
+                echo '<meta http-equiv = "refresh" content = "0; url = ./?page=form_redirect" />'; 
             } else {
 
                 $invalido_senha ='<span style="color:#ff6600;">Senha inválida!</span>';

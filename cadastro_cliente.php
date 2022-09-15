@@ -40,7 +40,7 @@ if (@$_POST['botao']) {
                 VALUES ( '$nome' , '$sexo' , '$nascimento' , '$email' , '$senha', '$telefone', 'CLIENTE', 'BÁSICO' );";
             // echo $sql;
             $result = $conn->query($sql);
-            setcookie("login", $email, time() + (86400 * 30), "/");
+            setcookie("cliente", $email, time() + (86400 * 30), "/");
             header('location: ./?page=form_redirect');
         } else {
             echo "<font color='#ff6600'> O email já foi cadastrado!"; //possível fazer estilização do input

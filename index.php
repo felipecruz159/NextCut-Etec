@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
 
   <title>NextCut</title>
 </head>
@@ -21,7 +22,7 @@
   if ($page != ''){ // verifica se a pag é vazia'
     if (file_exists($page . ".php")){ // verifica se existe o arquivo 
       if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha') { // exceções para header
-        if (isset($_COOKIE['login'])){ // verifica cookie login
+        if (isset($_COOKIE["cliente"]) || isset($_COOKIE["cabeleireiro"])){ // verifica cookie login
           include 'header_logado.php';
         }
         else{ // else cookie login
@@ -45,7 +46,7 @@
     }
   }
   else { // pagina diferente
-    if(isset($_COOKIE["login"])) {
+    if(isset($_COOKIE["cliente"]) || isset($_COOKIE["cabeleireiro"])) {
       include 'header_logado.php';
     } 
     else{

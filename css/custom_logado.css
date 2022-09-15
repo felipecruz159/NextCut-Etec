@@ -18,7 +18,8 @@ section .card .image img {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--gray);
-  background: rgb(249, 249, 249);
+  /* background: rgb(249, 249, 249); */
+  background: var(--gray);
 }
 
 section .card {

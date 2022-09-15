@@ -1,5 +1,4 @@
 <?php
-    include './config.php';
     include 'calendario.php';
     $info = array(
         'tabela' => 'Agendamento',

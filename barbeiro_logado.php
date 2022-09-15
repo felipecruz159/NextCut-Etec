@@ -85,9 +85,19 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-9 col-md-12">
-            <div class="calendario-horario">
-                <?php include "agendar.php" ?>
+            <div class="container-hora">
+                <h3>Horarios Disponiveis</h3>
+                <form action="">
+                    <?php include "agendar.php" ?>
+                    <div class="btn-horario">
+                        <input type="submit" value="Agendar">
+                    </div>
+
+                </form>
+
+                <p>Atenção, cada opção selecionada será entendida como um corte de cabelo!</p>
             </div>
+
         </div>
     </div>
 </div>

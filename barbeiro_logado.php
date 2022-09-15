@@ -81,3 +81,13 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-12">
+            <div class="calendario-horario">
+                <?php include "agendar.php" ?>
+            </div>
+        </div>
+    </div>
+</div>

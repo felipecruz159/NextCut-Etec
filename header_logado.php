@@ -108,10 +108,10 @@ if (@$_POST['botao2']) {
     </div>
   </div>
 
-  <div class="busca">
+  <!-- <div class="busca">
     <input type="text">
     <button><i class="bi bi-search"></i></button>
-  </div>
+  </div> -->
 
   <div class="endereco-logado">
     <!-- Button trigger modal -->

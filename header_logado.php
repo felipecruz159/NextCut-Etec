@@ -219,6 +219,7 @@ if (@$_POST['botao2']) {
             <li><a class="dropdown-item" href="#">Configurações</a></li>
             <li><a class="dropdown-item" href="#">Termos e condições de uso</a></li>
             <li><a class="dropdown-item" href="#">Privacidade</a></li>
+            <li><a class="dropdown-item" href="./?page=meuPerfil">Meu perfil</a></li>
             <li>
               <hr>
             </li>

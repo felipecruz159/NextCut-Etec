@@ -85,7 +85,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-9 col-md-12">
-            <div class="container-hora">
+            <!-- <div class="container-hora">
                 <h3>Horarios Disponiveis</h3>
                 <form action="">
                     <?php include "agendar.php" ?>
@@ -96,8 +96,9 @@
                 </form>
 
                 <p>Atenção, cada opção selecionada será entendida como um corte de cabelo!</p>
-            </div>
-
+            </div> -->
+            <?php include 'configuracao.php';?>
         </div>
     </div>
 </div>
+

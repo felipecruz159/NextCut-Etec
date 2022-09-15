@@ -116,7 +116,7 @@
                         echo '<td class="dia_'.$numero.'">'.$numero.'</td>';
                     }
                 }else{
-                    echo '<td class="dia_'.$numero.'">'.$numero.'</td>';
+                    echo '<td style="cursor:pointer" onclick="agenda()" class="dia_'.$numero.'">'.$numero.'</td>';
                 }
                 if($y == 7){
                     $y=0;

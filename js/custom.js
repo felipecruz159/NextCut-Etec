@@ -414,3 +414,35 @@ $(function(){
     });
 });
 
+// hora
+
+function horaIgual(){
+    var escolha1 = document.getElementById("corte1");
+    var escolha2 = document.getElementById("corte2");
+    escolha1.style.display = "none";
+    escolha2.style.display = "none";
+
+    var tipoAgenda = document.getElementById("tipoAgenda");
+    tipoAgenda.value = 1;
+
+    var div1 = document.getElementById("horasIguais");
+    var div2 = document.getElementById("diasIguais");
+
+    div1.style.display = "";
+    div2.style.display = "";
+    console.log(tipoAgenda.value);
+}
+
+function horaPerso(){
+    var escolha1 = document.getElementById("corte1");
+    var escolha2 = document.getElementById("corte2");
+    escolha1.style.display = "none";
+    escolha2.style.display = "none";
+
+    var tipoAgenda = document.getElementById("tipoAgenda");
+    tipoAgenda.value = 2;
+
+    var div1 = document.getElementById("diasDif");
+    div1.style.display = "";
+    console.log(tipoAgenda.value);
+}

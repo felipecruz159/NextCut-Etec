@@ -107,7 +107,7 @@ body {
 }
 
 .red {
-    background: #EC2F00;
+    background: var(--main-color);
 }
 
 .calendario .legends {

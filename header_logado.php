@@ -79,7 +79,7 @@ if (@$_POST['botao2']) {
 
   <!-- logo -->
   <a class="navbar-brand logo" href="./?page=inicio">
-    <img class="img-fluid" style="width: 80px;" src="https://www.seekpng.com/png/full/7-73431_orange-and-white-logo-of-youtube-orange-youtube.png" alt="logo" />
+    <img class="img-fluid" style="width: 80px;" src="https://logopng.com.br/logos/namecheap-146.png" alt="logo" />
   </a>
   <!-- /logo -->
   <div class="links-logado">
@@ -100,10 +100,10 @@ if (@$_POST['botao2']) {
     </div>
   </div>
 
-  <div class="busca">
+  <!-- <div class="busca">
     <input type="text">
     <button><i class="bi bi-search"></i></button>
-  </div>
+  </div> -->
 
   <div class="endereco-logado">
     <!-- Button trigger modal -->

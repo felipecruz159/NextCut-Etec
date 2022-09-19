@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="horarios-container">
                 <form action="" method="POST">
-                <input type="text" id="tipoAgenda" name="tipoAgenda" value="" style="display:none;">
+                    <input type="text" id="tipoAgenda" name="tipoAgenda" value="" style="display:none;">
 
                     <div class="row" id="horasIguais" style="display:none;">
                         <div class="col-6 hrcoluna">
@@ -63,15 +63,36 @@
                     </div>
                     <!-- HORAS DIFERENTES -->
                     <div id="diasDif" style="display:none">
-                        <p>segunda <input type="checkbox" name="seg"></p> <input type="time" step="1800" name="seginicio"> <input type="time" step="1800" name="segtermino">
-                        <p>terça <input type="checkbox" name="ter"></p> <input type="time" step="1800" name="terinicio"> <input type="time" step="1800" name="tertermino">
-                        <p>quarta <input type="checkbox" name="qua"></p> <input type="time" step="1800" name="quainicio"> <input type="time" step="1800" name="quatermino">
-                        <p>quinta <input type="checkbox" name="qui"></p> <input type="time" step="1800" name="quiinicio"> <input type="time" step="1800" name="quitermino">
-                        <p>sexta <input type="checkbox" name="sex"></p> <input type="time" step="1800" name="sexinicio"> <input type="time" step="1800" name="sextermino">
-                        <p>sabado <input type="checkbox" name="sab"></p> <input type="time" step="1800" name="sabinicio"> <input type="time" step="1800" name="sabtermino">
-                        <p>domingo <input type="checkbox" name="dom"></p> <input type="time" step="1800" name="dominicio"> <input type="time" step="1800" name="domtermino">
+                        <div class="diaPesonalizado">
+                        <label for="personalizado1">Segunda<input type="checkbox" name="seg" id="personalizado1"></label> <input type="time" step="1800" name="seginicio"> <input type="time" step="1800" name="segtermino">
+                        </div>
+
+                        <div class="diaPesonalizado">
+                        <label for="personalizado2">Terça<input type="checkbox" name="ter" id="personalizado2"></label> <input type="time" step="1800" name="terinicio"> <input type="time" step="1800" name="tertermino">
+                        </div>
+
+                        <div class="diaPesonalizado">
+                        <label for="personalizado3">Quarta<input type="checkbox" name="qua" id="personalizado3"></label><input type="time" step="1800" name="quainicio"> <input type="time" step="1800" name="quatermino">
+                        </div>
+
+                        <div class="diaPesonalizado">
+                        <label for="personalizado4">Quinta<input type="checkbox" name="qui" id="personalizado4"></label> <input type="time" step="1800" name="quiinicio"> <input type="time" step="1800" name="quitermino">
+                        </div>
+
+                        <div class="diaPesonalizado">
+                        <label for="personalizado5">Sexta<input type="checkbox" name="sex" id="personalizado5"></label><input type="time" step="1800" name="sexinicio"> <input type="time" step="1800" name="sextermino">
+                        </div>
+
+                        <div class="diaPesonalizado">
+                        <label for="personalizado6">Sabado<input type="checkbox" name="sab" id="personalizado6"></label> <input type="time" step="1800" name="sabinicio"> <input type="time" step="1800" name="sabtermino">
+                        </div>
+
+                        <div class="diaPesonalizado">
+
+                            <label for="personalizado7">Domingo<input type="checkbox" name="dom" id="personalizado7"></label> <input type="time" step="1800" name="dominicio"> <input type="time" step="1800" name="domtermino">
+                        </div>
                     </div>
-                    <input type="submit" class="cadastro-btn" value="agendar" name="botaotime">
+                    <input type="submit" class="btn-horario" value="agendar" name="botaotime">
 
                 </form>
             </div>
@@ -159,12 +180,10 @@ if (@$_POST["botaotime"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$inicio', '$termino', '$sabado', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        
-    }
-    else if ($_POST["tipoAgenda"] == 2){
+    } else if ($_POST["tipoAgenda"] == 2) {
         $segInicio = $_POST["seginicio"];
         $segTermino = $_POST["segtermino"];
-        
+
         $terInicio = $_POST["terinicio"];
         $terTermino = $_POST["tertermino"];
 
@@ -183,31 +202,31 @@ if (@$_POST["botaotime"]) {
         $domInicio = $_POST["dominicio"];
         $domTermino = $_POST["domtermino"];
 
-        if (@$_POST["seg"]){
+        if (@$_POST["seg"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$segInicio', '$segTermino', '$segunda', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        if (@$_POST["ter"]){
+        if (@$_POST["ter"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$terInicio', '$terTermino', '$terca', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        if (@$_POST["qua"]){
+        if (@$_POST["qua"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$quaInicio', '$quaTermino', '$quarta', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        if (@$_POST["qui"]){
+        if (@$_POST["qui"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$quiInicio', '$quiTermino', '$quinta', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        if (@$_POST["sex"]){
+        if (@$_POST["sex"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$sexInicio', '$sexTermino', '$sexta', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        if (@$_POST["sab"]){
+        if (@$_POST["sab"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$sabInicio', '$sabTermino', '$sabado', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }
-        if (@$_POST["dom"]){
+        if (@$_POST["dom"]) {
             $sql = "INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('$domInicio', '$domTermino', '$domingo', '$idEstabelecimento')";
             $result = $conn->query($sql);
         }

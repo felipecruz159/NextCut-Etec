@@ -512,25 +512,23 @@ input[type=time] {
 
 /*agendar */
 
-.container-hora{
+.container-hora {
   margin-top: 15px;
   background-color: var(--gray);
   border-radius: 10px;
   padding: 30px;
 }
-.container-hora p{
+
+.container-hora p {
   margin-top: 10px;
   font-size: 14px;
   padding: 5px;
 }
-form .btn-horario{
-  display: flex;
-  flex-direction: row-reverse;
-}
 
-form .btn-horario input{
+ form .btn-horario{
+
   margin-top: 15px;
-  background-color: var(--dark-main);
+  background-color: var(--black);
   color: var(--white);
   text-transform: uppercase;
   font-weight: bold;
@@ -540,13 +538,13 @@ form .btn-horario input{
   transition: .5s;
 }
 
-form .btn-horario input:hover{
+ form .btn-horario:hover {
   background-color: var(--main-color);
   color: var(--black);
   transition: .4s;
 }
 
-form .calendario-horario{
+form .calendario-horario {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -558,13 +556,41 @@ form .calendario-horario{
   flex-direction: column;
 }
 
-.agendar-hora p{
+.agendar-hora p {
   margin-bottom: 1px !important;
 }
 
-.agendar-hora input{
+.agendar-hora input {
   height: 25px;
   background-color: aqua;
 }
+
+#diasDif {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#diasDif .diaPesonalizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 10px;
+}
+#diasDif .diaPesonalizado input {
+ margin-bottom: 5px;
+}
+
+#diasDif .diaPesonalizado label {
+  margin-bottom: 10px;
+  padding: 5px;
+  color: var(--white);
+ }
+
+
+
 
 /* //agendar */

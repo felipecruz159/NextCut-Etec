@@ -1,4 +1,5 @@
 <!-- MESMA HORA TDS DIAS -->
+<link rel="stylesheet" href="css/main.css">
 <div class="container">
     <div>
         <p style="cursor:pointer" id="corte1" onclick="horaIgual()">corto no mesmo horario todos dias</p>
@@ -104,6 +105,7 @@
 
 
 <?php
+
 //getcookie
 if (isset($_COOKIE["cabeleireiro"])) {
     $cookieEmail = $_COOKIE["cabeleireiro"];

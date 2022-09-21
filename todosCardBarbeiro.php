@@ -25,7 +25,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()){
         $nome = $row['nome'];
-        $nome = strtok($nome, " "); $nome = strtolower($nome); $nome = ucfirst($nome);
+        $nome = strtolower($nome); $nome = ucwords($nome);
+        $id = $row["idEstabelecimento"];
 
         $filename = 'fotoPerfil/' . $row['foto'] . '.png';
 
@@ -60,9 +61,12 @@ if ($result->num_rows > 0){
                             <i class="bi bi-star-half"></i>
                             <i class="bi bi-star"></i>
                         </div> -->
+                        <?php 
+                        $dateAtual = date('Y-m-d');
+                        ?>
 
                         <div class="button">
-                            <button class="perfil">Ver perfil</button> <!-- ver perfil where id = id -->
+                            <button class="perfil"><a href="<?php echo './?page=barbeiro_logado&id='.$id.'&data='.$dateAtual ?>">Ver perfil</a></button> <!-- ver perfil where id = id -->
                         </div>
                     </div>
                 </div>

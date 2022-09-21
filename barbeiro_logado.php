@@ -3,9 +3,31 @@
 <style>
     body {
         padding-top: 120px;
-
     }
 </style>
+
+<?php
+$id = $_GET["id"];
+$sql = "SELECT * FROM cabeleireiro c
+INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
+INNER JOIN pessoa p on c.Pessoa_idPessoa = p.idPessoa
+INNER JOIN endereco l on e.Endereco_idEndereco = l.idEndereco
+WHERE c.Estabelecimento_idEstabelecimento = '$id'";
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0){
+    while ($row = $result->fetch_assoc()){
+        $nome = $row['nome'];
+        $nome = strtok($nome, " "); $nome = strtolower($nome); $nome = ucfirst($nome);
+        $id = $row["idEstabelecimento"];
+
+        $filename = 'fotoPerfil/' . $row['foto'] . '.png';
+
+        if (!file_exists($filename) || $row['foto'] == ''){
+            $filename = 'fotoPerfil/semfoto.png';
+        }
+        ?>
 
 <div class="container">
     <div class="row">
@@ -15,26 +37,18 @@
                 <div class="folder-logado">
                     <img src="https://i.pinimg.com/736x/c0/11/87/c0118721f2433d673d6e73782a0a05c0.jpg" class="img-fluid" alt="">
                     <div class="imagem-logado">
-                        <img src="https://img.freepik.com/fotos-gratis/barbeiro-profissional-com-ferramentas-de-barbeiro-close-up_1303-20983.jpg" class="img-fluid" alt="">
+                        <img src="<?php echo $filename ?>" class="img-fluid" alt="">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="infoTudo-barbeiro">
                             <div class="info-barbeiro">
-                                <h2>Dom Nicolini</h2>
-                                <h5>Daniel Dias Lima</h5>
-                                <p>Bairro Brasil, Itu</p>
+                                <h2><?php echo $row["nomeFantasia"]; ?></h2>
+                                <h5><?php $nome = $row["nome"]; $nome = strtolower($nome); $nome = ucwords($nome); echo $nome;?></h5>
+                                <p><?php echo $row["rua"] . " Nº " . $row["numero"] . ", " .$row["bairro"] . ", " . $row["cidade"]?></p>
                             </div>
 
-                        </div>
-                    </div>
-
-
-                    <div class="col-6">
-                        <div class="info-barbeiaria">
-                            <h4></h4>
-                            <?php include "horarios.php" ?>
                         </div>
                     </div>
                 </div>
@@ -97,8 +111,14 @@
 
                 <p>Atenção, cada opção selecionada será entendida como um corte de cabelo!</p>
             </div> -->
-            <?php include 'configuracao.php';?>
+            <?php
+            include 'configuracao.php';
+            include 'horarios.php';
+            ?>
         </div>
     </div>
 </div>
-
+<?php
+    }
+}
+?>

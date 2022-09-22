@@ -106,7 +106,12 @@ section .card .button {
 }
 
 section .card .button button {
+  background-color: transparent;
+}
+
+section .card .button a {
   background-color: var(--pastel-orange);
+  color: var(--black);
   font-size: 17px;
   font-weight: 700;
   outline: none;
@@ -114,9 +119,10 @@ section .card .button button {
   padding: 5px 10px;
   border-radius: 20px;
   transition: all 0.5s ease;
+  text-decoration: none;
 }
 
-section .card .button button:hover {
+section .card .button a:hover {
   background-color: var(--black);
   color: var(--main-color);
 }
@@ -525,8 +531,12 @@ input[type=time] {
   padding: 5px;
 }
 
- form .btn-horario{
+form .definir-horario{
+display: flex;
+justify-content: center;
+}
 
+ form .btn-horario{
   margin-top: 15px;
   background-color: var(--black);
   color: var(--white);
@@ -590,7 +600,81 @@ form .calendario-horario {
   color: var(--white);
  }
 
-
-
-
 /* //agendar */
+
+/* BtnCortarSempre e BtnCortarPersonalizazdo */
+
+.btn-personalizar{
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#corte1,#corte2{
+  margin-bottom: 20px;
+  background-color: var(--pastel-orange);
+  color: var(--black);
+  width: 304px;
+  font-size: 17px;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  text-decoration: none;
+
+}
+
+#corte1:hover,#corte2:hover{
+  background-color: var(--black);
+  color: var(--pastel-orange);
+  transition: all 0.5s ease;
+
+}
+
+/* //BtnCortarSempre e BtnCortarPersonalizazdo */
+
+/* hora-disponiveis */
+
+.confirmar-agendamento{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirmar-hora button, .canelar-hora button{
+  margin: 5px;
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: var(--black);
+  color: var(--main-color);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hora-disponiveis{
+  color:aliceblue;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hora-separada button{
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: var(--black);
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.hora-separada button:focus{
+  background-color: var(--pastel-orange);
+  color: var(--black);
+  transition: 0.3 ;
+}
+/* //hora-disponiveis */

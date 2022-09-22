@@ -391,9 +391,11 @@ function horaIgual(){
 
     var div1 = document.getElementById("horasIguais");
     var div2 = document.getElementById("diasIguais");
+    var definir = document.getElementById("definirFuncionamento")
 
     div1.style.display = "";
     div2.style.display = "";
+    definir.style.display="";
     console.log(tipoAgenda.value);
 }
 
@@ -407,6 +409,17 @@ function horaPerso(){
     tipoAgenda.value = 2;
 
     var div1 = document.getElementById("diasDif");
+    var definir = document.getElementById("definirFuncionamento")
     div1.style.display = "";
+    definir.style.display="";
     console.log(tipoAgenda.value);
+}
+
+function agendarHora(){
+    var exibir = document.getElementById("confirmacao");
+    exibir.style.display ="";
+
+
+
+
 }

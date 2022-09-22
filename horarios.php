@@ -55,40 +55,54 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
     //faz disponibilidade de hora
     $horaAtual = $horaInicio;
     $minutosAtual = $minutosInicio;
-    for ($i = $horaInicio; $i <= $horaTermino;) {
-        echo '<br>';
+?>
+    <div class="hora-disponiveis">
+        <?php for ($i = $horaInicio; $i <= $horaTermino;) {
+        ?> <div class="hora-separada">
+                <button type="button" style="cursor:pointer" id="agendarHorario" onclick="agendarHora()">
+                    <?php if (strlen($horaAtual) > 1) {
+                        if (strlen($minutosAtual) > 1) {
+                            echo $horaAtual . ":" . $minutosAtual;
+                        } else {
+                            echo $horaAtual . ":" . $minutosAtual . 0;
+                        }
+                    } else {
+                        if (strlen($minutosAtual) > 1) {
+                            echo '<a>' . 0 . $horaAtual . ":" . $minutosAtual . '</a>';
+                        } else {
+                            echo 0 . $horaAtual . ":" . $minutosAtual . 0;
+                        }
+                    } ?>
+                </button>
+            </div>
 
-        if (strlen($horaAtual) > 1) {
-            if (strlen($minutosAtual) > 1) {
-                echo $horaAtual . ":" . $minutosAtual;
-            } else {
-                echo $horaAtual . ":" . $minutosAtual . 0;
-            }
-        } else {
-            if (strlen($minutosAtual) > 1) {
-                echo '<a>' . 0 . $horaAtual . ":" . $minutosAtual . '</a>';
-            } else {
-                echo 0 . $horaAtual . ":" . $minutosAtual . 0;
-            }
-        }
-        $minutosAtual += 30;
-        
-        if ($i == $horaTermino){
-            break;
-        }
-        else if ($i == $horaTermino - 1 && $minutosAtual == 60){
-            if ($minutosTermino == 30){
 
-            }
-            else if ($minutosTermino == 0){
+        <?php
+            $minutosAtual += 30;
+
+            if ($i == $horaTermino) {
                 break;
+            } else if ($i == $horaTermino - 1 && $minutosAtual == 60) {
+                if ($minutosTermino == 30) {
+                } else if ($minutosTermino == 0) {
+                    break;
+                }
             }
-        }
-        
-        if ($minutosAtual == 60) {
-            $minutosAtual = 0;
-            $horaAtual++;
-            $i++;
-        }
-    }
+
+            if ($minutosAtual == 60) {
+                $minutosAtual = 0;
+                $horaAtual++;
+                $i++;
+            }
+        } ?>
+    </div>
+    <div class="confirmar-agendamento" id="confirmacao" style="display:none;">
+        <div class="confirmar-hora">
+            <button type="button">Agendar<i class="bi bi-check-lg"></i></button>
+        </div>
+        <div class="canelar-hora">
+            <button type="button">Cancelar<i class="bi bi-x-lg"></i></button>
+        </div>
+    </div>
+<?php
 }

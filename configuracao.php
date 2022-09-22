@@ -1,9 +1,9 @@
 <!-- MESMA HORA TDS DIAS -->
 <link rel="stylesheet" href="css/main.css">
 <div class="container">
-    <div>
-        <p style="cursor:pointer" id="corte1" onclick="horaIgual()">corto no mesmo horario todos dias</p>
-        <p style="cursor:pointer" id="corte2" onclick="horaPerso()">quero horarios personalizados</p>
+    <div class="btn-personalizar">
+        <button type="button" style="cursor:pointer" id="corte1" onclick="horaIgual()">Corto no mesmo horario todos dias</button>
+        <button type="button" style="cursor:pointer" id="corte2" onclick="horaPerso()">Quero horarios personalizados</button>
     </div>
     <div class="row">
         <div class="col-12">
@@ -65,27 +65,27 @@
                     <!-- HORAS DIFERENTES -->
                     <div id="diasDif" style="display:none">
                         <div class="diaPesonalizado">
-                        <label for="personalizado1">Segunda<input type="checkbox" name="seg" id="personalizado1"></label> <input type="time" step="1800" name="seginicio"> <input type="time" step="1800" name="segtermino">
+                            <label for="personalizado1">Segunda<input type="checkbox" name="seg" id="personalizado1"></label> <input type="time" step="1800" name="seginicio"> <input type="time" step="1800" name="segtermino">
                         </div>
 
                         <div class="diaPesonalizado">
-                        <label for="personalizado2">Terça<input type="checkbox" name="ter" id="personalizado2"></label> <input type="time" step="1800" name="terinicio"> <input type="time" step="1800" name="tertermino">
+                            <label for="personalizado2">Terça<input type="checkbox" name="ter" id="personalizado2"></label> <input type="time" step="1800" name="terinicio"> <input type="time" step="1800" name="tertermino">
                         </div>
 
                         <div class="diaPesonalizado">
-                        <label for="personalizado3">Quarta<input type="checkbox" name="qua" id="personalizado3"></label><input type="time" step="1800" name="quainicio"> <input type="time" step="1800" name="quatermino">
+                            <label for="personalizado3">Quarta<input type="checkbox" name="qua" id="personalizado3"></label><input type="time" step="1800" name="quainicio"> <input type="time" step="1800" name="quatermino">
                         </div>
 
                         <div class="diaPesonalizado">
-                        <label for="personalizado4">Quinta<input type="checkbox" name="qui" id="personalizado4"></label> <input type="time" step="1800" name="quiinicio"> <input type="time" step="1800" name="quitermino">
+                            <label for="personalizado4">Quinta<input type="checkbox" name="qui" id="personalizado4"></label> <input type="time" step="1800" name="quiinicio"> <input type="time" step="1800" name="quitermino">
                         </div>
 
                         <div class="diaPesonalizado">
-                        <label for="personalizado5">Sexta<input type="checkbox" name="sex" id="personalizado5"></label><input type="time" step="1800" name="sexinicio"> <input type="time" step="1800" name="sextermino">
+                            <label for="personalizado5">Sexta<input type="checkbox" name="sex" id="personalizado5"></label><input type="time" step="1800" name="sexinicio"> <input type="time" step="1800" name="sextermino">
                         </div>
 
                         <div class="diaPesonalizado">
-                        <label for="personalizado6">Sabado<input type="checkbox" name="sab" id="personalizado6"></label> <input type="time" step="1800" name="sabinicio"> <input type="time" step="1800" name="sabtermino">
+                            <label for="personalizado6">Sabado<input type="checkbox" name="sab" id="personalizado6"></label> <input type="time" step="1800" name="sabinicio"> <input type="time" step="1800" name="sabtermino">
                         </div>
 
                         <div class="diaPesonalizado">
@@ -93,7 +93,11 @@
                             <label for="personalizado7">Domingo<input type="checkbox" name="dom" id="personalizado7"></label> <input type="time" step="1800" name="dominicio"> <input type="time" step="1800" name="domtermino">
                         </div>
                     </div>
-                    <input type="submit" class="btn-horario" value="agendar" name="botaotime">
+
+                    <div class="definir-horario" id="definirFuncionamento" style="display:none; margin: 0px 0px 40px 0px;">
+                        <input type="submit" class="btn-horario" value="Definir horario de funcionamento" name="botaotime">
+                    </div>
+
 
                 </form>
             </div>

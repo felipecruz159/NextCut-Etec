@@ -22,7 +22,7 @@ if (@$_POST['botao']) {
             }
             // echo "digitada:" . md5($senha) . " ==>" . $senhaSistema;
             if (md5($senha) == $senhaSistema) {
-                if ($cargo == 'cabeleireiro'){
+                if ($cargo == 'CABELEIREIRO'){
                     setcookie("cabeleireiro", $email, time() + (86400 * 30), "/");
                 }
                 else {

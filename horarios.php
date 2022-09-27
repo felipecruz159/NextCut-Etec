@@ -1,6 +1,20 @@
 <?php
 date_default_timezone_set('America/Sao_Paulo');
 
+$sql = "SELECT * FROM cabeleireiro c
+INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
+INNER JOIN pessoa p on c.Pessoa_idPessoa = p.idPessoa
+INNER JOIN endereco l on e.Endereco_idEndereco = l.idEndereco
+WHERE idPessoa = '$id'";
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $idEstabelecimento = $row["idEstabelecimento"];
+    }
+}
+
 @$data = $_GET["data"];
 $dayofweek = date('w', strtotime($data));
 
@@ -30,7 +44,7 @@ switch ($dayofweek) {
 }
 
 if ($diaSemana) {
-    $sql = "SELECT horaInicio, horarioTermino FROM horariofuncionamento WHERE dia='$diaSemana'";
+    $sql = "SELECT horaInicio, horarioTermino FROM horariofuncionamento WHERE dia='$diaSemana' && Estabelecimento_idEstabelecimento='$idEstabelecimento'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -59,8 +73,8 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
     <div class="hora-disponiveis">
         <?php for ($i = $horaInicio; $i <= $horaTermino;) {
         ?> <div class="hora-separada">
-                <button type="button" style="cursor:pointer" id="agendarHorario" onclick="agendarHora()">
-                    <?php if (strlen($horaAtual) > 1) {
+                <button type="button" style="cursor:pointer" class="agendarHorario" onclick="agendarHora()" name="horaInput" value="">
+                    <?php if (strlen($horaAtual) > 1) { 
                         if (strlen($minutosAtual) > 1) {
                             echo $horaAtual . ":" . $minutosAtual;
                         } else {
@@ -68,7 +82,7 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
                         }
                     } else {
                         if (strlen($minutosAtual) > 1) {
-                            echo '<a>' . 0 . $horaAtual . ":" . $minutosAtual . '</a>';
+                            echo 0 . $horaAtual . ":" . $minutosAtual;
                         } else {
                             echo 0 . $horaAtual . ":" . $minutosAtual . 0;
                         }
@@ -94,14 +108,26 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
                 $horaAtual++;
                 $i++;
             }
-        } ?>
+        } 
+        
+        if(@$_POST["agenda"]){
+            $data = $_GET["data"];
+            $agenda = $_POST["agenda"];
+            if (!empty($_POST["horaInput"])){
+                $hora = $_POST["horaInput"];
+            }
+            
+        }
+        ?>
     </div>
     <div class="confirmar-agendamento" id="confirmacao" style="display:none;">
-        <div class="confirmar-hora">
-            <button type="button">Agendar<i class="bi bi-check-lg"></i></button>
-        </div>
+        <form method="post">
+            <div class="confirmar-hora">
+                <input type="submit" name="agenda">Agendar<i class="bi bi-check-lg"></i></input>
+            </div>
+        </form>
         <div class="canelar-hora">
-            <button type="button">Cancelar<i class="bi bi-x-lg"></i></button>
+            <button type="button" onclick="fecharAgenda()">Cancelar<i class="bi bi-x-lg"></i></button>
         </div>
     </div>
 <?php

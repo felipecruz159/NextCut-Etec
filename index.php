@@ -21,7 +21,7 @@
 
   if ($page != ''){ // verifica se a pag é vazia'
     if (file_exists($page . ".php")){ // verifica se existe o arquivo 
-      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha' && $page != 'configuracao') { // exceções para header
+      if ($page != 'login' && $page != 'cadastro_cliente' && $page != 'cadastro_barbeiro' && $page != 'cadastro_escolha' && $page != 'configuracao' && $page != 'agradecimento') { // exceções para header
         if (isset($_COOKIE["cliente"]) || isset($_COOKIE["cabeleireiro"])){ // verifica cookie login
           include 'header_logado.php';
         }

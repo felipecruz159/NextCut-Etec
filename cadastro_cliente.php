@@ -41,7 +41,7 @@ if (@$_POST['botao']) {
             // echo $sql;
             $result = $conn->query($sql);
             setcookie("cliente", $email, time() + (86400 * 30), "/");
-            header('location: ./?page=form_redirect');
+            header('location: ./?page=agradecimento');
         } else {
             echo "<font color='#ff6600'> O email já foi cadastrado!"; //possível fazer estilização do input
         }

@@ -26,7 +26,7 @@ if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()){
         $nome = $row['nome'];
         $nome = strtolower($nome); $nome = ucwords($nome);
-        $id = $row["idEstabelecimento"];
+        $id = $row["idPessoa"];
 
         $filename = 'fotoPerfil/' . $row['foto'] . '.png';
 
@@ -66,7 +66,7 @@ if ($result->num_rows > 0){
                         ?>
 
                         <div class="button">
-                            <button class="perfil"><a href="<?php echo './?page=barbeiro_logado&id='.$id.'&data='.$dateAtual ?>">Ver perfil</a></button> <!-- ver perfil where id = id -->
+                            <button class="perfil"><a href="<?php echo './?page=perfil&id='.$id.'&data='.$dateAtual ?>">Ver perfil</a></button> <!-- ver perfil where id = id -->
                         </div>
                     </div>
                 </div>

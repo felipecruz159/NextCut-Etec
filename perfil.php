@@ -12,7 +12,7 @@ $sql = "SELECT * FROM cabeleireiro c
 INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
 INNER JOIN pessoa p on c.Pessoa_idPessoa = p.idPessoa
 INNER JOIN endereco l on e.Endereco_idEndereco = l.idEndereco
-WHERE c.Estabelecimento_idEstabelecimento = '$id'";
+WHERE idPessoa = '$id'";
 $result = $conn->query($sql);
 
 
@@ -20,13 +20,14 @@ if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()){
         $nome = $row['nome'];
         $nome = strtok($nome, " "); $nome = strtolower($nome); $nome = ucfirst($nome);
-        $id = $row["idEstabelecimento"];
+        $id = $row["idPessoa"];
 
         $filename = 'fotoPerfil/' . $row['foto'] . '.png';
 
         if (!file_exists($filename) || $row['foto'] == ''){
             $filename = 'fotoPerfil/semfoto.png';
         }
+        $nome = $row["nome"]; $nome = strtolower($nome); $nome = ucwords($nome); 
         ?>
 
 <div class="container">
@@ -44,15 +45,15 @@ if ($result->num_rows > 0){
                     <div class="col-6">
                         <div class="infoTudo-barbeiro">
                             <div class="info-barbeiro">
-                                <h2><?php echo $row["nomeFantasia"]; ?></h2>
-                                <h5><?php $nome = $row["nome"]; $nome = strtolower($nome); $nome = ucwords($nome); echo $nome;?></h5>
-                                <p><?php echo $row["rua"] . " Nº " . $row["numero"] . ", " .$row["bairro"] . ", " . $row["cidade"]?></p>
+                                <h2><?php if(isset($row["nomeFantasia"])){echo $row["nomeFantasia"];}else{echo $nome;}; ?></h2>
+                                <h5><?php if(isset($row["nomeFantasia"])){echo $nome;}?></h5>
+                                <p><?php if(isset($row["nomeFantasia"])){echo $row["rua"] . " Nº " . $row["numero"] . ", " .$row["bairro"] . ", " . $row["cidade"];}?></p>
                             </div>
 
                         </div>
                     </div>
                 </div>
-
+                
             </div>
         </div>
 
@@ -90,7 +91,7 @@ if ($result->num_rows > 0){
     <div class="row">
         <div class="col-lg-9 col-md-12">
             <div class="calendario-conteudo">
-                <?php include "calendario/cal.php" ?>
+                <?php include "calendario/cal.php";?>
             </div>
         </div>
     </div>
@@ -102,7 +103,7 @@ if ($result->num_rows > 0){
             <!-- <div class="container-hora">
                 <h3>Horarios Disponiveis</h3>
                 <form action="">
-                    <?php include "agendar.php" ?>
+                    <?php //include "agendar.php" ?>
                     <div class="btn-horario">
                         <input type="submit" value="Agendar">
                     </div>
@@ -112,7 +113,12 @@ if ($result->num_rows > 0){
                 <p>Atenção, cada opção selecionada será entendida como um corte de cabelo!</p>
             </div> -->
             <?php
-            include 'configuracao.php';
+            if (isset($_COOKIE["cabeleireiro"])){
+                include "configuracao.php";
+            }
+            else if (isset($_COOKIE["cliente"])){
+                
+            }
             include 'horarios.php';
             ?>
         </div>

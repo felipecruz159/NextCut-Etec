@@ -417,9 +417,12 @@ function horaPerso(){
 
 function agendarHora(){
     var exibir = document.getElementById("confirmacao");
-    exibir.style.display ="";
+    exibir.style.display = "";
+    var agendar = document.getElementsByClassName("agendarHorario");
+    alert(agendar.value);
+}
 
-
-
-
+function fecharAgenda(){
+    var exibir = document.getElementById("confirmacao");
+    exibir.style.display = "none";
 }

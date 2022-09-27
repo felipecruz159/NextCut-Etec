@@ -14,11 +14,11 @@
                     <div class="row" id="horasIguais" style="display:none;">
                         <div class="col-6 hrcoluna">
                             <label for="hora1">Horário Início</label>
-                            <input type="time" name="inicio">
+                            <input type="time" name="inicio" step="1800">
                         </div>
                         <div class="col-6 hrcoluna">
                             <label for="hora2">Horário Término</label>
-                            <input type="time" name="termino">
+                            <input type="time" name="termino" step="1800">
                         </div>
                     </div>
 
@@ -143,7 +143,6 @@ if ($result) {
         $idEstabelecimento = $row["Estabelecimento_idEstabelecimento"];
     }
 }
-
 
 if (@$_POST["botaotime"]) {
     $segunda = "SEGUNDA";

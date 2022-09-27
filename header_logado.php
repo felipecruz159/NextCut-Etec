@@ -79,8 +79,8 @@ if (@$_POST['botao2']) {
 
 
   header("Refresh:3");
+  
 }
-
 ?>
 
 <header class="fixed-top" id="header-logado">
@@ -219,7 +219,7 @@ if (@$_POST['botao2']) {
             <li><a class="dropdown-item" href="#">Configurações</a></li>
             <li><a class="dropdown-item" href="#">Termos e condições de uso</a></li>
             <li><a class="dropdown-item" href="#">Privacidade</a></li>
-            <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+            <li><a class="dropdown-item" href="./?page=">Meu perfil</a></li>
             <li>
               <hr>
             </li>

@@ -71,6 +71,7 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
     $minutosAtual = $minutosInicio;
 
 ?>
+<form method="post">
     <div class="hora-disponiveis">
         <?php for ($i = $horaInicio; $i <= $horaTermino;) {
 
@@ -117,16 +118,17 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
         
         if(@$_POST["agenda"]){
             $data = $_GET["data"];
-            $hora = $_POST["horaInput"] . ":00";
+            $hora = $_POST["horaInput"];
 
             $sql = "INSERT INTO agendamento (horario, data, status, Pessoa_idPessoa, Estabelecimento_idEstabelecimento) VALUES ('$hora', '$data', 'agendado', 1, 1)";
             $result = $conn->query($sql);
-            
+            echo $sql;
+            echo 'hora: '.$hora;
         }
         ?>
     </div>
     <div class="confirmar-agendamento" id="confirmacao" style="display:none;">
-        <form method="post">
+        
             <div class="confirmar-hora">
                 <input type="submit" name="agenda">Agendar<i class="bi bi-check-lg"></i></input>
             </div>

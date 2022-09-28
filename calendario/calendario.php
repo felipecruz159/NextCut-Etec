@@ -22,7 +22,7 @@ function montaEventos($info)
         $dataArr = date('Y-m-d', strtotime($row->{$data}));
         $retorno[$dataArr] = array(
             // 'titulo' => $row->{$titulo},
-            'link' => $row->{$link}
+            //'link' => $row->{$link}
         );
     }
     return $retorno;

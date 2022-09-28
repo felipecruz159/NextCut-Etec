@@ -415,20 +415,42 @@ function horaPerso() {
     console.log(tipoAgenda.value);
 }
 
-function agendarHora(hora, minuto, data) {
+function agendarHora(hora, minuto) {
     var exibir = document.getElementById("confirmacao");
     exibir.style.display = "";
     
-    let horaFormatado = hora.toLocaleString('pt-BR', {
-        minimumIntegerDigits: 2});
-    let minutoFormatado = minuto.toLocaleString('pt-BR', {
-        minimumIntegerDigits: 2});
+    var horaFormatado = hora.toLocaleString('pt-BR', {
+        minimumIntegerDigits: 2,
+        timezone: 'America/Sao_Paulo'});
+    var minutoFormatado = minuto.toLocaleString('pt-BR', {
+        minimumIntegerDigits: 2,
+        timezone: 'America/Sao_Paulo'});
     
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const data = urlParams.get('data');
+
+
     var agendar = document.getElementsByClassName("agendarHorario");
-    var horario = horaFormatado + ":" + minutoFormatado + ":00";
-    var horarioValor = new Date(horario);
-    agendar.value = horarioValor;
-    alert(horarioValor);
+
+    const [year, month, day] = data.split('-');
+    // const [hours, minutes, seconds] = horario.split(':');
+
+    var horario = horaFormatado + ':' + minutoFormatado;
+    var agendamento = year + month + day;
+
+    //const date = new Date(+year, +month - 1, +day, +hours, +minutes, +seconds);
+    agendar.value = horario;
+    console.log('value: ' + agendar.value);
+
+    // console.log("data: " + date);
+    // console.log("ano: " + year);
+    // console.log("mes: " + month);
+    // console.log("dia: " + day);
+    // console.log("hora: " + hours);
+    // console.log("minutos: " + minutes);
+    // console.log("segundos: " + seconds);
+
 }
 
 function fecharAgenda() {

@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/Sao_Paulo');
 function num($num)
 {
     return ($num < 10) ? '0' . $num : $num;
@@ -110,28 +110,18 @@ function montaCalendario($eventos = array())
                 }
             }
             $id = $_GET["id"];
-            if (count($eventos) > 0) {
-                $month = num($num);
-                $dayNow = num($numero);
-                $date = date('Y') . '-' . $month . '-' . $dayNow;
-                if (in_array($date, array_keys($eventos))) {
-                    $evento = $eventos[$date];
-                    echo '<td class="evento"><a href="' . $evento['link'] . '" title="">' . $numero . '</a></td>';
-                } else {
-                    echo '<td class="dia_' . $numero . '">' . $numero . '</td>';
-                }
-            } else {
-                $month = num($num);
-                $dayNow = num($numero);
-                $date = date('Y') . '-' . $month . '-' . $dayNow;
-                $today = date('Y-m-d');
-                if ($date < $today){
-                    echo '<td style="cursor:not-allowed;" title="Não é permitido agendar em datas passadas" class="dia_' . $numero . '">' . $numero . '</td>';
-                }
-                else{
-                    echo '<td class="dia_' . $numero . '"><a href="./?page='.$_GET["page"] . '&id=' . $id . '&data=' . $date . '">' . $numero . '</a></td>';
-                }
+            
+            $month = num($num);
+            $dayNow = num($numero);
+            $date = date('Y') . '-' . $month . '-' . $dayNow;
+            $today = date('Y-m-d');
+            if ($date < $today){
+                echo '<td style="cursor:not-allowed;" title="Não é permitido agendar em datas passadas" class="dia_' . $numero . '">' . $numero . '</td>';
             }
+            else{
+                echo '<td class="dia_' . $numero . '"><a href="./?page='.$_GET["page"] . '&id=' . $id . '&data=' . $date . '">' . $numero . '</a></td>';
+            }
+            
             if ($y == 7) {
                 $y = 0;
                 echo '</tr><tr>';

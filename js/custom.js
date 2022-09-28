@@ -77,7 +77,7 @@ new Vue({
 
 // Mostra cep quando logado
 
-function mostraCep(){
+function mostraCep() {
     modalCep = document.getElementById('appCep');
     clickCep = document.getElementById('clickCep');
     clickCep2 = document.getElementById('clickCep2');
@@ -330,42 +330,42 @@ const div3 = document.getElementById('barbeiro3');
 const div4 = document.getElementById('barbeiro4');
 const div5 = document.getElementById('barbeiro5');
 
-function goto1(){
+function goto1() {
     div1.style.display = "none";
     div2.style.display = "";
     window.scrollTo(0, 0);
 }
-function goto2(){
+function goto2() {
     div2.style.display = "none"
     div3.style.display = "";
     window.scrollTo(0, 0);
 }
-function goto3(){
+function goto3() {
     div3.style.display = "none"
     div4.style.display = "";
     window.scrollTo(0, 0);
 }
-function goto4(){
+function goto4() {
     div4.style.display = "none"
     div5.style.display = "";
     window.scrollTo(0, 0);
 }
-function previ1(){
+function previ1() {
     div2.style.display = "none"
     div1.style.display = "";
     window.scrollTo(0, 0);
 }
-function previ2(){
+function previ2() {
     div3.style.display = "none"
     div2.style.display = "";
     window.scrollTo(0, 0);
 }
-function previ3(){
+function previ3() {
     div4.style.display = "none"
     div3.style.display = "";
     window.scrollTo(0, 0);
 }
-function previ4(){
+function previ4() {
     div5.style.display = "none"
     div4.style.display = "";
     window.scrollTo(0, 0);
@@ -374,13 +374,13 @@ function previ4(){
 
 //Reload
 
-function reload(){
-    location.reload()    
+function reload() {
+    location.reload()
 }
 
 // hora
 
-function horaIgual(){
+function horaIgual() {
     var escolha1 = document.getElementById("corte1");
     var escolha2 = document.getElementById("corte2");
     escolha1.style.display = "none";
@@ -395,11 +395,11 @@ function horaIgual(){
 
     div1.style.display = "";
     div2.style.display = "";
-    definir.style.display="";
+    definir.style.display = "";
     console.log(tipoAgenda.value);
 }
 
-function horaPerso(){
+function horaPerso() {
     var escolha1 = document.getElementById("corte1");
     var escolha2 = document.getElementById("corte2");
     escolha1.style.display = "none";
@@ -411,18 +411,27 @@ function horaPerso(){
     var div1 = document.getElementById("diasDif");
     var definir = document.getElementById("definirFuncionamento")
     div1.style.display = "";
-    definir.style.display="";
+    definir.style.display = "";
     console.log(tipoAgenda.value);
 }
 
-function agendarHora(){
+function agendarHora(hora, minuto, data) {
     var exibir = document.getElementById("confirmacao");
     exibir.style.display = "";
+    
+    let horaFormatado = hora.toLocaleString('pt-BR', {
+        minimumIntegerDigits: 2});
+    let minutoFormatado = minuto.toLocaleString('pt-BR', {
+        minimumIntegerDigits: 2});
+    
     var agendar = document.getElementsByClassName("agendarHorario");
-    alert(agendar.value);
+    var horario = horaFormatado + ":" + minutoFormatado + ":00";
+    var horarioValor = new Date(horario);
+    agendar.value = horarioValor;
+    alert(horarioValor);
 }
 
-function fecharAgenda(){
+function fecharAgenda() {
     var exibir = document.getElementById("confirmacao");
     exibir.style.display = "none";
 }

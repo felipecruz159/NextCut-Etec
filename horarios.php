@@ -69,24 +69,29 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
     //faz disponibilidade de hora
     $horaAtual = $horaInicio;
     $minutosAtual = $minutosInicio;
+
 ?>
     <div class="hora-disponiveis">
         <?php for ($i = $horaInicio; $i <= $horaTermino;) {
-        ?> <div class="hora-separada">
-                <button type="button" style="cursor:pointer" class="agendarHorario" onclick="agendarHora()" name="horaInput" value="">
-                    <?php if (strlen($horaAtual) > 1) { 
-                        if (strlen($minutosAtual) > 1) {
-                            echo $horaAtual . ":" . $minutosAtual;
-                        } else {
-                            echo $horaAtual . ":" . $minutosAtual . 0;
-                        }
+
+                if (strlen($horaAtual) > 1){
+                    if (strlen($minutosAtual) > 1){
+                        $horaExibir = $horaAtual . ":" . $minutosAtual;
                     } else {
-                        if (strlen($minutosAtual) > 1) {
-                            echo 0 . $horaAtual . ":" . $minutosAtual;
-                        } else {
-                            echo 0 . $horaAtual . ":" . $minutosAtual . 0;
-                        }
-                    } ?>
+                        $horaExibir = $horaAtual . ":" .  str_pad($minutosAtual, 2, "0", STR_PAD_RIGHT);
+                    }
+                } else{
+                    if (strlen($minutosAtual) > 1){
+                        $horaExibir = str_pad($horaAtual, 2, "0", STR_PAD_LEFT) . ":" .  $minutosAtual;
+                    }
+                    else {
+                        $horaExibir = str_pad($horaAtual, 2, "0", STR_PAD_LEFT) . ":" .  str_pad($minutosAtual, 2, "0", STR_PAD_RIGHT);
+                    }
+                }
+
+        ?> <div class="hora-separada">
+                <button type="button" style="cursor:pointer" class="agendarHorario" onclick="agendarHora(<?php echo $horaAtual; ?>, <?php echo $minutosAtual; ?>)" name="horaInput" value="">
+                    <?php echo $horaExibir; ?>
                 </button>
             </div>
 
@@ -112,10 +117,10 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
         
         if(@$_POST["agenda"]){
             $data = $_GET["data"];
-            $agenda = $_POST["agenda"];
-            if (!empty($_POST["horaInput"])){
-                $hora = $_POST["horaInput"];
-            }
+            $hora = $_POST["horaInput"] . ":00";
+
+            $sql = "INSERT INTO agendamento (horario, data, status, Pessoa_idPessoa, Estabelecimento_idEstabelecimento) VALUES ('$hora', '$data', 'agendado', 1, 1)";
+            $result = $conn->query($sql);
             
         }
         ?>

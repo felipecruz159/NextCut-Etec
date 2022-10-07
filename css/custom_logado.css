@@ -677,4 +677,10 @@ form .calendario-horario {
   color: var(--black);
   transition: 0.3 ;
 }
+
+.hora-focus{
+  background-color: var(--pastel-orange) !important; 
+  color: var(--black) !important;
+  transition: 0.3 !important;
+}
 /* //hora-disponiveis */

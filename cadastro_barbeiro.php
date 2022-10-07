@@ -83,7 +83,7 @@ if (@$_POST['botao']) {
             }
 
             $sql = "INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, plano, Endereco_idEndereco, cargo ) 
-                VALUES ( '$nome', '$sexo', '$nascimento', '$email', '$senha', '$telefone', '$plano', '$idEndereco', 'BARBEIRO' );"; //inserção dos dados pessoais 
+                VALUES ( '$nome', '$sexo', '$nascimento', '$email', '$senha', '$telefone', '$plano', '$idEndereco', 'CABELEIREIRO' );"; //inserção dos dados pessoais 
             $result = $conn->query($sql);
 
             $sql = "INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, telefone, Endereco_idEndereco ) 

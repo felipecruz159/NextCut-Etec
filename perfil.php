@@ -7,20 +7,19 @@
 </style>
 
 <?php
+
 $id = $_GET["id"];
 $sql = "SELECT * FROM cabeleireiro c
 INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
 INNER JOIN pessoa p on c.Pessoa_idPessoa = p.idPessoa
 INNER JOIN endereco l on e.Endereco_idEndereco = l.idEndereco
-WHERE idPessoa = '$id'";
+WHERE idPessoa = '$id'"; //get info estabelecimento
 $result = $conn->query($sql);
-
 
 if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()){
-        $nome = $row['nome'];
-        $nome = strtok($nome, " "); $nome = strtolower($nome); $nome = ucfirst($nome);
         $id = $row["idPessoa"];
+        $idEstabelecimento = $row["idEstabelecimento"];
 
         $filename = 'fotoPerfil/' . $row['foto'] . '.png';
 
@@ -57,32 +56,71 @@ if ($result->num_rows > 0){
             </div>
         </div>
 
+        <!-- BARRA AGENDA -->
+        <?php 
+        if (isset($_COOKIE["cabeleireiro"])){
+            ?>
         <div class="col-lg-3 col-12 mb-3">
             <div class="quem-viu">
                 <h5 class="text-center">Agendamentos</h5>
                 <hr>
+        <?php //FAZER LOGICA DE PEGAR DADOS SOMENTE DAS PESSOAS QUE AGENDARAM
+        $sql = "SELECT * FROM agendamento
+        WHERE Estabelecimento_idEstabelecimento = '$idEstabelecimento'
+        ORDER BY data ASC, horario ASC";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $agendou = $row["Pessoa_idPessoa"];
+                echo $agendou; //pegando somente 1, onde era pra pegar 1 e 2
+
+                $sql = "SELECT * FROM cabeleireiro c
+                INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
+                INNER JOIN pessoa p on c.Pessoa_idPessoa = p.idPessoa
+                INNER JOIN endereco l on e.Endereco_idEndereco = l.idEndereco
+                INNER JOIN agendamento a on p.IdPessoa = a.Pessoa_idPessoa
+                WHERE idPessoa = '$agendou'
+                ORDER BY data ASC, horario ASC";
+                // echo $sql;
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0){
+                    while ($row = $result->fetch_assoc()){
+                        $filenameAgenda = 'fotoPerfil/' . $row['foto'] . '.png';
+
+                        if (!file_exists($filenameAgenda) || $row['foto'] == ''){
+                            $filenameAgenda = 'fotoPerfil/semfoto.png';
+                        }
+
+                        $nomeAgenda = $row["nome"];
+                        $nomeAgenda = $row["nome"]; $nomeAgenda = strtolower($nomeAgenda); $nomeAgenda = ucwords($nomeAgenda); 
+
+                        $dataAgenda = $row["data"];
+                        $horario = $row["horario"];
+
+                        if($row["status"] == 'agendado'){ 
+        ?>
+        
 
                 <div class="agendamentos">
                     <div class="foto-agendamento">
-                        <img src="https://s2.glbimg.com/4rs66b2IRNYef4YX7OjTf4o0SU8=/e.glbimg.com/og/ed/f/original/2018/12/06/modelo1.jpg" alt="">
+                        <img src="<?php echo $filenameAgenda ?>" alt="">
                     </div>
                     <div class="agendamento-pessoa">
-                        <h2>Rafael</h2>
-                        <h3>14:30</h3>
+                        <h2><?php echo $nomeAgenda; ?></h2>
+                        <h3><?php echo date('d/m', strtotime($dataAgenda)). ' ' . date('H:i', strtotime($horario)); ?></h3>
                     </div>
                 </div>
-
-                <div class="agendamentos">
-                    <div class="foto-agendamento">
-                        <img src="https://i.pinimg.com/236x/fe/a8/1c/fea81cf56c6c19e45650757d36d4d7a5--hot-male-models-drawing-models.jpg" alt="">
-                    </div>
-                    <div class="agendamento-pessoa">
-                        <h2>Marcos</h2>
-                        <h3>15:00</h3>
-                    </div>
-                </div>
+            
+        <?php           }   
+                    }
+                } 
+            }
+        }?>
             </div>
         </div>
+        <?php } ?>
 
     </div>
 </div>
@@ -113,7 +151,7 @@ if ($result->num_rows > 0){
                 <p>Atenção, cada opção selecionada será entendida como um corte de cabelo!</p>
             </div> -->
             <?php
-            if (isset($_COOKIE["cabeleireiro"])){
+            if (isset($_COOKIE["cabeleireiro"]) && $id == $idPessoa){
                 include "configuracao.php";
             }
             else if (isset($_COOKIE["cliente"])){

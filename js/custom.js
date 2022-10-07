@@ -416,8 +416,6 @@ function horaPerso() {
 }
 
 function agendarHora(hora, minuto) {
-    var exibir = document.getElementById("confirmacao");
-    exibir.style.display = "";
     
     var horaFormatado = hora.toLocaleString('pt-BR', {
         minimumIntegerDigits: 2,
@@ -426,31 +424,11 @@ function agendarHora(hora, minuto) {
         minimumIntegerDigits: 2,
         timezone: 'America/Sao_Paulo'});
     
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const data = urlParams.get('data');
-
-
-    var agendar = document.getElementsByClassName("agendarHorario");
-
-    const [year, month, day] = data.split('-');
-    // const [hours, minutes, seconds] = horario.split(':');
-
-    var horario = horaFormatado + ':' + minutoFormatado;
-    var agendamento = year + month + day;
-
-    //const date = new Date(+year, +month - 1, +day, +hours, +minutes, +seconds);
-    agendar.value = horario;
-    console.log('value: ' + agendar.value);
-
-    // console.log("data: " + date);
-    // console.log("ano: " + year);
-    // console.log("mes: " + month);
-    // console.log("dia: " + day);
-    // console.log("hora: " + hours);
-    // console.log("minutos: " + minutes);
-    // console.log("segundos: " + seconds);
-
+    var hora = horaFormatado + ':' + minutoFormatado;
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('hora', hora);
+    window.location.search = urlParams;
+    
 }
 
 function fecharAgenda() {

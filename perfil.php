@@ -75,12 +75,12 @@ if ($result->num_rows > 0){
                 $agendou = $row["Pessoa_idPessoa"];
                 echo $agendou; //pegando somente 1, onde era pra pegar 1 e 2
 
-                $sql = "SELECT * FROM cabeleireiro c
-                INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
-                INNER JOIN pessoa p on c.Pessoa_idPessoa = p.idPessoa
-                INNER JOIN endereco l on e.Endereco_idEndereco = l.idEndereco
-                INNER JOIN agendamento a on p.IdPessoa = a.Pessoa_idPessoa
-                WHERE idPessoa = '$agendou'
+                $sql = "SELECT * FROM agendamento a
+                LEFT JOIN estabelecimento e  on e.idEstabelecimento = a.Estabelecimento_idEstabelecimento
+                LEFT JOIN pessoa p 			on p.idPessoa = a.Pessoa_idPessoa
+                LEFT JOIN endereco l 		on e.Endereco_idEndereco = l.idEndereco
+                LEFT JOIN cabeleireiro c 	on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento        
+                WHERE a.Estabelecimento_idEstabelecimento = '$idEstabelecimento'
                 ORDER BY data ASC, horario ASC";
                 // echo $sql;
                 $result = $conn->query($sql);

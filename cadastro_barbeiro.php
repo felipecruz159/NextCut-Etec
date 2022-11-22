@@ -138,7 +138,7 @@ if (@$_POST['botao']) {
                                                                                         echo $nome;
                                                                                     } else {
                                                                                         echo '';
-                                                                                    } ?>" onkeydown="return /[a-z ]/i.test(event.key)" required>
+                                                                                    } ?>" onkeydown="return /[a-z ]/i.test(event.key)">
                 </div>
             </div>
             <div class="row">
@@ -148,14 +148,14 @@ if (@$_POST['botao']) {
                                                                     echo $nascimento;
                                                                 } else {
                                                                     echo '';
-                                                                } ?>" required>
+                                                                } ?>">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 mb-2">
                     <label class="sexoLabel text-center" for="sexo">Qual o seu gênero?</label><i title="precisamos saber disso para melhor experiência durante o uso do aplicativo" class="bi bi-question-circle label-icons"></i> <!-- trocar o title por uma div ou popup-->
-                    <select class="form-select" id="sexo" name="sexo" onchange="getSexo()" required>
+                    <select class="form-select" id="sexo" name="sexo" onchange="getSexo()">
                         <option selected value="1">Masculino</option>
                         <option value="2">Feminino</option>
                         <option value="3">Outro...</option>
@@ -176,7 +176,7 @@ if (@$_POST['botao']) {
                                                                                                                                                                                     echo $telefone;
                                                                                                                                                                                 } else {
                                                                                                                                                                                     echo '';
-                                                                                                                                                                                } ?>" required>
+                                                                                                                                                                                } ?>">
                 </div>
             </div>
 
@@ -187,7 +187,7 @@ if (@$_POST['botao']) {
                                                                                                                                                             echo $cpf;
                                                                                                                                                         } else {
                                                                                                                                                             echo '';
-                                                                                                                                                        } ?>" required>
+                                                                                                                                                        } ?>">
                 </div>
             </div>
 
@@ -203,7 +203,7 @@ if (@$_POST['botao']) {
                                                                 echo $email;
                                                             } else {
                                                                 echo '';
-                                                            } ?>" required>
+                                                            } ?>">
                 </div>
             </div>
             <div class="btn-barbeiro">
@@ -243,7 +243,7 @@ if (@$_POST['botao']) {
                                                                     echo $nomeFantasia;
                                                                 } else {
                                                                     echo '';
-                                                                } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)" required>
+                                                                } ?>" autocomplete="off" onkeydown="return /[a-z ]/i.test(event.key)">
                 </div>
             </div>
 
@@ -254,7 +254,7 @@ if (@$_POST['botao']) {
                                                                     echo $email;
                                                                 } else {
                                                                     echo '';
-                                                                } ?>" required>
+                                                                } ?>">
                 </div>
             </div>
 
@@ -265,7 +265,7 @@ if (@$_POST['botao']) {
                                                                                                                                                                                     echo $telefoneBarbearia;
                                                                                                                                                                                 } else {
                                                                                                                                                                                     echo '';
-                                                                                                                                                                                } ?>" required>
+                                                                                                                                                                                } ?>">
                 </div>
             </div>
 
@@ -276,66 +276,42 @@ if (@$_POST['botao']) {
                 <div class="row">
                     <div class="col-12 mb-4 mt-2">
                         <label class="" for="cep">CEP <small class="text-muted">— apenas números</small></label>
-                        <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlterado" autocomplete="off" value="<?php if (isset($cep)) {
-                                                                                                                                                                                                        echo $cep;
-                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                        echo '';
-                                                                                                                                                                                                    } ?>" required>
+                        <input type="text" name="cep" id="cep" minlength="8" maxlength="8" onkeypress="return onlynumber();" v-model="endereco.cep" @change="cepAlteradoEvento" autocomplete="off">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="estado">Estado</label>
-                        <input type="text" name="estado" v-model="endereco.estado" value="<?php if (isset($estado)) {
-                                                                                                echo $estado;
-                                                                                            } else {
-                                                                                                echo '';
-                                                                                            } ?>" readonly>
+                        <input type="text" name="estado" v-model="endereco.estado" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="cidade">Cidade</label>
-                        <input type="text" name="cidade" v-model="endereco.cidade" value="<?php if (isset($cidade)) {
-                                                                                                echo $cidade;
-                                                                                            } else {
-                                                                                                echo '';
-                                                                                            } ?>" readonly>
+                        <input type="text" name="cidade" v-model="endereco.cidade" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="bairro">Bairro</label>
-                        <input type="text" name="bairro" v-model="endereco.bairro" value="<?php if (isset($bairro)) {
-                                                                                                echo $bairro;
-                                                                                            } else {
-                                                                                                echo '';
-                                                                                            } ?>" readonly>
+                        <input type="text" name="bairro" v-model="endereco.bairro" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="endereco">Rua</label>
-                        <input type="text" name="endereco" v-model="endereco.rua" value="<?php if (isset($rua)) {
-                                                                                                echo $rua;
-                                                                                            } else {
-                                                                                                echo '';
-                                                                                            } ?>" readonly>
+                        <input type="text" name="endereco" v-model="endereco.rua" readonly>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-4">
                         <label class="" for="numero">Número</label>
-                        <input type="text" name="numero" onkeypress="return onlynumber();" value="<?php if (isset($numero)) {
-                                                                                                        echo $numero;
-                                                                                                    } else {
-                                                                                                        echo '';
-                                                                                                    } ?>" required>
+                        <input type="text" name="numero" onkeypress="return onlynumber();">
                     </div>
                 </div>
 
@@ -420,7 +396,7 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <label for="">Senha</label>
                     <div class="submit-line">
-                        <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
+                        <input type="password" id="senha" name="senha" onchange="confereSenha()" onkeyup="validarSenhaForca()">
                         <i id="senhaIcon" class="bi bi-eye-slash-fill submit-lente2" onclick="verSenha()"></i>
                     </div>
                 </div>
@@ -431,7 +407,7 @@ if (@$_POST['botao']) {
                 <div class="col-12 mb-4">
                     <label class="" for="senha">Confirme a Senha</label>
                     <div class="submit-line">
-                        <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()" required>
+                        <input type="password" id="confirma" name="confirma" onchange="confereSenha()" onkeyup="validarSenhaForca()">
                         <i id="senhaIcon2" class="bi bi-eye-slash-fill submit-lente2" onclick="verConfirma()"></i>
                     </div>
                 </div>
@@ -444,3 +420,7 @@ if (@$_POST['botao']) {
         </div>
     </form>
 </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> <!--framework - vue.js-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--consumo de api / node-->

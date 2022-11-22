@@ -47,33 +47,7 @@ $('#mainSlider').carousel({
 
 // API Cep
 
-new Vue({
-    el: "#appCep",
-    data: {
-        endereco: {
-            cep: null,
-            estado: null,
-            cidade: null,
-            bairro: null,
-            rua: null
-        }
-    },
-    methods: {
-        cepAlterado() {
-            axios({
-                method: "get",
-                url: `https://viacep.com.br/ws/${this.endereco.cep}/json/`,
-                responseType: "application/json"
-            }).then(response => {
-                var bean = response.data;
-                this.endereco.estado = bean.uf;
-                this.endereco.cidade = bean.localidade;
-                this.endereco.bairro = bean.bairro;
-                this.endereco.rua = bean.logradouro;
-            });
-        }
-    }
-})
+// 
 
 // Mostra cep quando logado
 
@@ -435,3 +409,31 @@ function fecharAgenda() {
     var exibir = document.getElementById("confirmacao");
     exibir.style.display = "none";
 }
+
+new Vue({
+        el: "#appCep",
+        data: {
+            endereco: {
+                cep: null,
+                logradouro: null,
+                estado: null,
+                cidade: null,
+                bairro: null
+            }
+        },
+        methods: {
+            cepAlteradoEvento(){
+                axios({
+                    method: "get",
+                    url: `https://viacep.com.br/ws/${this.endereco.cep}/json/`,
+                    responseType: "json"
+                }).then(response => {
+                    var bean = response.data;
+                    this.endereco.rua    = bean.logradouro;
+                    this.endereco.bairro = bean.bairro;
+                    this.endereco.estado = bean.uf;
+                    this.endereco.cidade = bean.localidade;
+                });
+            }
+        }
+    });

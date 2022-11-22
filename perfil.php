@@ -7,7 +7,7 @@
 </style>
 
 <?php
-
+date_default_timezone_set("America/Sao_Paulo");
 $id = $_GET["id"];
 $sql = "SELECT * FROM cabeleireiro c
 INNER JOIN estabelecimento e on c.Estabelecimento_idEstabelecimento = e.idEstabelecimento
@@ -104,13 +104,17 @@ if ($result->num_rows > 0){
         
 
                 <div class="agendamentos">
-                    <div class="foto-agendamento">
-                        <img src="<?php echo $filenameAgenda ?>" alt="">
+                    <?php 
+                    if ($dataAgenda >= date('Y-m-d')){
+                        echo '<div class="foto-agendamento">
+                        <img src="'. $filenameAgenda .'" alt="">
                     </div>
                     <div class="agendamento-pessoa">
-                        <h2><?php echo $nomeAgenda; ?></h2>
-                        <h3><?php echo date('d/m', strtotime($dataAgenda)). ' ' . date('H:i', strtotime($horario)); ?></h3>
-                    </div>
+                        <h2>'. $nomeAgenda .'</h2>
+                        <h3>'. date('d/m', strtotime($dataAgenda)). ' ' . date('H:i', strtotime($horario)).'</h3>
+                    </div>';
+                    }
+                    ?>
                 </div>
             
         <?php           }   

@@ -143,8 +143,9 @@ if (isset($fullHoraInicio) && isset($fullHoraTermino)) {
         <div class="confirmar-agendamento" id="confirmacao" style="<?php if (!empty($linkHora)) {
                                                                         echo 'none';
                                                                     } ?>">
+     
             <div class="confirmar-hora">
-                <input type="submit" name="agenda">Agendar<i class="bi bi-check-lg"></i></input>
+                <input type="submit" name="agenda" value="Agendar"></input>
             </div>
     </form>
     <div class="canelar-hora">

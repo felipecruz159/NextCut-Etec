@@ -90,8 +90,8 @@
                         <img src="./imagens/tesoura-e-pente-branco.png" class="card-img-top img-fluid" alt="...">
 
                         <div class="card-body">
-                            <h5 class="card-title mb-1 mt-2">Não sei o que por </h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title mb-1 mt-2">Cortes Ágeis</h5>
+                            <p class="card-text">Contamos com uma equipe totalmente ágil em questão dos cortes, com o tempo máximo de 30 minutos faça o cadastro e agende o mais rápido.</p>
                         </div>
                     </div>
                 </div>

@@ -7,16 +7,16 @@ $img2 = 'https://hips.hearstapps.com/esq.h-cdn.co/assets/17/29/1500667303-es-072
 $img3 = 'https://img.freepik.com/free-photo/vintage-wooden-table-with-beard-shaping-salon-tools_53876-127084.jpg?w=2000';
 
 $title1 = 'NextCut';
-$title2 = 'NextCut2';
-$title3 = 'NextCut3';
+$title2 = 'NextCut';
+$title3 = 'NextCut';
 
-$desc1 = 'Conte conosco, temos mais de 30 barbearias no portfólio.';
-$desc2 = 'Conte conosco, temos mais de 30 barbearias no portfólio.2';
-$desc3 = 'Conte conosco, temos mais de 30 barbearias no portfólio.3';
+$desc1 = '';
+$desc2 = '';
+$desc3 = '';
 
-$botao1 = 'Ver portfólio';
-$botao2 = 'Ver portfólio2';
-$botao3 = 'Ver portfólio3';
+$botao1 = 'Ver equipe';
+$botao2 = 'Ver equipe';
+$botao3 = 'Ver equipe';
 
 if ($page == 'sobre'){
     $img1 = 'https://inovacaosebraeminas.com.br/wp-content/uploads/2018/08/criatividade.jpg';

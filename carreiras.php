@@ -65,7 +65,7 @@
             </div>
             <div class="col-md-6 col-sm-12 align-self-center">
                 <h5>Um Lugar Incrível</h5>
-                <p class="text-1">Como é a Vida na NextCut?</p>
+                <p class="text-1">Como é o ambiente na NextCut?</p>
                 <p class="text-2">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quasi est. Natus reprehenderit labore, incidunt vitae ad nemo. Inventore quos libero 
 <br><br>

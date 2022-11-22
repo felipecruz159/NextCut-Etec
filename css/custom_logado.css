@@ -654,6 +654,17 @@ form .calendario-horario {
   font-weight: 600;
 }
 
+.confirmar-hora input{
+  margin: 5px;
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: var(--black);
+  color: var(--main-color);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .hora-disponiveis{
   color:aliceblue;
   display: flex;

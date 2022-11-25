@@ -15,5 +15,5 @@ function Conectar()
     return $conn;
 }
 
-$pdo = new PDO('mysql:host=localhost;dbname=nextcut', 'root', '');
+// $pdo = new PDO('mysql:host=localhost;dbname=nextcut', 'root', '');
 ?>

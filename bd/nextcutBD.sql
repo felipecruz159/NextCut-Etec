@@ -24,6 +24,7 @@ CREATE TABLE `Endereco` (
   `plano` VARCHAR(7) NOT NULL,
   `cargo` VARCHAR(12) NOT NULL,
   `senha` VARCHAR(32) NOT NULL,
+  `foto` VARCHAR(30) NULL,
   PRIMARY KEY (`idPessoa`)
 );
 
@@ -94,10 +95,19 @@ CREATE TABLE `Avaliacao` (
   );
 
 #CABELEIREIRO
-INSERT INTO endereco ( cep, estado, cidade, bairro, rua, numero, complemento ) VALUES ( '13304374', 'SP', 'Itu', 'Parque América', 'Rua Paulinho Alves Ribeiro', '1', 'a' );
-INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, plano, Endereco_idEndereco, cargo ) VALUES ( 'MARCOS', 'MASCULINO', '2004-01-07', 'marcos.beraldo@etec.sp.gov.br', '202cb962ac59075b964b07152d234b70', '(11)11111-1111', 'PREMIUM', '1', 'CABELEIREIRO' );
-INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, telefone, Endereco_idEndereco ) VALUES ( '11.111.111/1111', 'a', 'a', 'marcos.beraldo@fatec.sp.gov.br', '(11)11111-1111', '1' );
-INSERT INTO cabeleireiro ( Pessoa_idPessoa, Estabelecimento_idEstabelecimento, cpf ) VALUES ( '1', '1', '111.111.111-11' );
+INSERT INTO endereco ( cep, estado, cidade, bairro, rua, numero, complemento ) VALUES ( '13306220', 'SP', 'Itu', 'Vila Prudente de Moraes', 'Vila Prudente de Moraes', '410', '' );
+INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, plano, Endereco_idEndereco, cargo ) VALUES ( 'RAFAEL', 'MASCULINO', '2004-01-07', 'barbeiro@email.com', '202cb962ac59075b964b07152d234b70', '(11)11111-1111', 'PREMIUM', '1', 'CABELEIREIRO' );
+INSERT INTO estabelecimento ( cnpj, razaoSocial, nomeFantasia, email, telefone, Endereco_idEndereco ) VALUES ( '11.111.111/1111', 'Rafaelo', 'Rafaelos', 'barbeiro@email.com', '(11)11111-1111', '1' );
+INSERT INTO cabeleireiro ( Pessoa_idPessoa, Estabelecimento_idEstabelecimento, cpf, foto ) VALUES ( '1', '1', '111.111.111-11', '000' );
 
 #CLIENTE
-INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, cargo, plano ) VALUES ( 'RAFAEL' , 'MASCULINO' , '2003-10-13' , 'rafael.fernandes26@etec.sp.gov.br' , '202cb962ac59075b964b07152d234b70', '(11)11111-1111', 'CLIENTE', 'BÁSICO' );
+INSERT INTO pessoa ( nome, sexo, dataNascimento, email, senha, telefone, cargo, plano, foto ) VALUES ( 'MARCOS' , 'MASCULINO' , '2003-10-13' , 'cliente@email.com' , '202cb962ac59075b964b07152d234b70', '(11)11111-1111', 'CLIENTE', 'BÁSICO', '000' );
+
+#HORARIO FUNCIONAMENTO 
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'DOMINGO', '1');
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'SEGUNDA', '1');
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'TERCA', '1');
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'QUARTA', '1');
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'QUINTA', '1');
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'SEXTA', '1');
+INSERT INTO horariofuncionamento (horaInicio, horarioTermino, dia, Estabelecimento_idEstabelecimento) VALUES ('07:00:00', '17:00:00', 'SABADO', '1');

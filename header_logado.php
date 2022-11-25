@@ -13,73 +13,20 @@ else {
 }
 
 $conn = Conectar();
-$sql = "SELECT nome, idPessoa, Endereco_idEndereco FROM pessoa WHERE email='$cookieEmail'";
+$sql = "SELECT nome, idPessoa, Endereco_idEndereco, foto FROM pessoa WHERE email='$cookieEmail'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
-    $nome = $row['nome'];
+    $GLOBALS["nome"] = $row['nome'];
     $idPessoa = $row['idPessoa'];
     $idEndereco = $row['Endereco_idEndereco'];
+
+    $filename = 'fotoPerfil/' . $row['foto'] . '.png';
+
+        if (!file_exists($filename) || $row['foto'] == ''){
+            $filename = 'fotoPerfil/semfoto.png';
+        }
   }
-}
-
-$sql = "SELECT cep, rua FROM endereco WHERE idEndereco='$idEndereco'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $cep = $row['cep'];
-    $rua = $row['rua'];
-  }
-}
-
-if (@$_POST['botao']) {
-  $cep = $_POST['cep'];
-  $estado = $_POST['estado'];
-  $cidade = $_POST['cidade'];
-  $bairro = $_POST['bairro'];
-  $rua = $_POST['endereco'];
-  $numero = $_POST['numero'];
-
-  $sql = "INSERT INTO endereco (cep, estado, cidade, bairro, rua, numero )
-  VALUES ( '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero' );";
-  $result = $conn->query($sql);
-
-  $sql = "SELECT MAX(idEndereco) idEndereco FROM endereco;";
-  $result = $conn->query($sql);
-
-  if ($result) {
-    while ($row = $result->fetch_assoc()) {
-      $maxEndereco = $row['idEndereco'];
-    }
-  } else {
-    die($conn->error);
-  }
-
-  $sql = "UPDATE pessoa
-  SET Endereco_idEndereco = '$maxEndereco'
-  WHERE idPessoa= '$idPessoa';";
-  $result = $conn->query($sql);
-
-  header("Refresh:1");
-  echo $maxEndereco;
-}
-
-if (@$_POST['botao2']) {
-  $cep = $_POST['cep'];
-  $estado = $_POST['estado'];
-  $cidade = $_POST['cidade'];
-  $bairro = $_POST['bairro'];
-  $rua = $_POST['endereco'];
-  $numero = $_POST['numero'];
-
-  $sql = "UPDATE endereco
-  SET cep='$cep', estado='$estado', cidade='$cidade', bairro='$bairro', rua='$rua', numero='$numero' 
-  WHERE idEndereco = $idEndereco;";
-  $result = $conn->query($sql);
-
-
-  header("Refresh:3");
-  
 }
 ?>
 
@@ -133,7 +80,7 @@ if (@$_POST['botao2']) {
                 <use xlink:href="#bootstrap" />
               </svg>
 
-              <p style="color: var(--white) !important; font-size: 1.2em; font-weight: bold;">Olá, <span class="fs-5 fw-semibold"><?php echo strtok($nome, " "); ?></span></p>
+              <p style="color: var(--white) !important; font-size: 1.2em; font-weight: bold;">Olá, <span class="fs-5 fw-semibold"><?php echo strtok($GLOBALS["nome"], " "); ?></span></p>
             </a>
             <ul class="list-unstyled ps-0">
               <li class="mb-1">
@@ -165,7 +112,7 @@ if (@$_POST['botao2']) {
         </div>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="40" height="40" class="rounded-circle me-2">
+            <img src="<?= $filename ?>" alt="" width="40" height="40" class="rounded-circle me-2">
             <strong>Perfil</strong>
           </a>
           <ul class="dropdown-menu text-small shadow">
